@@ -7,5 +7,4 @@ import java.util.Optional;
 
 @Repository
 public interface EventosRepository extends JpaRepository<EventosBean, Long> {
-    Optional<EventosBean> findById(Long id);
 }

@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 
 @Data
 public class ApiResponse {
-    /*ESTE PODRIA QUEDAR COMO EL PATRON DE DISEÑO FACTORY METHOD*/
     private Object object;
     private HttpStatus status;
     private String message;

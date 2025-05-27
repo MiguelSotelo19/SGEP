@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = {"*"})
-@RequestMapping("api/eventos/rol")
+@RequestMapping("api/rol")
 @AllArgsConstructor
 public class RolController {
 }

@@ -1,8 +1,11 @@
 package mx.edu.utez.Eventos.Model.Categorias;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import mx.edu.utez.Eventos.Model.Eventos.EventosBean;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "categorias")
@@ -25,9 +28,9 @@ public class CategoriaBean {
     @Column
     private Boolean estatus;
 
-    @OneToOne
-    @JoinColumn(name = "id_evento")
-    private EventosBean eventosBean;
+    @OneToMany(mappedBy = "categoriaBean", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private Set<EventosBean> eventos;
 
 
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = {"*"})
-@RequestMapping("api/eventos/participantes")
+@RequestMapping("api/participantes")
 @AllArgsConstructor
 public class ParticipantesController {
 }
