@@ -1,5 +1,6 @@
 package mx.edu.utez.Eventos.Model.Eventos;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import mx.edu.utez.Eventos.Model.Categorias.CategoriaBean;
@@ -23,6 +24,9 @@ public class EventosBean {
     @Column
     private String lugar;
 
+    @Column
+    private String tipo_evento;
+
     @Column(columnDefinition = "DATE")
     private LocalDate fecha;
 
@@ -32,7 +36,8 @@ public class EventosBean {
     @OneToMany(mappedBy = "evento", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<ParticipantesBean> participantes;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_categoria")
+    @JsonBackReference
     private CategoriaBean categoriaBean;
 }
