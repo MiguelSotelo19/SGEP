@@ -6,9 +6,9 @@ export const Login = () => {
         <>
             <div>
                 <div className="ring">
-                    <i style={{ "--clr": "#00ff0a" }}></i>
-                    <i style={{ "--clr": "#ff0057" }}></i>
-                    <i style={{ "--clr": "#fffd44" }}></i>
+                    <i style={{ "--clr": "#ADD8E6" }}></i>
+                    <i style={{ "--clr": "#4ad2ff" }}></i>
+                    <i style={{ "--clr": "#2294f3" }}></i>
                     <div className="login">
                         <h2>Inicio de sesión</h2>
                         <div className="inputBx">
@@ -27,6 +27,7 @@ export const Login = () => {
                     </div>
                 </div>
             </div>
+
 
         </>
     );
