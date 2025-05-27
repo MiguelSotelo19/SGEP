@@ -13,7 +13,7 @@ body {
   width: 100%;
   overflow: hidden;
 }
-.ring {
+.circulos {
   position: relative;
   width: 35vw;
   height: 65vh;
@@ -21,28 +21,28 @@ body {
   justify-content: center;
   align-items: center;
 }
-.ring i {
+.circulos i {
   position: absolute;
   inset: 0;
   border: 2px solid #000000;
   transition: 0.5s;
 }
-.ring i:nth-child(1) {
+.circulos i:nth-child(1) {
   border-radius: 38% 62% 63% 37% / 38% 62% 63% 37%;
-  animation: animate 30s linear infinite;
+  animation: circulo1 60s linear infinite;
 }
-.ring i:nth-child(2) {
+.circulos i:nth-child(2) {
   border-radius: 41% 44% 56% 59% / 41% 44% 56% 59%;
-  animation: animate2 34s linear infinite;
+  animation: circulo2 64s linear infinite;
 }
-.ring i:nth-child(3) {
+.circulos i:nth-child(3) {
   border-radius: 41% 34% 66% 43% / 41% 34% 66% 43%;
-  animation: animate3 38s linear infinite;
+  animation: circulo3 68s linear infinite;
 }
-.ring:hover i {
+.circulos:hover i {
   border: 6px solid var(--clr);
 }
-@keyframes animate {
+@keyframes circulo1 {
   0% {
     transform: rotate(0deg);
   }
@@ -51,7 +51,7 @@ body {
   }
 }
 
-@keyframes animate2 {
+@keyframes circulo2 {
   0% {
     transform: rotate(120deg);
   }
@@ -60,7 +60,7 @@ body {
   }
 }
 
-@keyframes animate3 {
+@keyframes circulo3 {
   0% {
     transform: rotate(240deg);
   }
@@ -68,9 +68,33 @@ body {
     transform: rotate(600deg);
   }
 }
+@keyframes circuloSalida1 {
+  0% {
+    transform: scale(1); 
+  }
+  100% {
+    transform: scale(0.5); 
+  }
+}
+@keyframes circuloSalida2 {
+  0% {
+    transform: scale(1); 
+  }
+  100% {
+    transform: scale(0.5); 
+  }
+}
+@keyframes circuloSalida3 {
+  0% {
+    transform: scale(1); 
+  }
+  100% {
+    transform: scale(0.5); 
+  }
+}
 .login {
   position: absolute;
-  width: 300px;
+  width: 20vw;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -79,8 +103,9 @@ body {
   gap: 20px;
 }
 .login h2 {
-  font-size: 2em;
+  font-size: 1.8em;
   color: #000000;
+  margin-bottom: 5%;
 }
 .login .inputBx {
   position: relative;
@@ -89,14 +114,18 @@ body {
 .login .inputBx input {
   position: relative;
   width: 100%;
-  padding: 12px 20px;
+  padding: 4%;
   background: transparent;
-  border: 2px solid #000000;
-  border-radius: 40px;
+  border: 1px solid #000000;
+  border-radius: 10px;
   font-size: 1.2em;
   color: #000000;
   box-shadow: none;
   outline: none;
+}
+.login .inputBx label {
+  width: 100%;
+  font-size: 1.2em;
 }
 .login .inputBx input[type="submit"] {
   width: 100%;
@@ -114,7 +143,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 2%;
+}
+.login .links button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: #2294f3;
+  text-decoration: none;
+  cursor: pointer;
 }
 .login .links a {
   color: #000000;
