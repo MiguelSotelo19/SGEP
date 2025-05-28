@@ -1,55 +1,38 @@
-package mx.edu.utez.Eventos.Model.Categorias;
+package mx.edu.utez.Eventos.Model.Categorias.DTO;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import mx.edu.utez.Eventos.Model.Categorias.CategoriaBean;
 import mx.edu.utez.Eventos.Model.Eventos.EventosBean;
 
 import java.util.Set;
-
-@Entity
-@Table(name = "categorias")
-public class CategoriaBean {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_categoria;
-
-    @Column(unique = true)
+public class CategoriaDTO {
     private String nombre;
 
-    @Column(length = 250)
     private String descripcion;
 
-    @Column
     private int limite_participantes;
 
-    @Column
     private Boolean estatus;
 
-    @OneToMany(mappedBy = "categoriaBean", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference  // <-- agrega esta línea
     private Set<EventosBean> eventos;
 
-    public CategoriaBean(String nombre, String descripcion, int limite_participantes, Boolean estatus) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.limite_participantes = limite_participantes;
-        this.estatus = estatus;
+    public CategoriaBean toEntity(){
+        return new CategoriaBean(nombre,descripcion,limite_participantes,estatus);
+    }
+
+    public CategoriaBean toUpdate(){
+        return new CategoriaBean(nombre,descripcion,limite_participantes,estatus);
     }
 
 
-
-    public Long getId_categoria() {
-        return id_categoria;
-    }
-
-    public void setId_categoria(Long id_categoria) {
-        this.id_categoria = id_categoria;
-    }
 
     public String getNombre() {
         return nombre;
@@ -91,6 +74,6 @@ public class CategoriaBean {
         this.eventos = eventos;
     }
 
-    public CategoriaBean() {
+    public CategoriaDTO() {
     }
 }

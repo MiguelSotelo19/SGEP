@@ -1,24 +1,65 @@
 package mx.edu.utez.Eventos.Config;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
-@Data
 public class ApiResponse {
-    private Object object;
-    private HttpStatus status;
+    private Object data;
+    private int status; // antes: HttpStatus
     private String message;
-    private Boolean error;
+    private Boolean error = false;
 
-    public ApiResponse(Object object, HttpStatus status, String message) {
-        this.object = object;
+    public ApiResponse(Object data, int status, String message) {
+        this.data = data;
         this.status = status;
         this.message = message;
     }
 
-    public ApiResponse(HttpStatus status, String message, Boolean error) {
+    public ApiResponse(Object data, int status, String message, Boolean error) {
+        this.data = data;
         this.status = status;
         this.message = message;
+        this.error = error;
+    }
+
+    public ApiResponse(int status, String message, Boolean error) {
+        this.status = status;
+        this.message = message;
+        this.error = error;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Boolean getError() {
+        return error;
+    }
+
+    public void setError(Boolean error) {
         this.error = error;
     }
 }

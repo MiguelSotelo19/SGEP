@@ -1,13 +1,18 @@
 package mx.edu.utez.Eventos.Model.Participantes;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import mx.edu.utez.Eventos.Model.Eventos.EventosBean;
 import mx.edu.utez.Eventos.Model.Roles.RolBean;
 
 @Entity
 @Table(name = "participantes")
-@Data
+@Getter
+@Setter
 public class ParticipantesBean {
 
     @Id
@@ -35,8 +40,9 @@ public class ParticipantesBean {
     @JoinColumn(name = "id_rol")
     private RolBean rolBean;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_evento")
+    @JsonIgnore
     private EventosBean evento;
 
 

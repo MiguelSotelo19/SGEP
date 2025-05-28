@@ -2,6 +2,8 @@ package mx.edu.utez.Eventos.Model.Roles;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import mx.edu.utez.Eventos.Model.Participantes.ParticipantesBean;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 
@@ -9,7 +11,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "rol")
-@Data
+@Getter
+@Setter
 public class RolBean {
 
     @Id

@@ -1,6 +1,7 @@
 package mx.edu.utez.Eventos.Model.Eventos;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import mx.edu.utez.Eventos.Model.Categorias.CategoriaBean;
@@ -11,7 +12,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "eventos")
-@Data
 public class EventosBean {
 
     @Id
@@ -38,6 +38,70 @@ public class EventosBean {
 
     @ManyToOne
     @JoinColumn(name = "id_categoria")
-    @JsonBackReference
+    @JsonBackReference  // <-- para evitar ciclos de serialización
     private CategoriaBean categoriaBean;
+
+    public Long getId_evento() {
+        return id_evento;
+    }
+
+    public void setId_evento(Long id_evento) {
+        this.id_evento = id_evento;
+    }
+
+    public String getNombre_evento() {
+        return nombre_evento;
+    }
+
+    public void setNombre_evento(String nombre_evento) {
+        this.nombre_evento = nombre_evento;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public String getTipo_evento() {
+        return tipo_evento;
+    }
+
+    public void setTipo_evento(String tipo_evento) {
+        this.tipo_evento = tipo_evento;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public Boolean getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(Boolean estatus) {
+        this.estatus = estatus;
+    }
+
+    public Set<ParticipantesBean> getParticipantes() {
+        return participantes;
+    }
+
+    public void setParticipantes(Set<ParticipantesBean> participantes) {
+        this.participantes = participantes;
+    }
+
+    public CategoriaBean getCategoriaBean() {
+        return categoriaBean;
+    }
+
+    public void setCategoriaBean(CategoriaBean categoriaBean) {
+        this.categoriaBean = categoriaBean;
+    }
 }

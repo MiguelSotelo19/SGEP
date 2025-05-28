@@ -3,11 +3,14 @@ package mx.edu.utez.Eventos.Model.Usuarios;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import mx.edu.utez.Eventos.Model.Roles.RolBean;
 
 @Entity
 @Table(name = "usuarios")
-@Data
+@Getter
+@Setter
 public class UsuarioBean {
 
     @Id

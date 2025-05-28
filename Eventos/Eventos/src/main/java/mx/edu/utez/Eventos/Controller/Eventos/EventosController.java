@@ -39,7 +39,7 @@ public class EventosController {
         EventosBean evento = eventosRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Evento no encontrado con Id: "+id));
         
-        return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.OK, "Evento encontrado"));
+        return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.OK.value(), "Evento encontrado"));
     }
 
     @PostMapping("/")
@@ -47,7 +47,7 @@ public class EventosController {
         EventosBean evento = eventoService.crearEventoPorTipo(dto);
         eventosRepository.save(evento);
 
-        return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.CREATED, "Evento creado con éxito"));
+        return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.CREATED.value(), "Evento creado con éxito"));
     }
 
     @PutMapping("/{id}")
@@ -65,7 +65,7 @@ public class EventosController {
 
         eventosRepository.save(evento);
 
-        return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.OK, "Evento actualizado"));
+        return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.OK.value(), "Evento actualizado"));
     }
 
     @DeleteMapping("/{id}")
@@ -75,6 +75,6 @@ public class EventosController {
 
         eventosRepository.delete(evento);
 
-        return ResponseEntity.ok(new ApiResponse(null, HttpStatus.OK, "Evento eliminado con éxito"));
+        return ResponseEntity.ok(new ApiResponse(null, HttpStatus.OK.value(), "Evento eliminado con éxito"));
     }
 }
