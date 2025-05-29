@@ -68,6 +68,17 @@ public class EventosController {
         return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.OK.value(), "Evento actualizado"));
     }
 
+    @PutMapping("/cambiarEstado/{id}")
+    public ResponseEntity<ApiResponse> cambiarEstado(@PathVariable Long id, @RequestBody boolean estado) {
+        EventosBean evento = eventosRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Evento no encontrado con Id: "+id));
+
+        evento.setEstatus(estado);
+        eventosRepository.save(evento);
+
+        return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.OK.value(), "Estado de evento actualizado"));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse> eliminarEvento(@PathVariable Long id) {
         EventosBean evento = eventosRepository.findById(id)

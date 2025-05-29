@@ -7,5 +7,6 @@ import java.util.Optional;
 @Repository
 public interface CategoriaRepository extends JpaRepository<CategoriaBean, Long> {
     Optional<CategoriaBean>findByEstatusTrue();
+
     Optional<CategoriaBean>findByNombre(String nombre);
 }

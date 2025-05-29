@@ -1,5 +1,6 @@
 package mx.edu.utez.Eventos.Model.Roles;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -27,6 +28,7 @@ public class RolBean {
     private Set<UsuarioBean> usuarioBeans;
 
     @OneToMany(mappedBy = "rolBean", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<ParticipantesBean> participantesBeans;
 
 }
