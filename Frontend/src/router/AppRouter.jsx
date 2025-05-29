@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import React from 'react';
 import { Login } from '../screens/Login';
-import CategoryForm from '../screens/categories/CategoryFormModal';
 import Test from '../screens/Test';
 
 const AppRouter = () => {
@@ -9,6 +7,7 @@ const AppRouter = () => {
         <Router>
             <Routes>
                 <Route path='/' element={<Login />} />
+                <Route path='/test' element={ <Test/> } />
             </Routes>
         </Router>
     );

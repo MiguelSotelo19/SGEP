@@ -6,7 +6,7 @@ export const Login = () => {
     const [modo, setModo] = useState("login");
 
   return (
-    <div>
+    <div className="login-page">
       <Circulos>
         <div className="login">
           {modo === "login" ? (
