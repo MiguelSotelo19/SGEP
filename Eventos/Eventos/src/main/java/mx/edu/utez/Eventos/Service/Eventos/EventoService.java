@@ -25,7 +25,7 @@ public class EventoService {
                 factory = new EventoPrivadoFactory(categoriaRepository);
                 break;
             default:
-                throw new IllegalArgumentException("Tipo de evento no valido");
+                throw new IllegalArgumentException("Tipo de taller no valido");
         }
 
         return factory.crearEvento(dto);
