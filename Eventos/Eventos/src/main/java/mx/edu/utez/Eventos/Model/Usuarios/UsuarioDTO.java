@@ -15,12 +15,13 @@ public class UsuarioDTO {
     public UsuarioDTO() {
     }
 
-    public UsuarioDTO(String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, Boolean estatus, RolBean rol) {
+    public UsuarioDTO(String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, String password, Boolean estatus, RolBean rol) {
         this.nombre = nombre;
         this.apellido_paterno = apellido_paterno;
         this.apellido_materno = apellido_materno;
         this.correo = correo;
         this.telefono = telefono;
+        this.password = password;
         this.estatus = estatus;
         this.rol = rol;
     }
