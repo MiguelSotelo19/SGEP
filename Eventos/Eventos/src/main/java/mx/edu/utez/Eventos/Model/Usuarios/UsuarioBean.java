@@ -5,7 +5,11 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import mx.edu.utez.Eventos.Model.Eventos.EventosBean;
 import mx.edu.utez.Eventos.Model.Roles.RolBean;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "usuarios")
@@ -40,6 +44,10 @@ public class UsuarioBean {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_rol")
     private RolBean rolBean;
+
+    @ManyToMany(mappedBy = "usuarios", fetch = FetchType.LAZY)
+    private Set<EventosBean> eventos = new HashSet<>();
+
 
     public UsuarioBean(String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, String password, Boolean estatus, RolBean rolBean) {
         this.nombre = nombre;

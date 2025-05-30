@@ -8,6 +8,7 @@ import mx.edu.utez.Eventos.Model.Categorias.CategoriaBean;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -36,8 +37,13 @@ public class EventosBean {
     @Column
     private Long limite_usuarios;
 
-    @OneToMany(mappedBy = "evento", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<UsuarioBean> usuarios;
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "evento_usuario",
+            joinColumns = @JoinColumn(name = "id_evento"),
+            inverseJoinColumns = @JoinColumn(name = "id_usuario")
+    )
+    private Set<UsuarioBean> usuarios = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "id_categoria")
