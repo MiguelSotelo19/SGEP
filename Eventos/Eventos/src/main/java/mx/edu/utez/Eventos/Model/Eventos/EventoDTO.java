@@ -6,6 +6,7 @@ public class EventoDTO {
     private String nombre_evento;
     private String lugar;
     private LocalDate fecha;
+    private Long limite_usuarios;
     private Long id_categoria;
     private String tipo_evento;
 
@@ -47,5 +48,13 @@ public class EventoDTO {
 
     public void setTipo_evento(String tipo_evento) {
         this.tipo_evento = tipo_evento;
+    }
+
+    public Long getLimite_usuarios() {
+        return limite_usuarios;
+    }
+
+    public void setLimite_usuarios(Long limite_usuarios) {
+        this.limite_usuarios = limite_usuarios;
     }
 }

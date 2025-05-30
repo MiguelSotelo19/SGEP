@@ -16,6 +16,7 @@ public class EventoPublicoFactory implements EventoFactory {
         evento.setNombre_evento(dto.getNombre_evento());
         evento.setFecha(dto.getFecha());
         evento.setLugar(dto.getLugar());
+        evento.setLimite_usuarios(dto.getLimite_usuarios());
         CategoriaBean categoria = categoriaRepository.findById(dto.getId_categoria())
                 .orElseThrow(() -> new RuntimeException("Categoría no encontrada"));
         evento.setCategoriaBean(categoria);

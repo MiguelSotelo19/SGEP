@@ -18,18 +18,16 @@ public class CategoriaDTO {
 
     private String descripcion;
 
-    private int limite_participantes;
-
     private Boolean estatus;
 
     private Set<EventosBean> eventos;
 
     public CategoriaBean toEntity(){
-        return new CategoriaBean(nombre,descripcion,limite_participantes,estatus);
+        return new CategoriaBean(nombre,descripcion,estatus);
     }
 
     public CategoriaBean toUpdate(){
-        return new CategoriaBean(nombre,descripcion,limite_participantes,estatus);
+        return new CategoriaBean(nombre,descripcion,estatus);
     }
 
 
@@ -48,14 +46,6 @@ public class CategoriaDTO {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public int getLimite_participantes() {
-        return limite_participantes;
-    }
-
-    public void setLimite_participantes(int limite_participantes) {
-        this.limite_participantes = limite_participantes;
     }
 
     public Boolean getEstatus() {

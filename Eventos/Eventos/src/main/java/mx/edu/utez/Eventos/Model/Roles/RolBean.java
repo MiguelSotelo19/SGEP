@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import mx.edu.utez.Eventos.Model.Participantes.ParticipantesBean;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 
 import java.util.Set;
@@ -26,9 +25,5 @@ public class RolBean {
 
     @OneToMany(mappedBy = "rolBean", fetch = FetchType.LAZY)
     private Set<UsuarioBean> usuarioBeans;
-
-    @OneToMany(mappedBy = "rolBean", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private Set<ParticipantesBean> participantesBeans;
 
 }

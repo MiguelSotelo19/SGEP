@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import mx.edu.utez.Eventos.Model.Categorias.CategoriaBean;
-import mx.edu.utez.Eventos.Model.Participantes.ParticipantesBean;
+import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -33,8 +33,11 @@ public class EventosBean {
     @Column
     private Boolean estatus;
 
+    @Column
+    private Long limite_usuarios;
+
     @OneToMany(mappedBy = "evento", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<ParticipantesBean> participantes;
+    private Set<UsuarioBean> usuarios;
 
     @ManyToOne
     @JoinColumn(name = "id_categoria")
@@ -89,19 +92,27 @@ public class EventosBean {
         this.estatus = estatus;
     }
 
-    public Set<ParticipantesBean> getParticipantes() {
-        return participantes;
-    }
-
-    public void setParticipantes(Set<ParticipantesBean> participantes) {
-        this.participantes = participantes;
-    }
-
     public CategoriaBean getCategoriaBean() {
         return categoriaBean;
     }
 
     public void setCategoriaBean(CategoriaBean categoriaBean) {
         this.categoriaBean = categoriaBean;
+    }
+
+    public Long getLimite_usuarios() {
+        return limite_usuarios;
+    }
+
+    public void setLimite_usuarios(Long limite_usuarios) {
+        this.limite_usuarios = limite_usuarios;
+    }
+
+    public Set<UsuarioBean> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(Set<UsuarioBean> usuarios) {
+        this.usuarios = usuarios;
     }
 }
