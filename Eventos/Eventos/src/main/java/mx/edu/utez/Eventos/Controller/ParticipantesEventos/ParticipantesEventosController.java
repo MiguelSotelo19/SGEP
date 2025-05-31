@@ -15,7 +15,7 @@ public class ParticipantesEventosController {
     @Autowired
     private ParticipantesEventosService participantesEventosService;
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<String> registrarUsuariosEventos(@RequestBody ParticipantesEventosDTO dto) {
         boolean registro = participantesEventosService.registrarUsuariosEventos(
                 dto.getIdUsuario(),dto.getIdEvento());

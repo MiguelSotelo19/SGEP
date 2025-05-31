@@ -85,4 +85,12 @@ public class UsuarioDTO {
     public void setRol(RolBean rol) {
         this.rol = rol;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

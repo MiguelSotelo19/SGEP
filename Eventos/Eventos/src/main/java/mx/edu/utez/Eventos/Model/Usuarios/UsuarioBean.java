@@ -41,6 +41,7 @@ public class UsuarioBean {
     @Column
     private Boolean estatus;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_rol")
     private RolBean rolBean;

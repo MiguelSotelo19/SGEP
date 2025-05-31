@@ -34,7 +34,7 @@ public class EventosController {
         return ResponseEntity.ok(eventos);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/one/{id}")
     public ResponseEntity<ApiResponse> getEventoById(@PathVariable Long id) {
         EventosBean evento = eventosRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Taller no encontrado con Id: "+id));
@@ -42,7 +42,7 @@ public class EventosController {
         return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.OK.value(), "Taller encontrado"));
     }
 
-    @PostMapping("/")
+    @PostMapping("/save")
     public ResponseEntity<ApiResponse> crearEvento(@RequestBody EventoDTO dto) {
         EventosBean evento = eventoService.crearEventoPorTipo(dto);
         eventosRepository.save(evento);
@@ -50,7 +50,7 @@ public class EventosController {
         return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.CREATED.value(), "Taller creado con éxito"));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<ApiResponse> actualizarEvento(@PathVariable Long id, @RequestBody EventoDTO dto) {
         EventosBean evento = eventosRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Taller no encontrado con Id: "+id));
@@ -79,7 +79,7 @@ public class EventosController {
         return ResponseEntity.ok(new ApiResponse(evento, HttpStatus.OK.value(), "Estado de taller actualizado"));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<ApiResponse> eliminarEvento(@PathVariable Long id) {
         EventosBean evento = eventosRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Taller no encontrado"));

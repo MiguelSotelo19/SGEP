@@ -33,18 +33,17 @@ public class CategoriasController {
         return new ResponseEntity<>(new ApiResponse(service.getAllCategoriasTrue(), HttpStatus.OK.value(), "ok"), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("/save")
     public ResponseEntity<ApiResponse> nuevaCategoria(@RequestBody CategoriaDTO dto){
-        System.out.println("nombre: "+ dto.getNombre());
         return service.newCategoria(dto.toEntity());
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<ApiResponse> actualizarCategoria(@RequestBody CategoriaDTO dto, @PathVariable Long id){
         return  service.updateCategoria(dto.toUpdate(),id);
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/status/{id}")
     public ResponseEntity<ApiResponse>cambiarEstado(@PathVariable Long id){
         return service.changeStatus(id);
     }
