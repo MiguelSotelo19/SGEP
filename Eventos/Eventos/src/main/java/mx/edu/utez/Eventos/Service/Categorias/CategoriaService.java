@@ -76,7 +76,6 @@ public class CategoriaService {
             cat.setNombre(categoria.getNombre());
             cat.setDescripcion(categoria.getDescripcion());
             cat.setEstatus(categoria.getEstatus());
-            cat.setLimite_participantes(categoria.getLimite_participantes());
 
             repository.saveAndFlush(cat);
 

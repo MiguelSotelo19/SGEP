@@ -25,19 +25,15 @@ public class CategoriaBean {
     private String descripcion;
 
     @Column
-    private int limite_participantes;
-
-    @Column
     private Boolean estatus;
 
     @OneToMany(mappedBy = "categoriaBean", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference  // <-- agrega esta línea
     private Set<EventosBean> eventos;
 
-    public CategoriaBean(String nombre, String descripcion, int limite_participantes, Boolean estatus) {
+    public CategoriaBean(String nombre, String descripcion, Boolean estatus) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.limite_participantes = limite_participantes;
         this.estatus = estatus;
     }
 
@@ -65,14 +61,6 @@ public class CategoriaBean {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public int getLimite_participantes() {
-        return limite_participantes;
-    }
-
-    public void setLimite_participantes(int limite_participantes) {
-        this.limite_participantes = limite_participantes;
     }
 
     public Boolean getEstatus() {

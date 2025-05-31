@@ -1,55 +1,21 @@
 package mx.edu.utez.Eventos.Model.Usuarios;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import mx.edu.utez.Eventos.Model.Eventos.EventosBean;
 import mx.edu.utez.Eventos.Model.Roles.RolBean;
 
-import java.util.HashSet;
-import java.util.Set;
-
-@Entity
-@Table(name = "usuarios")
-
-public class UsuarioBean {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_usuario;
-
-    @Column(length = 100)
+public class UsuarioDTO {
     private String nombre;
-
-    @Column(length = 100)
     private String apellido_paterno;
-
-    @Column(length = 100)
     private String apellido_materno;
-
-    @Column(length = 50, unique = true)
     private String correo;
-
-    @Column(length = 10, unique = true)
     private String telefono;
-
-    @Column(columnDefinition = "TEXT")
     private String password;
-
-    @Column
     private Boolean estatus;
+    private RolBean rol;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_rol")
-    private RolBean rolBean;
+    public UsuarioDTO() {
+    }
 
-    @ManyToMany(mappedBy = "usuarios", fetch = FetchType.LAZY)
-    private Set<EventosBean> eventos = new HashSet<>();
-
-
-    public UsuarioBean(String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, String password, Boolean estatus, RolBean rolBean) {
+    public UsuarioDTO(String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, String password, Boolean estatus, RolBean rol) {
         this.nombre = nombre;
         this.apellido_paterno = apellido_paterno;
         this.apellido_materno = apellido_materno;
@@ -57,19 +23,11 @@ public class UsuarioBean {
         this.telefono = telefono;
         this.password = password;
         this.estatus = estatus;
-        this.rolBean = rolBean;
+        this.rol = rol;
     }
 
-    public UsuarioBean() {
-
-    }
-
-    public Long getId_usuario() {
-        return id_usuario;
-    }
-
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
+    public UsuarioBean toEntity(){
+        return new UsuarioBean(nombre, apellido_paterno, apellido_materno, correo, telefono, password, estatus, rol);
     }
 
     public String getNombre() {
@@ -112,14 +70,6 @@ public class UsuarioBean {
         this.telefono = telefono;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public Boolean getEstatus() {
         return estatus;
     }
@@ -128,11 +78,11 @@ public class UsuarioBean {
         this.estatus = estatus;
     }
 
-    public RolBean getRolBean() {
-        return rolBean;
+    public RolBean getRol() {
+        return rol;
     }
 
-    public void setRolBean(RolBean rolBean) {
-        this.rolBean = rolBean;
+    public void setRol(RolBean rol) {
+        this.rol = rol;
     }
 }

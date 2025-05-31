@@ -22,8 +22,9 @@ public class CategoriasController {
 
     @Autowired
     private CategoriaRepository repository;
+
     @GetMapping(value = "/")
-   public ResponseEntity<ApiResponse> categorias(){
+    public ResponseEntity<ApiResponse> categorias(){
         return  new ResponseEntity<>(new ApiResponse(service.getAllCategorias(), HttpStatus.OK.value(), "ok"), HttpStatus.OK);
     }
 
