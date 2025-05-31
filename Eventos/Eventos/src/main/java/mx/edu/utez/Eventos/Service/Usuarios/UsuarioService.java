@@ -7,6 +7,7 @@ import mx.edu.utez.Eventos.Model.Usuarios.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +22,10 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository repository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+
     @Transactional(readOnly = true)
     public ApiResponse getAllUsuarios() {
         return new ApiResponse(repository.findAll(), HttpStatus.OK.value(), "OK");
@@ -34,6 +39,9 @@ public class UsuarioService {
         if(findCorreo.isPresent() || findTel.isPresent()) {
             return new ResponseEntity<>(new ApiResponse(HttpStatus.BAD_REQUEST.value(), findTel.isPresent() ? "El número de telefono ya se encuentra registrado": "El correo ya se encuentra registrado", true), HttpStatus.BAD_REQUEST);
         }
+
+        String encrypted = passwordEncoder.encode(usuario.getPassword());
+        usuario.setPassword(encrypted);
 
         UsuarioBean saved = repository.saveAndFlush(usuario);
 
