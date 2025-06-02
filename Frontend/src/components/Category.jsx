@@ -1,6 +1,6 @@
 import EstadoBadge from './EstadoBadge';
 
-const Category = ({nombre, descripcion, estado}) => {
+const Category = ({ nombre, descripcion, estado }) => {
     return (
         <div className="cursor-pointer flex flex-col justify-between h-full rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
             <div>
@@ -10,7 +10,7 @@ const Category = ({nombre, descripcion, estado}) => {
 
             <div className="flex items-center justify-between mt-4">
                 <EstadoBadge estado={estado} />
-                <button className="text-blue-600 hover:underline text-sm">Editar</button>
+                <button className="text-blue-600 hover:underline text-sm cursor-pointer">Editar</button>
             </div>
         </div>
     )

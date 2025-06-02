@@ -17,7 +17,7 @@ export const category = async ({nombre, descripcion, estatus=true}) => {
 
 export const getCategories = async () => {
     try {
-        const response = await axiosInstance.get('/api/categoria');
+        const response = await axiosInstance.get('/api/categoria/');
         return response.data.data;
     } catch (error) {
         console.error('Error al obtener categorías: ', error);

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { category } from "../services/categoryService";
 import { toast } from "react-toastify";
 
-const CategoryModal = ({ isOpen, handleClose }) => {
+const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada }) => {
 
     useEffect(() => {
         if (!isOpen) {
@@ -76,6 +76,7 @@ const CategoryModal = ({ isOpen, handleClose }) => {
                 });
 
                 console.log("Creada: ", response);
+                onCategoriaCreada && onCategoriaCreada();
                 toast.success("Categoría creada");
             } catch (error) {
                 if (error.response?.status === 400) {

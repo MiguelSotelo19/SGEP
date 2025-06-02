@@ -16,7 +16,7 @@ const CategoryList = () => {
     const fetchCategorias = async () => {
         try {
             const data = await getCategories();
-            setCategorias(data);
+            setCategorias(data.data);
         } catch (error) {
             toast.error("Error al cargar las categorías: ", error);
         }
@@ -45,11 +45,15 @@ const CategoryList = () => {
                         key={index}
                         nombre={cat.nombre}
                         descripcion={cat.descripcion}
-                        estado={cat.estado}
+                        estado={cat.estatus ? "Activo" : "Inactivo"}
                     />
                 ))}
             </div>
-            <CategoryModal isOpen={isOpen} handleClose={handleClose} />
+            <CategoryModal
+                isOpen={isOpen}
+                handleClose={handleClose}
+                onCategoriaCreada={fetchCategorias}
+            />
         </div>
     )
 }
