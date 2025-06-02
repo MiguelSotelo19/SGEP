@@ -27,6 +27,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class MainSecurity {
     private final String[] WHITE_LIST = {
             "/api/auth/**",
+            "/api/usuarios/verify",
+            "/api/usuarios/verify/code",
+            "/api/usuarios/verify/reset"
+
 
     };
     private final UserDetailsServiceImpl service;
