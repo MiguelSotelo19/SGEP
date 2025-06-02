@@ -8,10 +8,21 @@ import { getCategories } from "../../services/categoryService";
 const CategoryList = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [categorias, setCategorias] = useState([]);
+    const [isEditMode, setIsEditMode] = useState(false);
+    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
 
     const handleModal = () => setIsOpen(true);
 
-    const handleClose = () => setIsOpen(false);
+    const handleClose = () => {
+        setIsOpen(false);
+        setIsEditMode(false);
+    }
+
+    const handleEditMode = (categoria) => {
+        setIsEditMode(true);
+        setCategoriaSeleccionada(categoria);
+        setIsOpen(true);
+    };
 
     const fetchCategorias = async () => {
         try {
@@ -46,6 +57,7 @@ const CategoryList = () => {
                         nombre={cat.nombre}
                         descripcion={cat.descripcion}
                         estado={cat.estatus ? "Activo" : "Inactivo"}
+                        onEditMode={() => handleEditMode(cat)}
                     />
                 ))}
             </div>
@@ -53,6 +65,8 @@ const CategoryList = () => {
                 isOpen={isOpen}
                 handleClose={handleClose}
                 onCategoriaCreada={fetchCategorias}
+                isEditMode={isEditMode}
+                categoriaSeleccionada={categoriaSeleccionada}
             />
         </div>
     )
