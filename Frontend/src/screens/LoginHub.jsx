@@ -7,24 +7,24 @@ import { useNavigate } from "react-router-dom";
 
 export const LoginHub = () => {
   const navigate = useNavigate();
-    const [modo, setModo] = useState("login");
+  const [modo, setModo] = useState("login");
   const isAuthenticated = () => {
-        return !!sessionStorage.getItem("usuario");
-    };
+    return !!sessionStorage.getItem("usuario");
+  };
 
   useEffect(() => {
-        if (isAuthenticated()) {
-            navigate("/categories", { replace: true });
-        }
-    }, []);
+    if (isAuthenticated()) {
+      navigate("/categories", { replace: true });
+    }
+  }, []);
   return (
     <div className="login-page">
       <Circulos>
         <div className="login">
           {modo === "login" ? (
-            <Login setModo={setModo}/>
+            <Login setModo={setModo} />
           ) : (
-            <Recuperar setModo={setModo}/>
+            <Recuperar setModo={setModo} />
           )}
         </div>
       </Circulos>

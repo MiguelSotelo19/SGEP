@@ -42,8 +42,8 @@ export const Login = ({ setModo }) => {
 
     const login = async () => {
         if (bloqueado) return;
-        const correoLogin=correo.trim()
-        const passwordLogin=password.trim()
+        const correoLogin = correo.trim()
+        const passwordLogin = password.trim()
         const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const regexPassword = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{6,}$/;
 
@@ -108,7 +108,7 @@ export const Login = ({ setModo }) => {
     function limpiar() {
         setCorreo("");
         setPassword("");
-        
+
     }
 
     return (
@@ -129,8 +129,8 @@ export const Login = ({ setModo }) => {
                 />
             </div>
             <div className="links">
-                <button onClick={() => { setModo("recuperar"); limpiar(); }} className="login-letra">Olvidé mi contraseña</button>
-                <a href="#" className="login-letra">Registrarse</a>
+                <a onClick={() => { setModo("recuperar"); limpiar(); }} className="login-letra boton_login">Olvidé mi contraseña</a>
+                <a href="#" className="login-letra boton_login">Registrarse</a>
             </div>
         </>
     );
