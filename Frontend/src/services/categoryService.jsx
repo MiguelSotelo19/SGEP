@@ -24,3 +24,17 @@ export const getCategories = async () => {
         throw error;
     }
 }
+
+export const editCategory = async ({ id, nombre, descripcion, estatus }) => {
+    try {
+        const response = await axiosInstance.put(`/api/categoria/update/${id}`, {
+            nombre,
+            descripcion,
+            estatus
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error al editar categoría:", error);
+        throw error;
+    }
+};

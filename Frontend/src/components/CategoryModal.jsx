@@ -1,22 +1,19 @@
 import { Tag, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { category } from "../services/categoryService";
+import { category, editCategory } from "../services/categoryService";
 import { toast } from "react-toastify";
 
-const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada }) => {
+const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada, isEditMode, categoriaSeleccionada }) => {
 
     useEffect(() => {
-        if (!isOpen) {
-            setErrors({
-                nombre: '',
-                descripcion: ''
-            });
+        if (isEditMode && categoriaSeleccionada) {
             setFormData({
-                nombre: '',
-                descripcion: ''
+                nombre: categoriaSeleccionada.nombre || '',
+                descripcion: categoriaSeleccionada.descripcion || '',
             });
+            setIsActivate(categoriaSeleccionada.estatus);
         }
-    }, [isOpen]);
+    }, [isEditMode, categoriaSeleccionada]);
 
     const [formData, setFormData] = useState({
         nombre: '',
@@ -27,6 +24,8 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada }) => {
         nombre: '',
         descripcion: ''
     });
+
+    const [isActivate, setIsActivate] = useState(true);
 
     const textOnlyRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/;
 
@@ -65,19 +64,32 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada }) => {
         }));
     };
 
+    const handleActivate = () => setIsActivate(!isActivate);
+
     const handleSubmit = async () => {
-
         if (validateFields()) {
-            console.log('Formulario válido. Enviando:', formData);
             try {
-                const response = await category({
-                    nombre: formData.nombre.trim(),
-                    descripcion: formData.descripcion.trim(),
-                });
+                if (isEditMode && categoriaSeleccionada) {
+                    const response = await editCategory({
+                        id: categoriaSeleccionada.id_categoria,
+                        nombre: formData.nombre.trim(),
+                        descripcion: formData.descripcion.trim(),
+                        estatus: isActivate,
+                    });
+                    console.log("Actualizada: ", response);
+                    toast.success("Categoría actualizada");
+                } else {
+                    const response = await category({
+                        nombre: formData.nombre.trim(),
+                        descripcion: formData.descripcion.trim(),
+                    });
+                    console.log("Creada: ", response);
+                    toast.success("Categoría creada");
+                }
 
-                console.log("Creada: ", response);
                 onCategoriaCreada && onCategoriaCreada();
-                toast.success("Categoría creada");
+                handleClose();
+
             } catch (error) {
                 if (error.response?.status === 400) {
                     toast.warn('Ya está registrada');
@@ -85,9 +97,7 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada }) => {
                     console.error('Error al enviar: ', error);
                     toast.error('Error en el servidor');
                 }
-
             }
-            handleClose();
         } else {
             console.log('Formulario inválido');
         }
@@ -105,7 +115,7 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada }) => {
                                     <Tag className="w-5 h-5 text-blue-600" />
                                 </div>
                                 <h2 className="text-xl font-semibold text-gray-900">
-                                    Registrar Categoría
+                                    {isEditMode ? 'Editar Categoría' : 'Registrar Categoría'}
                                 </h2>
                             </div>
                             <button
@@ -159,6 +169,17 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada }) => {
                                 )}
                             </div>
 
+                            {isEditMode ? (
+
+                                <label class="inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer" checked={isActivate} onChange={handleActivate} />
+                                    <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+                                    <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Checked toggle</span>
+                                </label>
+
+                            ) : null}
+
+
                             <div className="flex gap-3 pt-4">
                                 <button
                                     type="button"
@@ -172,7 +193,7 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada }) => {
                                     onClick={handleSubmit}
                                     className="flex-1 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium shadow-md hover:shadow-lg"
                                 >
-                                    Registrar
+                                    {isEditMode ? 'Editar' : 'Registrar'}
                                 </button>
                             </div>
                         </div>
