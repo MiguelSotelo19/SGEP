@@ -1,6 +1,5 @@
 package mx.edu.utez.Eventos.Controller.Categorias;
 
-import lombok.AllArgsConstructor;
 import mx.edu.utez.Eventos.Config.ApiResponse;
 import mx.edu.utez.Eventos.Model.Categorias.CategoriaRepository;
 import mx.edu.utez.Eventos.Model.Categorias.DTO.CategoriaDTO;
@@ -9,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.swing.plaf.SpinnerUI;
 
 @RestController
 @CrossOrigin(origins = {"*"})
