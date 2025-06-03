@@ -46,8 +46,8 @@ public class UsuarioBean {
     @JoinColumn(name = "id_rol")
     private RolBean rolBean;
 
-    @ManyToMany(mappedBy = "usuarios", fetch = FetchType.LAZY)
-    private Set<EventosBean> eventos = new HashSet<>();
+    /*@ManyToMany(mappedBy = "usuarios", fetch = FetchType.LAZY)
+    private Set<EventosBean> eventos = new HashSet<>();*/
 
 
     public UsuarioBean(String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, String password, Boolean estatus, RolBean rolBean) {

@@ -2,6 +2,10 @@ package mx.edu.utez.Eventos.Controller.Usuarios;
 
 import lombok.AllArgsConstructor;
 import mx.edu.utez.Eventos.Config.ApiResponse;
+import mx.edu.utez.Eventos.Model.PasswordReset.DTO.CodeDTO;
+import mx.edu.utez.Eventos.Model.PasswordReset.DTO.PasswordResetDTO;
+import mx.edu.utez.Eventos.Model.Usuarios.DTO.CorreoDTO;
+import mx.edu.utez.Eventos.Model.Usuarios.DTO.PasswordDTO;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioDTO;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioRepository;
@@ -37,4 +41,21 @@ public class UsuariosController {
     public ResponseEntity<ApiResponse> actualizarUsuario(@PathVariable Long id, @RequestBody UsuarioDTO dto) {
         return service.updateUsuario(dto.toEntity(), id);
     }
+
+    @PostMapping("/verify")
+    public ResponseEntity<ApiResponse> verificarEmail(@RequestBody CorreoDTO dto) throws Exception {
+        return service.VerifyEmail(dto.getCorreo());
+    }
+
+    @PostMapping("/verify/code")
+    public ResponseEntity<ApiResponse> verificarCodigo(@RequestBody CodeDTO dto) {
+        return service.verifyCode(dto.getCorreo(), dto.getCodigo());
+    }
+
+    @PutMapping("/verify/reset")
+    public ResponseEntity<ApiResponse> resetPassword(@RequestBody PasswordResetDTO dto) {
+        return service.newPassword(dto.getCorreo(), dto.getCodigo(), dto.getPassword());
+    }
+
+
 }

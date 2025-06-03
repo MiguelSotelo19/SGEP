@@ -32,7 +32,7 @@ public class CategoriaService {
     //listado de las categorias activas
     @Transactional(readOnly = true)
     public ResponseEntity<ApiResponse>getAllCategoriasTrue(){
-        return new ResponseEntity<>(new ApiResponse(repository.findByEstatusTrue(), HttpStatus.OK.value(), "Ok"), HttpStatus.OK);
+        return new ResponseEntity<>(new ApiResponse(repository.findAllByEstatusTrue(), HttpStatus.OK.value(), "Ok"), HttpStatus.OK);
     }
 
     //registro de nueva categoria (obviamente sin eventos)
