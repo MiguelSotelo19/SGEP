@@ -27,6 +27,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class MainSecurity {
     private final String[] WHITE_LIST = {
             "/api/auth/**",
+            "/api/usuarios/registro",
             "/api/usuarios/verify",
             "/api/usuarios/verify/code",
             "/api/usuarios/verify/reset"
@@ -69,6 +70,7 @@ public class MainSecurity {
         http.cors(Customizer.withDefaults()).csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(req ->
                         req.requestMatchers(WHITE_LIST).permitAll()
+                                .requestMatchers("/api/usuarios/registro").permitAll()
                                 .requestMatchers("/api/usuarios/**").hasAnyAuthority("Admin", "Participante")
                                 .requestMatchers("/api/categoria/").hasAnyAuthority("Admin", "Participante")
                                 .requestMatchers("/api/categoria/true").hasAnyAuthority("Admin", "Participante")

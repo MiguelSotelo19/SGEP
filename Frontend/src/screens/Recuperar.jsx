@@ -15,6 +15,7 @@ export const Recuperar = ({ setModo }) => {
     const [codigo, setCodigo] = useState("");
     const [password, setPassword] = useState("");
 
+    
     const enviarCorreo = async () => {
         const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!regexCorreo.test(correo)) {
@@ -55,11 +56,12 @@ export const Recuperar = ({ setModo }) => {
 
     const verificarCodigo = async () => {
         if (!codigo.trim()) {
-            return Swal.fire({
+            Swal.fire({
                 icon: "warning",
                 title: "Código requerido",
                 text: "Por favor, ingresa el código recibido por correo.",
             });
+            return;
         }
 
         try {
@@ -89,11 +91,12 @@ export const Recuperar = ({ setModo }) => {
 
     const resetPassword = async () => {
         if (!password.trim()) {
-            return Swal.fire({
+            Swal.fire({
                 icon: "warning",
                 title: "Contraseña requerida",
                 text: "Por favor, ingresa una nueva contraseña.",
             });
+            return;
         }
 
         try {
@@ -108,6 +111,7 @@ export const Recuperar = ({ setModo }) => {
             });
             navigate("/");
             setModo("login");
+            limpiar();
         } catch (err) {
             Swal.fire({
                 icon: "error",
@@ -142,6 +146,14 @@ export const Recuperar = ({ setModo }) => {
         const sec = String(segundos % 60).padStart(2, '0');
         return `${min}:${sec}`;
     };
+
+    function limpiar() {
+        setTiempoRestante(300);
+        setPaso(1);
+        setCodigo("");
+        setCorreo("");
+        setPassword("");
+    }
 
     return (
 
@@ -195,7 +207,7 @@ export const Recuperar = ({ setModo }) => {
             )}
 
             <div className="links">
-                <button className="login-letra boton_login" onClick={() => setModo("login")} style={{ width: "100%" }}>
+                <button className="login-letra boton_login" onClick={() =>{ setModo("login"); limpiar()}} style={{ width: "100%" }}>
                     Volver al inicio
                 </button>
             </div>

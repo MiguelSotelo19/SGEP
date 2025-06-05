@@ -65,14 +65,14 @@ export const Login = ({ setModo }) => {
             return;
         }
 
-        /*if (!regexPassword.test(passwordLogin)) {
+        if (!regexPassword.test(passwordLogin)) {
             Swal.fire({
                 icon: "warning",
                 title: "Contraseña inválida",
                 text: "La contraseña debe tener al menos 6 carácteres, una mayuscula y un carácter especial",
             });
             return;
-        }*/
+        }
 
         try {
             const respuesta = await auth(correo, password);
@@ -130,7 +130,7 @@ export const Login = ({ setModo }) => {
             </div>
             <div className="links">
                 <a onClick={() => { setModo("recuperar"); limpiar(); }} className="login-letra boton_login">Olvidé mi contraseña</a>
-                <a href="#" className="login-letra boton_login">Registrarse</a>
+                <a onClick={() => { setModo("registrar"); limpiar(); }} className="login-letra boton_login">Registrarse</a>
             </div>
         </>
     );

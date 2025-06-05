@@ -32,7 +32,7 @@ public class UsuariosController {
         return new ResponseEntity<>(new ApiResponse(service.getAllUsuarios(), HttpStatus.OK.value(), "OK"), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("/registro")
     public ResponseEntity<ApiResponse> nuevoUsuario(@RequestBody UsuarioDTO dto) {
         return service.newUsuario(dto.toEntity());
     }

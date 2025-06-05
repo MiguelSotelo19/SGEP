@@ -4,6 +4,7 @@ import './css/login.css';
 import { Login } from "./Login";
 import { Recuperar } from "./Recuperar";
 import { useNavigate } from "react-router-dom";
+import { Registro } from "./Registro";
 
 export const LoginHub = () => {
   const navigate = useNavigate();
@@ -23,10 +24,13 @@ export const LoginHub = () => {
         <div className="login">
           {modo === "login" ? (
             <Login setModo={setModo} />
-          ) : (
+          ) : modo === "recuperar" ? (
             <Recuperar setModo={setModo} />
+          ) : (
+            <Registro setModo={setModo} />
           )}
         </div>
+
       </Circulos>
     </div>
   );
