@@ -5,6 +5,7 @@ import mx.edu.utez.Eventos.Config.ApiResponse;
 import mx.edu.utez.Eventos.Model.PasswordReset.DTO.CodeDTO;
 import mx.edu.utez.Eventos.Model.PasswordReset.DTO.PasswordResetDTO;
 import mx.edu.utez.Eventos.Model.Usuarios.DTO.CorreoDTO;
+import mx.edu.utez.Eventos.Model.Usuarios.DTO.IntentosDTO;
 import mx.edu.utez.Eventos.Model.Usuarios.DTO.PasswordDTO;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioDTO;
@@ -56,6 +57,13 @@ public class UsuariosController {
     public ResponseEntity<ApiResponse> resetPassword(@RequestBody PasswordResetDTO dto) {
         return service.newPassword(dto.getCorreo(), dto.getCodigo(), dto.getPassword());
     }
+
+
+    @PutMapping("/intentos")
+    public ResponseEntity<ApiResponse> actualizarIntentos(@RequestBody IntentosDTO dto) {
+        return service.actualizarIntentos(dto.getCorreo(), dto.getIntentos());
+    }
+
 
 
 }

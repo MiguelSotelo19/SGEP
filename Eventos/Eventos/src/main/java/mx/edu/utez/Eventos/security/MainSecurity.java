@@ -30,7 +30,8 @@ public class MainSecurity {
             "/api/usuarios/registro",
             "/api/usuarios/verify",
             "/api/usuarios/verify/code",
-            "/api/usuarios/verify/reset"
+            "/api/usuarios/verify/reset",
+            "/api/usuarios/intentos",
 
 
     };
@@ -70,7 +71,6 @@ public class MainSecurity {
         http.cors(Customizer.withDefaults()).csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(req ->
                         req.requestMatchers(WHITE_LIST).permitAll()
-                                .requestMatchers("/api/usuarios/registro").permitAll()
                                 .requestMatchers("/api/usuarios/**").hasAnyAuthority("Admin", "Participante")
                                 .requestMatchers("/api/categoria/").hasAnyAuthority("Admin", "Participante")
                                 .requestMatchers("/api/categoria/true").hasAnyAuthority("Admin", "Participante")

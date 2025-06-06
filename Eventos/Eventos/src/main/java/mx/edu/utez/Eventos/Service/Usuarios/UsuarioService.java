@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static java.lang.Integer.parseInt;
@@ -128,22 +129,66 @@ public class UsuarioService {
     }
 
     @Transactional
+    public ResponseEntity<ApiResponse> actualizarIntentos(String correo, int intentos) {
+        Optional<UsuarioBean> optionalUsuario = repository.findByCorreo(correo);
+
+        if (optionalUsuario.isEmpty()) {
+            return new ResponseEntity<>(new ApiResponse(HttpStatus.NOT_FOUND.value(), "Usuario no encontrado", true), HttpStatus.NOT_FOUND);
+        }
+
+        UsuarioBean usuario = optionalUsuario.get();
+
+        // Si ya está bloqueado, no permitimos continuar
+        if (usuario.getLimitefecha() != null && usuario.getLimitefecha().isAfter(LocalDateTime.now())) {
+            return new ResponseEntity<>(new ApiResponse(HttpStatus.FORBIDDEN.value(), "Cuenta bloqueada hasta " + usuario.getLimitefecha(), true), HttpStatus.FORBIDDEN);
+
+        }
+
+        // Si ya tiene 3 o más intentos, se bloquea
+        if (intentos >= 3) {
+            usuario.setLimitefecha(LocalDateTime.now().plusMinutes(30)); // Bloqueo de 5 min
+            usuario.setIntentos(0); // Reiniciar contador
+            repository.save(usuario);
+
+            return new ResponseEntity<>(new ApiResponse(HttpStatus.FORBIDDEN.value(), "Cuenta bloqueada por exceder intentos permitidos", false), HttpStatus.FORBIDDEN);
+
+        }
+
+        // Solo actualizar intentos
+        usuario.setIntentos(intentos);
+        repository.save(usuario);
+
+        return new ResponseEntity<>(new ApiResponse(HttpStatus.OK.value(), "Intentos actualizandoce", true), HttpStatus.OK);
+    }
+
+
+    @Transactional
     public ResponseEntity<ApiResponse> VerifyEmail(String email) throws Exception {
         Optional<UsuarioBean> find = repository.findByCorreo(email);
         if (find.isPresent()) {
+
+            List<PasswordReset> codigosViejos = resetRepository.findAllByEmailAndUsedFalse(email);
+            for (PasswordReset viejo : codigosViejos) {
+                viejo.setUsed(true);
+            }
+            resetRepository.saveAll(codigosViejos);
+
             String codigo = GenerarCodigo();
 
             PasswordReset token = new PasswordReset();
             token.setEmail(email);
             token.setCode(codigo);
-            token.setExpiration(LocalDateTime.now().plusMinutes(5)); // 5 min válidez
+            token.setExpiration(LocalDateTime.now().plusMinutes(5));
+            token.setUsed(false);
             resetRepository.save(token);
 
             enviarCorreo(email, codigo);
             return new ResponseEntity<>(new ApiResponse(HttpStatus.OK.value(), "Código enviado", false), HttpStatus.OK);
         }
+
         return new ResponseEntity<>(new ApiResponse(HttpStatus.NOT_FOUND.value(), "Usuario no encontrado", false), HttpStatus.NOT_FOUND);
     }
+
 
     @Transactional
     public ResponseEntity<ApiResponse> newPassword(String email, String code, String password) {
