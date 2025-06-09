@@ -26,7 +26,6 @@ import static java.lang.Integer.parseInt;
 
 @Service
 @Transactional
-@AllArgsConstructor
 public class UsuarioService {
 
     @Autowired
