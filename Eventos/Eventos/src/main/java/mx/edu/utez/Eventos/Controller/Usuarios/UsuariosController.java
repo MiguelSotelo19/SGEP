@@ -43,6 +43,18 @@ public class UsuariosController {
         return service.updateUsuario(dto.toEntity(), id);
     }
 
+    @GetMapping("/consultar-bloqueo/{correo:.+}")
+    public ResponseEntity<ApiResponse> consultarBloqueo(@PathVariable String correo) {
+        return new ResponseEntity<>(service.consultarUsuario(correo), HttpStatus.OK);
+    }
+
+
+    @PostMapping("/bloquear/{correo:.+}")
+    public ResponseEntity<ApiResponse> bloquearUsuario(@PathVariable String correo) {
+        return service.bloquearUsuario(correo);
+    }
+
+
     @PostMapping("/verify")
     public ResponseEntity<ApiResponse> verificarEmail(@RequestBody CorreoDTO dto) throws Exception {
         return service.VerifyEmail(dto.getCorreo());
@@ -57,13 +69,5 @@ public class UsuariosController {
     public ResponseEntity<ApiResponse> resetPassword(@RequestBody PasswordResetDTO dto) {
         return service.newPassword(dto.getCorreo(), dto.getCodigo(), dto.getPassword());
     }
-
-
-    @PutMapping("/intentos")
-    public ResponseEntity<ApiResponse> actualizarIntentos(@RequestBody IntentosDTO dto) {
-        return service.actualizarIntentos(dto.getCorreo(), dto.getIntentos());
-    }
-
-
 
 }

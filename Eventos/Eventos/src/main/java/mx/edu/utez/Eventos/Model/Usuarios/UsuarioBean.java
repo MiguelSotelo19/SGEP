@@ -36,11 +36,8 @@ public class UsuarioBean {
     @Column
     private Boolean estatus;
 
-    @Column(columnDefinition = "DATE")
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime limitefecha;
-
-    @Column
-    private int intentos;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
@@ -100,16 +97,7 @@ public class UsuarioBean {
         this.password = password;
         this.estatus = estatus;
         this.limitefecha = limitefecha;
-        this.intentos = intentos;
         this.rolBean = rolBean;
-    }
-
-    public int getIntentos() {
-        return intentos;
-    }
-
-    public void setIntentos(int intentos) {
-        this.intentos = intentos;
     }
 
     public LocalDateTime getLimitefecha() {

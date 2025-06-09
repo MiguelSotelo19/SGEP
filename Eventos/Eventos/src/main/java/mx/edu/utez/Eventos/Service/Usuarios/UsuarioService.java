@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.swing.text.html.Option;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -43,6 +44,19 @@ public class UsuarioService {
     private PasswordResetRepository resetRepository;
 
 
+    @Transactional
+    public ApiResponse consultarUsuario(String correo) {
+        Optional<UsuarioBean> optionalUsuario = repository.findByCorreo(correo);
+
+        System.out.println(optionalUsuario.get().getLimitefecha());
+
+        if (optionalUsuario.isPresent()) {
+            LocalDateTime limite = optionalUsuario.get().getLimitefecha();
+            return new ApiResponse(limite, HttpStatus.OK.value(), "Ok");
+        } else {
+            return new ApiResponse(null, HttpStatus.NOT_FOUND.value(), "Usuario no encontrado");
+        }
+    }
 
 
     @Transactional(readOnly = true)
@@ -128,37 +142,20 @@ public class UsuarioService {
     }
 
     @Transactional
-    public ResponseEntity<ApiResponse> actualizarIntentos(String correo, int intentos) {
-        Optional<UsuarioBean> optionalUsuario = repository.findByCorreo(correo);
+    public ResponseEntity<ApiResponse> bloquearUsuario(String correo) {
+        Optional<UsuarioBean> find = repository.findByCorreo(correo);
 
-        if (optionalUsuario.isEmpty()) {
-            return new ResponseEntity<>(new ApiResponse(HttpStatus.NOT_FOUND.value(), "Usuario no encontrado", true), HttpStatus.NOT_FOUND);
-        }
-
-        UsuarioBean usuario = optionalUsuario.get();
-
-        // Si ya está bloqueado, no permitimos continuar
-        if (usuario.getLimitefecha() != null && usuario.getLimitefecha().isAfter(LocalDateTime.now())) {
-            return new ResponseEntity<>(new ApiResponse(HttpStatus.FORBIDDEN.value(), "Cuenta bloqueada hasta " + usuario.getLimitefecha(), true), HttpStatus.FORBIDDEN);
-
-        }
-
-        // Si ya tiene 3 o más intentos, se bloquea
-        if (intentos >= 3) {
-            usuario.setLimitefecha(LocalDateTime.now().plusMinutes(30)); // Bloqueo de 5 min
-            usuario.setIntentos(0); // Reiniciar contador
+        if (find.isPresent()) {
+            UsuarioBean usuario = find.get();
+            usuario.setLimitefecha(LocalDateTime.now().plusMinutes(30));
             repository.save(usuario);
 
-            return new ResponseEntity<>(new ApiResponse(HttpStatus.FORBIDDEN.value(), "Cuenta bloqueada por exceder intentos permitidos", false), HttpStatus.FORBIDDEN);
-
+            return new ResponseEntity<>(new ApiResponse(usuario, HttpStatus.OK.value(), "Usuario actualizado correctamente"), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(new ApiResponse(HttpStatus.NOT_FOUND.value(), "Usuario no encontrado", false), HttpStatus.NOT_FOUND);
         }
-
-        // Solo actualizar intentos
-        usuario.setIntentos(intentos);
-        repository.save(usuario);
-
-        return new ResponseEntity<>(new ApiResponse(HttpStatus.OK.value(), "Intentos actualizandoce", true), HttpStatus.OK);
     }
+
 
 
     @Transactional

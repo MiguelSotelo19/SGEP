@@ -31,9 +31,12 @@ public class MainSecurity {
             "/api/usuarios/verify",
             "/api/usuarios/verify/code",
             "/api/usuarios/verify/reset",
-            "/api/usuarios/intentos",
-
-
+            "/api/usuarios/consultar-bloqueo/",
+            "/api/usuarios/consultar-bloqueo/*",
+            "/api/usuarios/consultar-bloqueo/{correo:.+}",
+            "/api/usuarios/bloquear/",
+            "/api/usuarios/bloquear/*",
+            "/api/usuarios/bloquear/{correo:.+}",
     };
     private final UserDetailsServiceImpl service;
 
