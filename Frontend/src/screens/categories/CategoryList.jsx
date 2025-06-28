@@ -54,6 +54,7 @@ const CategoryList = () => {
                 {categorias.map((cat, index) => (
                     <Category
                         key={index}
+                        id_categoria={cat.id_categoria}
                         nombre={cat.nombre}
                         descripcion={cat.descripcion}
                         estado={cat.estatus ? "Activo" : "Inactivo"}

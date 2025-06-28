@@ -1,8 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import EstadoBadge from './EstadoBadge';
 
-const Category = ({ nombre, descripcion, estado, onEditMode }) => {
+const Category = ({ id_categoria, nombre, descripcion, estado, onEditMode }) => {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/events/category/${id_categoria}/${encodeURIComponent(nombre)}`);
+
+    };
+
     return (
-        <div className="cursor-pointer flex flex-col justify-between h-full rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div onClick={handleClick} className="cursor-pointer flex flex-col justify-between h-full rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
             <div>
                 <h3 className="text-lg font-semibold text-gray-900">{nombre}</h3>
                 <p className="text-sm text-gray-600 mt-1">{descripcion}</p>
@@ -12,7 +21,10 @@ const Category = ({ nombre, descripcion, estado, onEditMode }) => {
                 <EstadoBadge estado={estado} />
                 <button
                     className="text-blue-600 hover:underline text-sm cursor-pointer"
-                    onClick={onEditMode}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onEditMode();
+                    }}
                 >Editar
                 </button>
             </div>
