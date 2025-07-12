@@ -50,6 +50,7 @@ public class CategoriaService {
 
 
         // Guardar directamente la categoría recibida
+        categoria.setEstatus(true);
         CategoriaBean saved = repository.saveAndFlush(categoria);
 
         return new ResponseEntity<>(

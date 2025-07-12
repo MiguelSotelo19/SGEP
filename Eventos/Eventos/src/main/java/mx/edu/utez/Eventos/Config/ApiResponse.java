@@ -8,9 +8,17 @@ import org.springframework.http.HttpStatus;
 
 public class ApiResponse {
     private Object data;
+    private Object rol;
     private int status; // antes: HttpStatus
     private String message;
     private Boolean error = false;
+
+    public ApiResponse(Object data, Object rol, int status, String message) {
+        this.data = data;
+        this.rol = rol;
+        this.status = status;
+        this.message = message;
+    }
 
     public ApiResponse(Object data, int status, String message) {
         this.data = data;
@@ -62,4 +70,8 @@ public class ApiResponse {
     public void setError(Boolean error) {
         this.error = error;
     }
+
+    public Object getRol() { return rol; }
+
+    public void setRol(Object rol) { this.rol = rol; }
 }

@@ -78,7 +78,16 @@ export const Login = ({ setModo }) => {
             const respuesta = await auth(correo, password);
 
             if (respuesta && respuesta.data) {
-                const usuarioEncontrado = await getUsers(correo);
+                Swal.fire({
+                    icon: "success",
+                    title: "Inicio de sesión exitoso",
+                    text: "Bienvenido"
+                }).then(() => {
+                    limpiar();
+                    setIntentosRestantes(3);
+                    navigate("/categories");
+                });
+                /*const usuarioEncontrado = await getUsers(correo);
                 if (usuarioEncontrado) {
                     Swal.fire({
                         icon: "success",
@@ -89,7 +98,7 @@ export const Login = ({ setModo }) => {
                         setIntentosRestantes(3);
                         navigate("/categories");
                     });
-                }
+                }*/
             }
         } catch (e) {
             const nuevosIntentos = intentosRestantes - 1;

@@ -13,6 +13,7 @@ export const auth = async (correo, password) => {
 
     if (response.data.data) {
       localStorage.setItem("accessToken", response.data.data);
+      localStorage.setItem("rolUser", response.data.rol);
     }
 
     return response.data;
