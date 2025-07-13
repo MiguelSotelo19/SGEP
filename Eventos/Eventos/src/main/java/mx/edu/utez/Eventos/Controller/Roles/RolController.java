@@ -25,7 +25,7 @@ public class RolController {
     private RolRepository repository;
 
     @GetMapping("/")
-    public ResponseEntity<ApiResponse> findAll() {
-        return new ResponseEntity<>(new ApiResponse(repository.findAll(), HttpStatus.OK.value(), "OK"), HttpStatus.OK);
+    public ResponseEntity<ApiResponse> All() {
+        return new ResponseEntity<>(new ApiResponse(service.findAll(), HttpStatus.OK.value(), "OK"), HttpStatus.OK);
     }
 }

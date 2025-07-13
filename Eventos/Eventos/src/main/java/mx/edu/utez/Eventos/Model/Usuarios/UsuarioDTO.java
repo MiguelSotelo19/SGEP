@@ -1,15 +1,25 @@
 package mx.edu.utez.Eventos.Model.Usuarios;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import mx.edu.utez.Eventos.Model.Roles.RolBean;
 
 public class UsuarioDTO {
+    @NotBlank(groups = {Register.class, Modify.class})
     private String nombre;
+    @NotBlank(groups = {Register.class, Modify.class})
     private String apellido_paterno;
+    @NotBlank(groups = {Register.class, Modify.class})
     private String apellido_materno;
+    @NotBlank(groups = {Register.class, Modify.class})
     private String correo;
+    @NotBlank(groups = {Register.class, Modify.class})
     private String telefono;
+    @NotBlank(groups = {Register.class, Modify.class})
     private String password;
+    @NotNull(groups = {Register.class, Modify.class})
     private Boolean estatus;
+    @NotNull(groups = {Register.class})
     private RolBean rol;
 
     public UsuarioDTO() {
@@ -93,4 +103,10 @@ public class UsuarioDTO {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public interface Register{}
+
+    public interface Modify{}
+
+
 }

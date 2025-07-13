@@ -7,6 +7,7 @@ import mx.edu.utez.Eventos.Model.PasswordReset.PasswordReset;
 import mx.edu.utez.Eventos.Model.PasswordReset.PasswordResetRepository;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioRepository;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,10 +25,13 @@ import java.util.List;
 import java.util.Optional;
 
 import static java.lang.Integer.parseInt;
+import org.slf4j.Logger;
 
 @Service
 @Transactional
 public class UsuarioService {
+
+    private static final Logger logger = LoggerFactory.getLogger(UsuarioService.class);
 
     @Autowired
     private UsuarioRepository repository;
@@ -52,6 +56,7 @@ public class UsuarioService {
 
         if (optionalUsuario.isPresent()) {
             LocalDateTime limite = optionalUsuario.get().getLimitefecha();
+            logger.info("Consultando al usuario con correo: " +correo);
             return new ApiResponse(limite, HttpStatus.OK.value(), "Ok");
         } else {
             return new ApiResponse(null, HttpStatus.NOT_FOUND.value(), "Usuario no encontrado");
@@ -61,6 +66,7 @@ public class UsuarioService {
 
     @Transactional(readOnly = true)
     public ApiResponse getAllUsuarios() {
+        logger.info("Se han consultado a todos los usuarios");
         return new ApiResponse(repository.findAll(), HttpStatus.OK.value(), "OK");
     }
 
@@ -70,6 +76,7 @@ public class UsuarioService {
         Optional<UsuarioBean> findTel = repository.findByTelefono(usuario.getTelefono());
 
         if(findCorreo.isPresent() || findTel.isPresent()) {
+            logger.warn("El intento de registro falló debido a " + (findTel.isPresent() ? "número de teléfono duplicado" : "correo electrónico duplicado"));
             return new ResponseEntity<>(new ApiResponse(HttpStatus.BAD_REQUEST.value(), findTel.isPresent() ? "El número de telefono ya se encuentra registrado": "El correo ya se encuentra registrado", true), HttpStatus.BAD_REQUEST);
         }
 
@@ -77,7 +84,7 @@ public class UsuarioService {
         usuario.setPassword(encrypted);
 
         UsuarioBean saved = repository.saveAndFlush(usuario);
-
+        logger.info("Se ha registrado a un nuevo usuario con correo: " + saved.getCorreo());
         return new ResponseEntity<>(new ApiResponse(saved, HttpStatus.OK.value(), "Usuario registrado!"), HttpStatus.OK);
     }
 
@@ -97,6 +104,7 @@ public class UsuarioService {
                     !userWithSamePhone.get().getId_usuario().equals(existingUser.getId_usuario());
 
             if (correoEnUso || telefonoEnUso) {
+                logger.warn("El intento de registro falló debido a " + (telefonoEnUso ? "número de teléfono duplicado" : "correo electrónico duplicado"));
                 return new ResponseEntity<>(
                         new ApiResponse(HttpStatus.BAD_REQUEST.value(), "Correo o teléfono ya se encuentra en uso por otro usuario", true),
                         HttpStatus.BAD_REQUEST
@@ -110,9 +118,10 @@ public class UsuarioService {
             existingUser.setApellido_paterno(usuario.getApellido_paterno());
 
             repository.save(existingUser);
-
+            logger.info("Se ha actualizado correctamente al uusario con correo: " +existingUser.getCorreo());
             return new ResponseEntity<>(new ApiResponse(existingUser, HttpStatus.OK.value(), "Usuario actualizado correctamente"), HttpStatus.OK);
         } else {
+            logger.warn("El usuario con ID : " + id  + " no ha sido localizado");
             return new ResponseEntity<>(
                     new ApiResponse(HttpStatus.NOT_FOUND.value(), "Usuario no encontrado", true),
                     HttpStatus.NOT_FOUND
@@ -132,9 +141,10 @@ public class UsuarioService {
                 usuario.setEstatus(true);
             }
             repository.save(usuario);
+            logger.info("El estatus del usuario con correo:" + usuario.getCorreo() + " ha sido cambiado por: " + (usuario.getEstatus() ? "Activo" : "Inactivo") );
             return new ResponseEntity<>(new ApiResponse(usuario, HttpStatus.OK.value(), "Usuario actualizado correctamente"), HttpStatus.OK);
         }
-
+        logger.warn("El usuario con ID " +id + "no ha sido localizado");
         return new ResponseEntity<>(
                 new ApiResponse(HttpStatus.NOT_FOUND.value(), "No encontrado!", true),
                 HttpStatus.NOT_FOUND
@@ -149,9 +159,10 @@ public class UsuarioService {
             UsuarioBean usuario = find.get();
             usuario.setLimitefecha(LocalDateTime.now().plusMinutes(30));
             repository.save(usuario);
-
+            logger.info("Se ha bloqueado por " +usuario.getLimitefecha() +  " minutos al usuario con correo: " + usuario.getCorreo());
             return new ResponseEntity<>(new ApiResponse(usuario, HttpStatus.OK.value(), "Usuario actualizado correctamente"), HttpStatus.OK);
         } else {
+            logger.info("El usuario con correo: " +correo + "no ha sido localizado");
             return new ResponseEntity<>(new ApiResponse(HttpStatus.NOT_FOUND.value(), "Usuario no encontrado", false), HttpStatus.NOT_FOUND);
         }
     }
@@ -179,9 +190,10 @@ public class UsuarioService {
             resetRepository.save(token);
 
             enviarCorreo(email, codigo);
+            logger.info("Se ha enviado un correo electrónico al usuario con correo: " +token.getEmail());
             return new ResponseEntity<>(new ApiResponse(HttpStatus.OK.value(), "Código enviado", false), HttpStatus.OK);
         }
-
+        logger.warn("El usuario con correo " +email + "no ha sido localizado");
         return new ResponseEntity<>(new ApiResponse(HttpStatus.NOT_FOUND.value(), "Usuario no encontrado", false), HttpStatus.NOT_FOUND);
     }
 
@@ -199,10 +211,11 @@ public class UsuarioService {
                 PasswordReset token = tokenOpt.get();
                 token.setUsed(true);
                 resetRepository.save(token);
-
+                logger.info("Se ha actualizado la contraseña del usuario con correo: " +user.getCorreo());
                 return new ResponseEntity<>(new ApiResponse(HttpStatus.OK.value(), "Contraseña reestablecida", false), HttpStatus.OK);
             }
         }
+        logger.warn("El código ingresado se encuentra expirado o es inválido");
         return new ResponseEntity<>(new ApiResponse(HttpStatus.BAD_REQUEST.value(), "Código inválido o expirado", true), HttpStatus.BAD_REQUEST);
     }
 
@@ -210,8 +223,10 @@ public class UsuarioService {
     public ResponseEntity<ApiResponse> verifyCode(String email, String code) {
         Optional<PasswordReset> tokenOpt = resetRepository.findByEmailAndCodeAndUsedFalse(email, code.trim());
         if (tokenOpt.isPresent() && tokenOpt.get().getExpiration().isAfter(LocalDateTime.now())) {
+            logger.info("El código usado por el usuario con correo: " +email + " es válido");
             return new ResponseEntity<>(new ApiResponse(HttpStatus.OK.value(), "Código válido", false), HttpStatus.OK);
         }
+        logger.warn("El código ingresado se encuentra expirado o es inválido");
         return new ResponseEntity<>(new ApiResponse(HttpStatus.BAD_REQUEST.value(), "Código no válido o expirado", true), HttpStatus.BAD_REQUEST);
     }
     public String GenerarCodigo() {
@@ -220,8 +235,6 @@ public class UsuarioService {
             int digito = (int) (Math.random() * 10);
             codigo += digito;
         }
-
-        System.out.println("el codigo es: " + codigo);
         return codigo;
     }
 
@@ -237,7 +250,7 @@ public class UsuarioService {
         String htmlContent =
                 "<div style='background-color: #ffffff; padding: 40px; max-width: 600px; margin: 0 auto; "
                         + "border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;'>"
-                        + "<h1 style='text-align: center; font-weight: bold;'>¡Hola pequeña 🫦!</h1>"
+                        + "<h1 style='text-align: center; font-weight: bold;'>¡Hola!</h1>"
                         + "<p style='font-weight: bold; text-align: center;'>¡Esperamos que estés bien!</p>"
                         + "<p style='font-size: 18px; text-align: center;'>Este es un correo de parte de SGEP para darte tu código de verificación 🔥🫦🔥.</p>"
                         + "<p style='font-size: 18px; text-align: center;'>Tu código es:</p>"
@@ -247,8 +260,8 @@ public class UsuarioService {
                         + "margin: 20px auto; width: 100%;'>"
                         + codigo
                         + "</div>"
-                        + "<p style='font-size: 18px; text-align: center;'>Pierdelo y vales vrg bb</p>"
-                        + "<p style='font-size: 18px; text-align: center;'>Gracias uwu.</p>"
+                        + "<p style='font-size: 18px; text-align: center;'>¡Tienes 5 minutos a partir de ahora para utilizarlo!</p>"
+                        + "<p style='font-size: 18px; text-align: center;'>Gracias.</p>"
                         + "</div>";
 
 

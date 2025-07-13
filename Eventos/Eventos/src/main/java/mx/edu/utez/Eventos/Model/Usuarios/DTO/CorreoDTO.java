@@ -1,6 +1,9 @@
 package mx.edu.utez.Eventos.Model.Usuarios.DTO;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class CorreoDTO {
+    @NotBlank
     private String correo;
 
     public String getCorreo() {

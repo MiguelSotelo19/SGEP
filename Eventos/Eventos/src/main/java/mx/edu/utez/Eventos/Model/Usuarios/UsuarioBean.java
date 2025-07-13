@@ -30,6 +30,7 @@ public class UsuarioBean {
     @Column(length = 10, unique = true)
     private String telefono;
 
+    @JsonIgnore
     @Column(columnDefinition = "TEXT")
     private String password;
 
