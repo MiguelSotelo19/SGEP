@@ -14,6 +14,7 @@ import { Plus, Calendar, Clock, MapPin, Users, Search } from "lucide-react";
 
 import EventModal from "../../components/EventModal";
 import { getCategories } from "../../services/categoryService";
+import "../css/main.css";
 
 const EventList = () => {
   const [eventos, setEventos] = useState([]);
@@ -27,6 +28,7 @@ const EventList = () => {
 
   const location = useLocation();
   const { id_categoria, nombre } = location.state || {};
+  const rol = localStorage.getItem("rolUser");
 
   const fetchCategorias = async () => {
     try {
@@ -118,10 +120,14 @@ const EventList = () => {
             <h1 className="text-3xl font-bold text-gray-900">Talleres</h1>
             <p className="text-gray-600 mt-2">Consulta o administra los talleres disponibles</p>
           </div>
-          <Button className="bg-blue-500 hover:bg-blue-600" onClick={handleModal}>
-            <Plus className="w-4 h-4 mr-2" />
-            Nuevo Taller
-          </Button>
+          {(rol == 1) ? (
+            <Button className="bg-blue-500 hover:bg-blue-600" onClick={handleModal}>
+              <Plus className="w-4 h-4 mr-2" />
+              Nuevo Taller
+            </Button>
+          ) : (
+            <></>
+          )}          
         </div>
 
         {/* Filtros */}
@@ -201,22 +207,31 @@ const EventList = () => {
                       <span>{evento.limite_usuarios} asistentes</span>
                     </div>
                   </div>
-                  <div className="flex justify-between items-center pt-4 gap-2">
-                    <Button
-                      variant="outline"
-                      className="w-full"
-                      onClick={() => handleEditMode(evento)}
-                    >
-                      Editar
-                    </Button>
-                    <Button
-                      variant="destructive"
-                      className="w-full"
-                      onClick={() => handleDelete(evento.id_evento)}
-                    >
-                      Eliminar
-                    </Button>
-                  </div>
+                  {(rol == 1) ? (
+                    <>
+                      <div className="flex justify-between items-center pt-4 gap-2">
+                        <Button
+                          variant="outline"
+                          className="w-full action"
+                          onClick={() => handleEditMode(evento)}
+                        >
+                          Editar
+                        </Button>
+                        <Button
+                          variant="outline"
+                          className="w-full action delete"
+                          onClick={() => handleDelete(evento.id_evento)}
+                        >
+                          Eliminar
+                        </Button>
+                      </div>
+                    </>
+                    ) : (
+                    <>
+                      <Button variant="outline" className="w-full princ">Inscribirse al taller</Button>
+                    </>
+                    )
+                  }
                 </CardContent>
               </Card>
             ))

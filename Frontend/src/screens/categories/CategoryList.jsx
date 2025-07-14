@@ -11,6 +11,7 @@ import { Plus, Calendar, Users, Music, Briefcase, Heart, Gamepad2 } from "lucide
 import { Link } from "react-router-dom";
 
 import CategoryModal from "../../components/CategoryModal";
+import "../css/main.css";
 
 const iconMap = {
   Música: Music,
@@ -35,6 +36,7 @@ const CategoryList = () => {
   const [categorias, setCategorias] = useState([]);
   const [isEditMode, setIsEditMode] = useState(false);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
+  const rol = localStorage.getItem("rolUser");
   const navigate = useNavigate();
 
   const handleModal = () => setIsOpen(true);
@@ -84,10 +86,12 @@ const CategoryList = () => {
             <h1 className="text-3xl font-bold text-gray-900">Categorías de talleres</h1>
             <p className="text-gray-600 mt-2">Explora o administra categorías disponibles</p>
           </div>
-          <Button className="bg-blue-500 hover:bg-blue-600" onClick={handleModal}>
-            <Plus className="w-4 h-4 mr-2" />
-            Nueva Categoría
-          </Button>
+          {(rol == 1) ? (
+            <Button className="bg-blue-500 hover:bg-blue-600" onClick={handleModal}>
+              <Plus className="w-4 h-4 mr-2" />
+              Nueva Categoría
+            </Button>
+          ) : (<></>)}          
         </div>
 
         {/* Categories Grid */}
@@ -102,15 +106,32 @@ const CategoryList = () => {
                     <div className={`p-3 rounded-lg ${color}`}>
                       <Icon className="w-6 h-6" />
                     </div>
-                    <Badge variant="secondary">{cat.estatus ? "Activo" : "Inactivo"}</Badge>
+                    <Badge
+                      variant={cat.estatus ? "default" : "destructive"}
+                      className={cat.estatus ? "bg-green-100 text-green-800" : ""}
+                    >
+                      {cat.estatus ? "Activo" : "Inactivo"}</Badge>
                   </div>
                   <CardTitle className="text-xl">{cat.nombre}</CardTitle>
                   <CardDescription>{cat.descripcion}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full bg-transparent" onClick={() => handleEditMode(cat)}>
-                    Editar Categoría
-                  </Button>
+
+                  {(rol == 1) ? (
+                    <div className="flex items-center justify-between">
+                      <Button variant="outline" className="action bg-transparent" onClick={() => handleEditMode(cat)}>
+                        Editar Categoría
+                      </Button>
+                      <Button variant="outline" className="action w-50 princ" onClick={() => showEvents(cat)}>
+                        Ver talleres
+                      </Button>
+                    </div>
+                  ): (
+                    <Button variant="outline" className="action w-full princ" onClick={() => showEvents(cat)}>
+                      Ver talleres
+                    </Button>
+                  )}
+                  
                 </CardContent>
               </Card>
             );
