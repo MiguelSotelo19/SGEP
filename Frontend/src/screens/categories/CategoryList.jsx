@@ -5,10 +5,11 @@ import { getCategories } from "../../services/categoryService";
 
 import { Navigation } from "../../components/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card";
-import { Badge } from "../../components/ui/Badge";
+import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
-import { Plus, Calendar, Users, Music, Briefcase, Heart, Gamepad2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Input } from "../../components/ui/input";
+import { Plus, Calendar, Users, Search, Music, Briefcase, Heart, Gamepad2 } from "lucide-react";
+
 
 import CategoryModal from "../../components/CategoryModal";
 import "../css/main.css";
@@ -39,6 +40,10 @@ const CategoryList = () => {
   const rol = localStorage.getItem("rolUser");
   const navigate = useNavigate();
 
+  const [busqueda, setBusqueda] = useState(""); 
+  const [categoriasFiltradas, setCategoriasFiltradas] = useState([]);
+
+
   const handleModal = () => setIsOpen(true);
 
   const handleClose = () => {
@@ -56,6 +61,7 @@ const CategoryList = () => {
     try {
       const data = await getCategories();
       setCategorias(data.data);
+      setCategoriasFiltradas(data.data);
     } catch (error) {
       toast.error("Error al cargar las categorías");
     }
@@ -73,6 +79,15 @@ const CategoryList = () => {
       }
     });
   };
+
+  useEffect(() => {
+    const resultados = categorias.filter(cat =>
+      cat.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+      cat.descripcion.toLowerCase().includes(busqueda.toLowerCase())
+    );
+    setCategoriasFiltradas(resultados);
+  }, [busqueda, categorias]);
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -94,9 +109,19 @@ const CategoryList = () => {
           ) : (<></>)}          
         </div>
 
+        {/* Filtros */}
+        <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Input className="pl-10" placeholder="Buscar categorías" value={busqueda} onChange={(e) => setBusqueda(e.target.value)} />
+            </div>
+          </div>
+        </div>
+
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categorias.map((cat) => {
+          {categoriasFiltradas.map((cat) => {
             const Icon = iconMap[cat.nombre] || Calendar;
             const color = colorMap[cat.nombre] || "bg-gray-100 text-gray-600";
             return (

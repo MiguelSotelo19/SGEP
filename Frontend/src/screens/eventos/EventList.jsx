@@ -30,6 +30,8 @@ const EventList = () => {
   const { id_categoria, nombre } = location.state || {};
   const rol = localStorage.getItem("rolUser");
 
+  const [busqueda, setBusqueda] = useState("");
+
   const fetchCategorias = async () => {
     try {
       const data = await getCategories();
@@ -104,9 +106,17 @@ const EventList = () => {
   };
 
   // Filtrado dinámico por categoría seleccionada
-  const eventosFiltrados = categoriaSeleccionada === "all"
-    ? eventos
-    : eventos.filter(e => String(e.id_categoria) === categoriaSeleccionada);
+  const eventosFiltrados = eventos.filter(e => {
+    const coincideCategoria = categoriaSeleccionada === "all" || String(e.id_categoria) === categoriaSeleccionada;
+    const coincideBusqueda = (
+      e.nombre_evento.toLowerCase().includes(busqueda.toLowerCase()) ||
+      e.descripcion?.toLowerCase().includes(busqueda.toLowerCase()) ||
+      e.lugar?.toLowerCase().includes(busqueda.toLowerCase())
+    );
+
+    return coincideCategoria && coincideBusqueda;
+  });
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -135,7 +145,7 @@ const EventList = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-              <Input placeholder="Buscar talleres..." className="pl-10" />
+              <Input placeholder="Buscar talleres..." className="pl-10" value={busqueda} onChange={(e) => setBusqueda(e.target.value)} />
             </div>
             <Select
               value={categoriaSeleccionada}
