@@ -117,7 +117,7 @@ export const Login = ({ setModo }) => {
 
         try {
             const respuesta = await auth(correoLogin, passwordLogin)
-
+            console.log(respuesta)
             if (!respuesta || !respuesta.data) {
                 console.warn("Credenciales incorrectas")
                 setIntentosRestantes((prev) => prev - 1)

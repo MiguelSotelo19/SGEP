@@ -56,7 +56,7 @@ public class AuthService {
                 message = "UserDisabled";
             if (e instanceof AccountExpiredException)
                 message = "Expiro";
-            return new ResponseEntity<>(new ApiResponse(HttpStatus.BAD_REQUEST.value(), message,true), HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(new ApiResponse(HttpStatus.UNAUTHORIZED.value(), message,true), HttpStatus.UNAUTHORIZED);
         }
     }
 }
