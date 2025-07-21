@@ -54,6 +54,8 @@ public class CategoriaService {
         }
 
 
+        // Guardar directamente la categoría recibida
+        categoria.setEstatus(true);
         CategoriaBean saved = repository.saveAndFlush(categoria);
         logger.info("Registrando la nueva categoria de nombre: " +saved.getNombre());
         return new ResponseEntity<>(

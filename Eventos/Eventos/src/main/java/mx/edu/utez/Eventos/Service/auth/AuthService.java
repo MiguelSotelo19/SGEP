@@ -47,7 +47,7 @@ public class AuthService {
             String token = provider.generateToken(auth);
             // Payload - DTO (token, attrs)
 
-            return new ResponseEntity<>(new ApiResponse(token, HttpStatus.OK.value(),"Token generado"), HttpStatus.OK);
+            return new ResponseEntity<>(new ApiResponse(token, user, HttpStatus.OK.value(),"Token generado"), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             String message = "CredentialsMismatch";
@@ -55,7 +55,7 @@ public class AuthService {
                 message = "UserDisabled";
             if (e instanceof AccountExpiredException)
                 message = "Expiro";
-            return new ResponseEntity<>(new ApiResponse(HttpStatus.BAD_REQUEST.value(), message,true), HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(new ApiResponse(HttpStatus.UNAUTHORIZED.value(), message,true), HttpStatus.UNAUTHORIZED);
         }
     }
 }

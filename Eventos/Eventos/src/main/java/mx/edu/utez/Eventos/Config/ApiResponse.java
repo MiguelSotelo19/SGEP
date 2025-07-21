@@ -4,13 +4,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 import org.springframework.http.HttpStatus;
 
 public class ApiResponse {
     private Object data;
+    private UsuarioBean user;
     private int status; // antes: HttpStatus
     private String message;
     private Boolean error = false;
+
+    public ApiResponse(Object data, UsuarioBean user, int status, String message) {
+        this.data = data;
+        this.user = user;
+        this.status = status;
+        this.message = message;
+    }
 
     public ApiResponse(Object data, int status, String message) {
         this.data = data;
@@ -61,5 +70,13 @@ public class ApiResponse {
 
     public void setError(Boolean error) {
         this.error = error;
+    }
+
+    public UsuarioBean getUser() {
+        return user;
+    }
+
+    public void setUser(UsuarioBean user) {
+        this.user = user;
     }
 }

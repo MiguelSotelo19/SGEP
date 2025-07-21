@@ -52,16 +52,19 @@ public class UsuarioService {
     public ApiResponse consultarUsuario(String correo) {
         Optional<UsuarioBean> optionalUsuario = repository.findByCorreo(correo);
 
-        System.out.println(optionalUsuario.get().getLimitefecha());
-
         if (optionalUsuario.isPresent()) {
-            LocalDateTime limite = optionalUsuario.get().getLimitefecha();
-            logger.info("Consultando al usuario con correo: " +correo);
+            logger.info("Consultando al usuario con correo: " + correo);
+
+            UsuarioBean usuario = optionalUsuario.get();
+            LocalDateTime limite = usuario.getLimitefecha();
+            System.out.println("Limite fecha: " + limite);
+
             return new ApiResponse(limite, HttpStatus.OK.value(), "Ok");
         } else {
             return new ApiResponse(null, HttpStatus.NOT_FOUND.value(), "Usuario no encontrado");
         }
     }
+
 
 
     @Transactional(readOnly = true)

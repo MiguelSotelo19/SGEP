@@ -11,11 +11,11 @@ export const Registro = ({ setModo }) => {
     const urlRegistro = `${API_URL}/api/usuarios/registro`
     const navigate = useNavigate();
     const [nombre, setNombre] = useState("");
-    let nombreLimpio="";
+    let nombreLimpio = "";
     const [ap_p, setAp_p] = useState("");
-    let ap_pLimpio="";
+    let ap_pLimpio = "";
     const [ap_m, setAp_m] = useState("");
-    let ap_mLimpio="";
+    let ap_mLimpio = "";
     const [correo, setCorreo] = useState("");
     const [telefono, setTelefono] = useState("");
     const [password, setPassword] = useState("");
@@ -24,7 +24,21 @@ export const Registro = ({ setModo }) => {
 
     const paso2 = async () => {
 
-        const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]{3,}$/;
+        const regex = /^(?!.*  )[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$/;
+
+        function esValido(cadena) {
+            const soloLetras = cadena.replace(/ /g, "");
+            return regex.test(cadena.trim()) && soloLetras.length >= 3;
+        }
+
+        if (!esValido(nombre.trim()) || !esValido(ap_m.trim()) || !esValido(ap_p.trim())) {
+            Swal.fire({
+                icon: "warning",
+                title: "Campos inválidos",
+                text: "Por favor, verifica que ningun campo cuente con espacios dobles ni contenga números.",
+            });
+            return;
+        }
 
         if (!regex.test(nombre.trim())) {
             Swal.fire({
@@ -108,9 +122,9 @@ export const Registro = ({ setModo }) => {
                     id_rol: 2
                 }
             };
-            console.log("parametros: ",parametros)
+            console.log("parametros: ", parametros)
             const respuesta = await axios.post(urlRegistro, parametros);
-            console.log("respuesta: ",respuesta)
+            console.log("respuesta: ", respuesta)
             if (respuesta.status === 200) {
                 Swal.fire({
                     icon: "success",
@@ -123,12 +137,12 @@ export const Registro = ({ setModo }) => {
             }
 
         } catch (error) {
-            
-                Swal.fire({
-                    icon: "error",
-                    title: "Error",
-                    text: "Algo salió mal. Intenta más tarde.",
-                });
+
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Algo salió mal. Intenta más tarde.",
+            });
             console.log(error)
         }
     };
@@ -140,9 +154,9 @@ export const Registro = ({ setModo }) => {
         setTelefono("");
         setCorreo("");
         setPassword("");
-        nombreLimpio="";
-        ap_mLimpio="";
-        ap_pLimpio="";
+        nombreLimpio = "";
+        ap_mLimpio = "";
+        ap_pLimpio = "";
     }
 
     return (
@@ -150,53 +164,63 @@ export const Registro = ({ setModo }) => {
             <ToastContainer />
             <div className="small-inputs">
                 <h2 className="login-letra">Registrar cuenta</h2>
+
                 {paso === 1 && (
                     <>
-                        <div className="inputBx">
-                            <input className="login-letra" type="text" placeholder="Nombre"
+                        <div className="inputBx login-letra" >
+                            <input type="text" placeholder="Nombre"
                                 value={nombre} onChange={(e) => setNombre(e.target.value)} />
                         </div>
-                        <div className="inputBx">
-                            <input className="login-letra" type="text" placeholder="Apellido paterno"
-                                value={ap_p} onChange={(e) => setAp_p(e.target.value)} />
+
+                        <div style={{ display: "flex", gap: "1rem", width: "100%", marginBottom: "1rem" }}>
+                            <div className="inputBx login-letra" style={{ flex: 1 }}>
+                                <input type="text" style={{ padding: "7%" }} placeholder="Apellido paterno"
+                                    value={ap_p} onChange={(e) => setAp_p(e.target.value)} />
+                            </div>
+                            <div className="inputBx login-letra" style={{ flex: 1 }}>
+                                <input type="text" style={{ padding: "7%" }} placeholder="Apellido materno"
+                                    value={ap_m} onChange={(e) => setAp_m(e.target.value)} />
+                            </div>
                         </div>
-                        <div className="inputBx">
-                            <input className="login-letra" type="text" placeholder="Apellido materno"
-                                value={ap_m} onChange={(e) => setAp_m(e.target.value)} />
-                        </div>
+
                         <div className="inputBx">
                             <input className="login-letra" type="submit"
-                                onClick={paso2} value="Siguiente"
-                            />
+                                onClick={paso2} value="Siguiente" />
                         </div>
                     </>
                 )}
+
                 {paso === 2 && (
                     <>
                         <div className="inputBx login-letra">
                             <input type="email" placeholder="Correo electrónico"
                                 value={correo} onChange={(e) => setCorreo(e.target.value)} />
                         </div>
-                        <div className="inputBx login-letra">
-                            <input className="login-letra" type="number" placeholder="Número de teléfono"
-                                value={telefono} onChange={(e) => setTelefono(e.target.value)} />
+
+                        <div style={{ display: "flex", gap: "1rem", width: "100%", marginBottom: "1rem" }}>
+                            <div className="inputBx login-letra" >
+                                <input type="number" style={{ padding: "7%" }} placeholder="Núm. de teléfono"
+                                    value={telefono} onChange={(e) => setTelefono(e.target.value)} />
+                            </div>
+                            <div className="inputBx login-letra" >
+                                <input type="password" style={{ padding: "7%" }} placeholder="Contraseña"
+                                    value={password} onChange={(e) => setPassword(e.target.value)} />
+                            </div>
                         </div>
-                        <div className="inputBx login-letra">
-                            <input className="login-letra" type="password" placeholder="Contraseña"
-                                value={password} onChange={(e) => setPassword(e.target.value)} />
-                        </div>
+
                         <div className="inputBx login-letra">
                             <input className="login-letra" type="submit"
-                                onClick={registrar} value="Registrar mi cuenta"
-                            />
+                                onClick={registrar} value="Registrar mi cuenta" />
                         </div>
                     </>
                 )}
+
                 <div className="links">
                     <a onClick={() => { setModo("recuperar"); limpiar(); }} className="login-letra boton_login">Olvidé mi contraseña</a>
                     <a onClick={() => { setModo("login"); limpiar(); }} className="login-letra boton_login">Iniciar sesión</a>
                 </div>
             </div>
+
 
         </>
     )

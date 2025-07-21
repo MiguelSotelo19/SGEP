@@ -1,122 +1,335 @@
-import { useEffect, useState } from "react"
-import { getEventos, deleteEvent } from "../../services/eventService"
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { entry } from "../../services/entryService";
+import { getEventos, deleteEvent } from "../../services/eventService";
 import { ToastContainer, toast } from "react-toastify";
-import Event from "../../components/Event";
+import Swal from "sweetalert2";
+
+import { Navigation } from "../../components/navigation";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../../components/ui/card";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "../../components/ui/select";
+import { Input } from "../../components/ui/input";
+import {
+  Plus,
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  Search,
+} from "lucide-react";
+
 import EventModal from "../../components/EventModal";
-import Swal from 'sweetalert2';
-import { useParams } from "react-router-dom";
+import { getCategories } from "../../services/categoryService";
+import "../css/main.css";
 
 const EventList = () => {
+  const [eventos, setEventos] = useState([]);
+  const [categorias, setCategorias] = useState([]);
+  const [categoriasD, setCategoriasD] = useState([]);
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("all");
 
-    const { id_categoria, nombre_categoria } = useParams();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [eventoSeleccionado, setEventoSeleccionado] = useState(null);
 
-    const [eventos, setEventos] = useState([])
+  const location = useLocation();
+  const { id_categoria } = location.state || {};
+  const rol = localStorage.getItem("User");
+  const id_usuario = localStorage.getItem("User");
 
-    const fetchEventos = async () => {
-        try {
-            const data = await getEventos()
 
-            const filteredData = id_categoria
-                ? data.filter(evento => evento.id_categoria == id_categoria)
-                : data;
-            setEventos(filteredData);
+  const [busqueda, setBusqueda] = useState("");
 
-        } catch (error) {
-            toast.error("Error al cargar los talleres")
-        }
+  const fetchCategorias = async () => {
+    try {
+      const data = await getCategories();
+      setCategoriasD(data.data);
+    } catch (error) {
+      toast.error("Error al cargar las categorías");
     }
+  };
 
-    useEffect(() => {
-        fetchEventos()
-    }, [id_categoria])
+  useEffect(() => {
+    fetchCategorias();
+  }, []);
 
-    const [isOpen, setIsOpen] = useState(false);
+  const fetchEventos = async () => {
+    try {
+      const data = await getEventos();
 
-    const handleModal = () => setIsOpen(true);
+      const cats = [
+        ...new Map(
+          data.map((e) => [
+            e.id_categoria,
+            {
+              id_categoria: e.id_categoria,
+              nombre_categoria: e.nombre_categoria || "Sin categoría",
+            },
+          ])
+        ).values(),
+      ];
+      setCategorias(cats);
 
-    const handleClose = () => {
-        setIsOpen(false)
-        setIsEditMode(false)
+      if (id_categoria) {
+        setCategoriaSeleccionada(String(id_categoria));
+        setEventos(data);
+      } else {
+        setEventos(data);
+      }
+    } catch (error) {
+      toast.error("Error al cargar los talleres");
     }
+  };
 
-    const [isEditMode, setIsEditMode] = useState(false);
-    const [eventoSeleccionado, setEventoSeleccionado] = useState(null);
+  useEffect(() => {
+    fetchEventos();
+  }, []);
 
-    const handleEditMode = (evento) => {
-        setIsEditMode(true)
-        setEventoSeleccionado(evento);
-        setIsOpen(true)
+  const handleModal = () => setIsOpen(true);
+  const handleClose = () => {
+    setIsOpen(false);
+    setIsEditMode(false);
+  };
+
+  const handleEditMode = (evento) => {
+    setIsEditMode(true);
+    setEventoSeleccionado(evento);
+    setIsOpen(true);
+  };
+
+  const handleDelete = async (id_evento) => {
+    const result = await Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Esta acción eliminará el evento permanentemente",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await deleteEvent({ id_evento });
+        toast.success("Evento eliminado");
+        fetchEventos();
+      } catch (error) {
+        toast.error("Error al eliminar evento");
+      }
     }
+  };
 
-    const handleDelete = async (id_evento) => {
-        const result = await Swal.fire({
-            title: '¿Estás seguro?',
-            text: 'Esta acción eliminará el evento permanentemente',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Sí, eliminar',
-            cancelButtonText: 'Cancelar',
-        });
+const inscribirUsuario = async (id_evento) => {
+  const id_usuario = localStorage.getItem("User");
+   console.log(localstorage.getItem("User"))
+  console.log(id_usuario)
+  const rol = localStorage.getItem("User");
+  console.log(rol)
 
-        if (result.isConfirmed) {
-            try {
-                await deleteEvent({ id_evento });
-                toast.success("Evento eliminado");
-                fetchEventos();
-            } catch (error) {
-                toast.error("Error al eliminar evento");
-                console.error(error);
-            }
-        }
-    };
+  console.log("Usuario:", id_usuario, "Rol:", rol);
 
-    return (
-        <div className="p-6 max-w-5xl mx-auto">
-            <ToastContainer />
-            <div className="flex justify-between items-center mb-6 mt-6">
-                <h1 className="text-3xl font-bold">
-                    {nombre_categoria ? `Talleres de la categoría ${decodeURIComponent(nombre_categoria)}` : "Talleres"}
-                </h1>
+  if (!id_usuario) {
+    toast.error("Debes iniciar sesión para inscribirte");
+    return;
+  }
 
-                <button
-                    onClick={handleModal}
-                    className="bg-gray-100 text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-200 cursor-pointer">
-                    Nuevo Taller
-                </button>
-            </div>
-            <div className="border-b-2 border-gray-200 mb-5"></div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {eventos.length === 0 ? (
-                    <div className="col-span-full text-center text-gray-500">
-                        Aún no hay talleres disponibles en esta categoría.
-                    </div>
-                ) : (
-                    eventos.map((evento, index) => (
-                        <Event
-                            key={index}
-                            nombre_evento={evento.nombre_evento}
-                            lugar={evento.lugar}
-                            tipo_evento={evento.tipo_evento}
-                            fecha={evento.fecha}
-                            estatus={evento.estatus ? "Activo" : "Inactivo"}
-                            limite_usuarios={evento.limite_usuarios}
-                            onEditMode={() => handleEditMode(evento)}
-                            onDelete={() => handleDelete(evento.id_evento)}
-                        />
-                    ))
-                )}
-            </div>
-            <EventModal
-                isOpen={isOpen}
-                handleClose={handleClose}
-                onEventoCreado={fetchEventos}
-                isEditMode={isEditMode}
-                eventoSeleccionado={eventoSeleccionado}
-            />
+  if (rol !== "2") {  
+    toast.error("No tienes permiso para inscribirte a este taller");
+    return;
+  }
+
+  try {
+    await entry({ id_usuario, id_evento });
+    toast.success("Inscripción exitosa");
+  } catch (error) {
+    toast.error("Error al inscribir al taller");
+  }
+};
+
+  const eventosFiltrados = eventos.filter((e) => {
+    const coincideCategoria =
+      categoriaSeleccionada === "all" ||
+      String(e.id_categoria) === categoriaSeleccionada;
+    const coincideBusqueda =
+      e.nombre_evento.toLowerCase().includes(busqueda.toLowerCase()) ||
+      e.descripcion?.toLowerCase().includes(busqueda.toLowerCase()) ||
+      e.lugar?.toLowerCase().includes(busqueda.toLowerCase());
+
+    return coincideCategoria && coincideBusqueda;
+  });
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <ToastContainer />
+      <Navigation />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex justify-between items-center mb-8">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">Talleres</h1>
+            <p className="text-gray-600 mt-2">
+              Consulta o administra los talleres disponibles
+            </p>
+          </div>
+          {rol == 1 && (
+            <Button
+              className="bg-blue-500 hover:bg-blue-600"
+              onClick={handleModal}
+            >
+              <Plus className="w-4 h-4 mr-2" />
+              Nuevo Taller
+            </Button>
+          )}
         </div>
-    )
-}
 
-export default EventList
+        {/* Filtros */}
+        <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Input
+                placeholder="Buscar talleres..."
+                className="pl-10"
+                value={busqueda}
+                onChange={(e) => setBusqueda(e.target.value)}
+              />
+            </div>
+            <Select
+              value={categoriaSeleccionada}
+              onValueChange={(value) => setCategoriaSeleccionada(value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Categoría" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Todas las categorías</SelectItem>
+                {categoriasD.map((cat) => (
+                  <SelectItem
+                    key={cat.id_categoria}
+                    value={String(cat.id_categoria)}
+                  >
+                    {cat.nombre}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
+        {/* Grid de eventos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {eventosFiltrados.length === 0 ? (
+            <div className="col-span-full text-center text-gray-500">
+              No hay talleres para esta categoría.
+            </div>
+          ) : (
+            eventosFiltrados.map((evento) => (
+              <Card
+                key={evento.id_evento}
+                className="hover:shadow-lg transition-shadow"
+              >
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <Badge variant="outline">{evento.tipo_evento}</Badge>
+                    <Badge
+                      variant={evento.estatus ? "default" : "destructive"}
+                      className={
+                        evento.estatus ? "bg-green-100 text-green-800" : ""
+                      }
+                    >
+                      {evento.estatus ? "Activo" : "Inactivo"}
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-xl">
+                    {evento.nombre_evento}
+                  </CardTitle>
+                  <CardDescription>{evento.lugar}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-center space-x-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>
+                        {new Date(evento.fecha).toLocaleDateString("es-ES", {
+                          weekday: "long",
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Clock className="w-4 h-4" />
+                      <span>{evento.hora || "Sin hora"}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>{evento.lugar}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Users className="w-4 h-4" />
+                      <span>{evento.limite_usuarios} asistentes</span>
+                    </div>
+                  </div>
+
+                  {rol == 1 ? (
+                    <div className="flex justify-between items-center pt-4 gap-2">
+                      <Button
+                        variant="outline"
+                        className="w-full action"
+                        onClick={() => handleEditMode(evento)}
+                      >
+                        Editar
+                      </Button>
+                      <Button
+                        variant="outline"
+                        className="w-full action delete"
+                        onClick={() => handleDelete(evento.id_evento)}
+                      >
+                        Eliminar
+                      </Button>
+                    </div>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      className="w-full"
+                      onClick={() => inscribirUsuario(evento.id_evento)}
+                    >
+                      Inscribirse al taller
+                    </Button>
+                  )}
+                </CardContent>
+              </Card>
+            ))
+          )}
+        </div>
+      </div>
+
+      <EventModal
+        isOpen={isOpen}
+        handleClose={handleClose}
+        onEventoCreado={fetchEventos}
+        isEditMode={isEditMode}
+        eventoSeleccionado={eventoSeleccionado}
+        categoriaSeleccionada={categoriaSeleccionada}
+      />
+    </div>
+  );
+};
+
+export default EventList;

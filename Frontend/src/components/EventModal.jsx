@@ -5,16 +5,15 @@ import { createEvent, editEvent } from "../services/eventService";
 import { useParams } from "react-router-dom";
 
 
-const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSeleccionado }) => {
-  const { id_categoria: idCategoriaUrl } = useParams();
-
+const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSeleccionado, categoriaSeleccionada }) => {
+  console.log(categoriaSeleccionada)
   const [formData, setFormData] = useState({
     nombre_evento: '',
     lugar: '',
     tipo_evento: '',
     fecha: '',
-    id_categoria: idCategoriaUrl,
-    limite_usuarios: ''
+    id_categoria: categoriaSeleccionada,
+    limite_usuarios: 0
   });
 
   const [errors, setErrors] = useState({
@@ -22,7 +21,7 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
     lugar: '',
     tipo_evento: '',
     fecha: '',
-    limite_usuarios: ''
+    limite_usuarios: 0
   });
 
   const resetForm = () => {
@@ -31,15 +30,15 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
       lugar: '',
       tipo_evento: '',
       fecha: '',
-      id_categoria: idCategoriaUrl,
-      limite_usuarios: ''
+      id_categoria: categoriaSeleccionada,
+      limite_usuarios: 0
     });
     setErrors({
       nombre_evento: '',
       lugar: '',
       tipo_evento: '',
       fecha: '',
-      limite_usuarios: ''
+      limite_usuarios: 0
     });
     setIsActivate(true);
   };
@@ -55,14 +54,14 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
         lugar: eventoSeleccionado.lugar || '',
         tipo_evento: eventoSeleccionado.tipo_evento?.toLowerCase() || '',
         fecha: eventoSeleccionado.fecha || '',
-        id_categoria: eventoSeleccionado.id_categoria || idCategoriaUrl,
-        limite_usuarios: eventoSeleccionado.limite_usuarios || ''
+        id_categoria: eventoSeleccionado.id_categoria || categoriaSeleccionada,
+        limite_usuarios: eventoSeleccionado.limite_usuarios || 0
       });
       setIsActivate(eventoSeleccionado.estatus);
     } else {
       resetForm();
     }
-  }, [isEditMode, eventoSeleccionado, idCategoriaUrl]);
+  }, [isEditMode, eventoSeleccionado, categoriaSeleccionada]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -81,7 +80,7 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
       lugar: '',
       tipo_evento: '',
       fecha: '',
-      limite_usuarios: ''
+      limite_usuarios: 0
     };
 
     if (!formData.nombre_evento.trim()) {
@@ -144,9 +143,10 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
       try {
         const payload = {
           ...formData,
-          id_categoria: formData.id_categoria,
+          id_categoria: parseInt(formData.id_categoria),
           estatus: isActivate
         };
+        console.log(payload)
 
         if (isEditMode && eventoSeleccionado) {
           await editEvent({ ...payload, id_evento: eventoSeleccionado.id_evento });

@@ -8,7 +8,7 @@ const AppRouter = () => {
             <Routes>
                 <Route path='/' element={<LoginHub />} />
                 <Route path='/categories' element={<CategoryList />} />
-                <Route path='/events/category/:id_categoria/:nombre_categoria' element={<EventList />} />
+                <Route path="/events" element={<EventList />} />
             </Routes>
         </Router>
     );

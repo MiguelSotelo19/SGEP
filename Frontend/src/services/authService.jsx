@@ -1,5 +1,6 @@
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
+
 export const auth = async (correo, password) => {
   try {
     const response = await axios({
@@ -7,17 +8,23 @@ export const auth = async (correo, password) => {
       url: `${API_URL}/api/auth/signin`,
       data: {
         correo: correo,
-        password: password
-      }
-    });
+        password: password,
+      },
+    })
+    console.log("auth: ",response)
 
     if (response.data.data) {
       localStorage.setItem("accessToken", response.data.data);
+      localStorage.setItem("User", response.data.user);
     }
 
-    return response.data;
+    return {
+      data: response.data,
+      status: response.status
+    };
+    
   } catch (error) {
-    console.log(error)
-    throw error;
+    console.error("Error en autenticación:", error)
+    return null
   }
-};
+}

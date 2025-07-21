@@ -1,0 +1,19 @@
+.action:hover {
+    background-color: rgb(173, 173, 173);
+}
+
+.delete {
+    background-color: rgb(250, 140, 140);
+}
+
+.delete:hover {
+    background-color: rgb(250, 46, 46);
+}
+
+.princ {
+    background-color: rgb(203, 232, 255);
+}
+
+.princ:hover{
+    background-color: rgb(101, 186, 255);
+}
