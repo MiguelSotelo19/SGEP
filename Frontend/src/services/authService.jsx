@@ -15,7 +15,7 @@ export const auth = async (correo, password) => {
 
     if (response.data.data) {
       localStorage.setItem("accessToken", response.data.data);
-      localStorage.setItem("User", response.data.user);
+      localStorage.setItem("User", JSON.stringify(response.data.user));
     }
 
     return {

@@ -28,7 +28,7 @@ const EventList = () => {
 
   const location = useLocation();
   const { id_categoria, nombre } = location.state || {};
-  const rol = localStorage.getItem("rolUser").rol;
+  const user = JSON.parse(localStorage.getItem("User"));
 
   const [busqueda, setBusqueda] = useState("");
 
@@ -136,7 +136,7 @@ const EventList = () => {
             <h1 className="text-3xl font-bold text-gray-900">Talleres</h1>
             <p className="text-gray-600 mt-2">Consulta o administra los talleres disponibles</p>
           </div>
-          {(rol == 1) ? (
+          {(user.rol == 1) ? (
             <Button className="bg-blue-500 hover:bg-blue-600" onClick={handleModal}>
               <Plus className="w-4 h-4 mr-2" />
               Nuevo Taller
@@ -223,7 +223,7 @@ const EventList = () => {
                       <span>{evento.limite_usuarios} asistentes</span>
                     </div>
                   </div>
-                  {(rol == 1) ? (
+                  {(user.rol == 1) ? (
                     <>
                       <div className="flex justify-between items-center pt-4 gap-2">
                         <Button

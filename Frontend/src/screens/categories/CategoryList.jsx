@@ -37,7 +37,7 @@ const CategoryList = () => {
   const [categorias, setCategorias] = useState([]);
   const [isEditMode, setIsEditMode] = useState(false);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
-  const rol = localStorage.getItem("User").rol;
+  const user = JSON.parse(localStorage.getItem("User"));
   const navigate = useNavigate();
 
   const [busqueda, setBusqueda] = useState(""); 
@@ -101,7 +101,7 @@ const CategoryList = () => {
             <h1 className="text-3xl font-bold text-gray-900">Categorías de talleres</h1>
             <p className="text-gray-600 mt-2">Explora o administra categorías disponibles</p>
           </div>
-          {(rol == 1) ? (
+          {(user.rol == 1) ? (
             <Button className="bg-blue-500 hover:bg-blue-600" onClick={handleModal}>
               <Plus className="w-4 h-4 mr-2" />
               Nueva Categoría
@@ -142,7 +142,7 @@ const CategoryList = () => {
                 </CardHeader>
                 <CardContent>
 
-                  {(rol == 1) ? (
+                  {(user.rol == 1) ? (
                     <div className="flex items-center justify-between">
                       <Button variant="outline" className="action bg-transparent" onClick={() => handleEditMode(cat)}>
                         Editar Categoría
