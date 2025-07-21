@@ -48,6 +48,7 @@ public class AuthService {
             // Payload - DTO (token, attrs)
 
             return new ResponseEntity<>(new ApiResponse(token, user, HttpStatus.OK.value(),"Token generado"), HttpStatus.OK);
+
         } catch (Exception e) {
             e.printStackTrace();
             String message = "CredentialsMismatch";
