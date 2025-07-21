@@ -72,7 +72,13 @@ const EventList = () => {
     fetchEventos();
   }, []);
 
-  const handleModal = () => setIsOpen(true);
+  const handleModal = () => {
+    if(categoriaSeleccionada == "all"){
+      toast.info("Antes debe seleccionar una categoría")
+    } else {
+      setIsOpen(true)
+    }    
+  };
   const handleClose = () => {
     setIsOpen(false);
     setIsEditMode(false);
