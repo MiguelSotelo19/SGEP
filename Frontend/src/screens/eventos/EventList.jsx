@@ -28,7 +28,7 @@ const EventList = () => {
 
   const location = useLocation();
   const { id_categoria, nombre } = location.state || {};
-  const rol = localStorage.getItem("rolUser");
+  const rol = localStorage.getItem("rolUser").rol;
 
   const [busqueda, setBusqueda] = useState("");
 

@@ -37,7 +37,7 @@ const CategoryList = () => {
   const [categorias, setCategorias] = useState([]);
   const [isEditMode, setIsEditMode] = useState(false);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
-  const rol = localStorage.getItem("rolUser");
+  const rol = localStorage.getItem("User").rol;
   const navigate = useNavigate();
 
   const [busqueda, setBusqueda] = useState(""); 

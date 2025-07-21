@@ -4,18 +4,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 import org.springframework.http.HttpStatus;
 
 public class ApiResponse {
     private Object data;
-    private Object rol;
+    private UsuarioBean user;
     private int status; // antes: HttpStatus
     private String message;
     private Boolean error = false;
 
-    public ApiResponse(Object data, Object rol, int status, String message) {
+    public ApiResponse(Object data, UsuarioBean user, int status, String message) {
         this.data = data;
-        this.rol = rol;
+        this.user = user;
         this.status = status;
         this.message = message;
     }
@@ -71,7 +72,11 @@ public class ApiResponse {
         this.error = error;
     }
 
-    public Object getRol() { return rol; }
+    public UsuarioBean getUser() {
+        return user;
+    }
 
-    public void setRol(Object rol) { this.rol = rol; }
+    public void setUser(UsuarioBean user) {
+        this.user = user;
+    }
 }

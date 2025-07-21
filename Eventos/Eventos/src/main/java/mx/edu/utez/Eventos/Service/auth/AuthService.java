@@ -45,10 +45,9 @@ public class AuthService {
             );
             SecurityContextHolder.getContext().setAuthentication(auth);
             String token = provider.generateToken(auth);
-            Long rol = user.getRolBean().getId_rol();
             // Payload - DTO (token, attrs)
 
-            return new ResponseEntity<>(new ApiResponse(token, rol, HttpStatus.OK.value(),"Token generado"), HttpStatus.OK);
+            return new ResponseEntity<>(new ApiResponse(token, user, HttpStatus.OK.value(),"Token generado"), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             String message = "CredentialsMismatch";
