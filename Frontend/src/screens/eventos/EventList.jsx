@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { entry } from "../../services/entryService";
 import { getEventos, deleteEvent } from "../../services/eventService";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
@@ -30,10 +29,12 @@ import {
   MapPin,
   Users,
   Search,
+  ChartNoAxesColumnIcon,
 } from "lucide-react";
 
 import EventModal from "../../components/EventModal";
 import { getCategories } from "../../services/categoryService";
+import { entry } from "../../services/entryService"; // No olvides importar entry
 import "../css/main.css";
 
 const EventList = () => {
@@ -48,9 +49,7 @@ const EventList = () => {
 
   const location = useLocation();
   const { id_categoria } = location.state || {};
-  const rol = localStorage.getItem("User");
-  const id_usuario = localStorage.getItem("User");
-
+  const user = JSON.parse(localStorage.getItem("User") ?? "{}");
 
   const [busqueda, setBusqueda] = useState("");
 
@@ -99,7 +98,14 @@ const EventList = () => {
     fetchEventos();
   }, []);
 
-  const handleModal = () => setIsOpen(true);
+  const handleModal = () => {
+    if (categoriaSeleccionada === "all") {
+      toast.info("Antes debe seleccionar una categoría");
+    } else {
+      setIsOpen(true);
+    }
+  };
+
   const handleClose = () => {
     setIsOpen(false);
     setIsEditMode(false);
@@ -134,21 +140,29 @@ const EventList = () => {
     }
   };
 
-const inscribirUsuario = async (id_evento) => {
-  const id_usuario = localStorage.getItem("User");
-   console.log(localstorage.getItem("User"))
-  console.log(id_usuario)
-  const rol = localStorage.getItem("User");
-  console.log(rol)
+  const inscribirUsuario = async (id_evento) => {
+  const userStr = localStorage.getItem("User");
 
-  console.log("Usuario:", id_usuario, "Rol:", rol);
-
-  if (!id_usuario) {
+  if (!userStr) {
     toast.error("Debes iniciar sesión para inscribirte");
     return;
   }
 
-  if (rol !== "2") {  
+  const user = JSON.parse(userStr);
+  console.log("Objeto user desde localStorage:", user);
+
+  
+  const id_usuario = user.idUsuario || user.id_usuario || user.userId;
+  const rol = user.rol || user.rol || user.rolUsuario;
+
+  console.log("usuario"+id_usuario);
+  console.log("Rol"+rol);
+  if (!id_usuario) {
+    toast.error("No se encontró el ID del usuario");
+    return;
+  }
+
+  if (rol !== "2") {
     toast.error("No tienes permiso para inscribirte a este taller");
     return;
   }
@@ -157,9 +171,11 @@ const inscribirUsuario = async (id_evento) => {
     await entry({ id_usuario, id_evento });
     toast.success("Inscripción exitosa");
   } catch (error) {
-    toast.error("Error al inscribir al taller");
+    toast.error("Error al inscribirte al taller");
+    console.error("Error en inscripción:", error);
   }
 };
+
 
   const eventosFiltrados = eventos.filter((e) => {
     const coincideCategoria =
@@ -179,6 +195,7 @@ const inscribirUsuario = async (id_evento) => {
       <Navigation />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Talleres</h1>
@@ -186,7 +203,7 @@ const inscribirUsuario = async (id_evento) => {
               Consulta o administra los talleres disponibles
             </p>
           </div>
-          {rol == 1 && (
+          {user?.rol === 1 && (
             <Button
               className="bg-blue-500 hover:bg-blue-600"
               onClick={handleModal}
@@ -219,10 +236,7 @@ const inscribirUsuario = async (id_evento) => {
               <SelectContent>
                 <SelectItem value="all">Todas las categorías</SelectItem>
                 {categoriasD.map((cat) => (
-                  <SelectItem
-                    key={cat.id_categoria}
-                    value={String(cat.id_categoria)}
-                  >
+                  <SelectItem key={cat.id_categoria} value={String(cat.id_categoria)}>
                     {cat.nombre}
                   </SelectItem>
                 ))}
@@ -239,25 +253,18 @@ const inscribirUsuario = async (id_evento) => {
             </div>
           ) : (
             eventosFiltrados.map((evento) => (
-              <Card
-                key={evento.id_evento}
-                className="hover:shadow-lg transition-shadow"
-              >
+              <Card key={evento.id_evento} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <Badge variant="outline">{evento.tipo_evento}</Badge>
                     <Badge
                       variant={evento.estatus ? "default" : "destructive"}
-                      className={
-                        evento.estatus ? "bg-green-100 text-green-800" : ""
-                      }
+                      className={evento.estatus ? "bg-green-100 text-green-800" : ""}
                     >
                       {evento.estatus ? "Activo" : "Inactivo"}
                     </Badge>
                   </div>
-                  <CardTitle className="text-xl">
-                    {evento.nombre_evento}
-                  </CardTitle>
+                  <CardTitle className="text-xl">{evento.nombre_evento}</CardTitle>
                   <CardDescription>{evento.lugar}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -287,7 +294,7 @@ const inscribirUsuario = async (id_evento) => {
                     </div>
                   </div>
 
-                  {rol == 1 ? (
+                  {user?.rol === 1 ? (
                     <div className="flex justify-between items-center pt-4 gap-2">
                       <Button
                         variant="outline"
@@ -307,7 +314,7 @@ const inscribirUsuario = async (id_evento) => {
                   ) : (
                     <Button
                       variant="outline"
-                      className="w-full"
+                      className="w-full princ"
                       onClick={() => inscribirUsuario(evento.id_evento)}
                     >
                       Inscribirse al taller
