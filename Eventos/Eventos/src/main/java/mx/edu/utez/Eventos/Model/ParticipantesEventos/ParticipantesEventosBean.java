@@ -1,5 +1,6 @@
 package mx.edu.utez.Eventos.Model.ParticipantesEventos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 import mx.edu.utez.Eventos.Model.Eventos.EventosBean;

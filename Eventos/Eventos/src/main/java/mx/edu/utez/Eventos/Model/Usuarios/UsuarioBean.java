@@ -30,6 +30,7 @@ public class UsuarioBean {
     @Column(length = 10, unique = true)
     private String telefono;
 
+    @JsonIgnore
     @Column(columnDefinition = "TEXT")
     private String password;
 
@@ -179,4 +180,5 @@ public class UsuarioBean {
     public void setRolBean(RolBean rolBean) {
         this.rolBean = rolBean;
     }
+
 }
