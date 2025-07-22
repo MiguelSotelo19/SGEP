@@ -52,6 +52,13 @@ public class UsuariosController {
         return new ResponseEntity<>(new ApiResponse(service.getAllUsuarios(), HttpStatus.OK.value(), "OK"), HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiResponse> getUsuario(
+            @PathVariable Long id
+    ) {
+        return new ResponseEntity<>(new ApiResponse(service.getOneUser(id), HttpStatus.OK.value(), "OK"), HttpStatus.OK);
+    }
+
     @PostMapping("/registro")
     public ResponseEntity<ApiResponse> nuevoUsuario(@Validated(UsuarioDTO.Register.class) @RequestBody UsuarioDTO dto) {
         return service.newUsuario(dto.toEntity());

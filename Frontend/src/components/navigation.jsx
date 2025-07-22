@@ -1,9 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
-import { Calendar, Grid3X3, User, LogOut } from "lucide-react";
+import { Calendar, Grid3X3, User, LogOut, CircleUserIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 
 export function Navigation() {
+  const user = JSON.parse(localStorage.getItem("User"));
   const location = useLocation();
   const pathname = location.pathname;
 
@@ -51,10 +52,17 @@ export function Navigation() {
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="flex items-center space-x-2">
                   <User className="w-4 h-4" />
-                  <span className="hidden sm:inline">Usuario</span>
+                  <span className="hidden sm:inline">{user.nombre}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
+                <DropdownMenuItem
+                  onClick={() => window.location.href = "/perfil"}
+                  className="flex items-center space-x-2 cursor-pointer"
+                  >
+                    <CircleUserIcon className="w-4 h-4" />
+                    <span>Mi perfil</span>
+                </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => {
                     localStorage.removeItem("accessToken"); 

@@ -55,6 +55,7 @@ public class AuthService {
             userData.put("nombre", user.getNombre());
             userData.put("apellido_paterno", user.getApellido_paterno());
             userData.put("apellido_materno", user.getApellido_materno());
+            userData.put("telefono", user.getTelefono());
             userData.put("rol", user.getRolBean().getId_rol());
             userData.put("estatus", user.getEstatus());
 
