@@ -140,8 +140,9 @@ const EventList = () => {
     }
   };
 
-  const inscribirUsuario = async (id_evento) => {
+ const inscribirUsuario = async (id_evento) => {
   const userStr = localStorage.getItem("User");
+  console.log("Contenido crudo del localStorage:", userStr);
 
   if (!userStr) {
     toast.error("Debes iniciar sesión para inscribirte");
@@ -149,25 +150,31 @@ const EventList = () => {
   }
 
   const user = JSON.parse(userStr);
-  console.log("Objeto user desde localStorage:", user);
+  console.log("Objeto user parseado:", user);
 
-  
-  const id_usuario = user.idUsuario || user.id_usuario || user.userId;
-  const rol = user.rol || user.rol || user.rolUsuario;
+  const id_usuario = user.idUsuario || user.usuario?.id || user.id || null;
+  const rolObj = user.rol || user.rolUsuario || null; // ← aún es un objeto
+    console.log("Contenido de rolObj:", rolObj);
 
-  console.log("usuario"+id_usuario);
-  console.log("Rol"+rol);
+  const rolId = user.rol || user.rolUsuario || null;
+ // ← extraemos el número del ID
+
+  console.log("ID del usuario:", id_usuario);
+  console.log("Rol ID:", rolId);
+
   if (!id_usuario) {
     toast.error("No se encontró el ID del usuario");
     return;
   }
 
-  if (rol !== "2") {
+  if (rolId !== 2) {
     toast.error("No tienes permiso para inscribirte a este taller");
     return;
   }
 
   try {
+    console.log("id_usuario:", id_usuario, "id_evento:", id_evento);
+
     await entry({ id_usuario, id_evento });
     toast.success("Inscripción exitosa");
   } catch (error) {
@@ -175,6 +182,7 @@ const EventList = () => {
     console.error("Error en inscripción:", error);
   }
 };
+
 
 
   const eventosFiltrados = eventos.filter((e) => {

@@ -7,14 +7,16 @@ import lombok.Setter;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 import org.springframework.http.HttpStatus;
 
+import java.util.Map;
+
 public class ApiResponse {
     private Object data;
-    private UsuarioBean user;
     private int status; // antes: HttpStatus
+    private Map<String, Object> user;
     private String message;
     private Boolean error = false;
 
-    public ApiResponse(Object data, UsuarioBean user, int status, String message) {
+    public ApiResponse(Object data, Map<String, Object> user, int status, String message) {
         this.data = data;
         this.user = user;
         this.status = status;
@@ -72,11 +74,11 @@ public class ApiResponse {
         this.error = error;
     }
 
-    public UsuarioBean getUser() {
+    public Map<String, Object> getUser() {
         return user;
     }
 
-    public void setUser(UsuarioBean user) {
+    public void setUser(Map<String, Object> user) {
         this.user = user;
     }
 }

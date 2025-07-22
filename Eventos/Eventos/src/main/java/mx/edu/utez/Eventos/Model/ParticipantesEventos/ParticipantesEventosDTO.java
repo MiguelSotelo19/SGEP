@@ -1,21 +1,22 @@
 package mx.edu.utez.Eventos.Model.ParticipantesEventos;
 
 public class ParticipantesEventosDTO {
-    private Long idUsuario;
-    private Long idEvento;
+    private Long id_usuario;
+    private Long id_evento;
 
-    public  Long getIdUsuario(){
-        return idUsuario;
+    public Long getId_usuario() {
+        return id_usuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId_usuario(Long id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
-    public Long getIdEvento(){
-        return idEvento;
+    public Long getId_evento() {
+        return id_evento;
     }
-    public void setIdEvento(Long idEvento){
-        this.idEvento=idEvento;
+
+    public void setId_evento(Long id_evento) {
+        this.id_evento = id_evento;
     }
 }

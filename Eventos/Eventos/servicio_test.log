@@ -1,1 +1,430 @@
 2025-07-21T00:00:00.767-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:00:18.392-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:00:24.776-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:00:40.430-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:00:46.373-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:00:51.382-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:00:54.365-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:00:57.969-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:01:17.417-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:02:49.376-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:02:50.488-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:02:54.390-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:02:57.349-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:03:06.390-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:03:11.406-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:03:53.396-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:03:55.670-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:04:02.396-06:00  INFO 15412 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T00:28:07.973-06:00  WARN 15412 --- [Eventos] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m49s239ms298µs900ns).
+2025-07-21T19:08:15.468-06:00  WARN 15412 --- [Eventos] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14h52m22s460ms516µs).
+2025-07-21T19:35:37.704-06:00  INFO 15412 --- [Eventos] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-07-21T19:35:37.722-06:00  INFO 15412 --- [Eventos] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T19:35:37.742-06:00  INFO 15412 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T19:35:37.756-06:00  INFO 15412 --- [Eventos] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T19:35:37.769-06:00  INFO 15412 --- [Eventos] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-21T19:35:37.779-06:00  INFO 15412 --- [Eventos] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-21T19:35:37.985-06:00  INFO 15412 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 15412 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T19:35:37.986-06:00  INFO 15412 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T19:35:38.565-06:00  INFO 15412 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T19:35:38.642-06:00  INFO 15412 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 6 JPA repository interfaces.
+2025-07-21T19:35:38.905-06:00  INFO 15412 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T19:35:38.910-06:00  INFO 15412 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T19:35:38.911-06:00  INFO 15412 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T19:35:38.957-06:00  INFO 15412 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T19:35:38.957-06:00  INFO 15412 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 961 ms
+2025-07-21T19:35:39.058-06:00  INFO 15412 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T19:35:39.064-06:00  INFO 15412 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T19:35:39.085-06:00  INFO 15412 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T19:35:39.087-06:00  INFO 15412 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-07-21T19:35:39.162-06:00  INFO 15412 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@1a3139db
+2025-07-21T19:35:39.163-06:00  INFO 15412 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-07-21T19:35:39.182-06:00  WARN 15412 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T19:35:39.183-06:00  INFO 15412 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T19:35:39.445-06:00  INFO 15412 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T19:35:39.924-06:00  INFO 15412 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T19:35:40.131-06:00  WARN 15412 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController': Resolution of declared constructors on bean Class [mx.edu.utez.Eventos.Controller.auth.AuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@51161964] failed
+2025-07-21T19:35:40.132-06:00  INFO 15412 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T19:35:40.134-06:00  INFO 15412 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-07-21T19:35:40.174-06:00  INFO 15412 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-07-21T19:35:40.175-06:00  INFO 15412 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-07-21T19:35:40.184-06:00  INFO 15412 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T19:35:40.217-06:00 ERROR 15412 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController': Resolution of declared constructors on bean Class [mx.edu.utez.Eventos.Controller.auth.AuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@51161964] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:384) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1229) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.NoClassDefFoundError: mx/edu/utez/Eventos/Service/auth/AuthService
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3006) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2356) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:379) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 23 common frames omitted
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Service.auth.AuthService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 27 common frames omitted
+
+2025-07-21T19:36:20.299-06:00  INFO 29316 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 29316 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T19:36:20.301-06:00  INFO 29316 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T19:36:20.361-06:00  INFO 29316 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-21T19:36:20.362-06:00  INFO 29316 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-21T19:36:21.224-06:00  INFO 29316 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T19:36:21.335-06:00  INFO 29316 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 6 JPA repository interfaces.
+2025-07-21T19:36:22.051-06:00  INFO 29316 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T19:36:22.069-06:00  INFO 29316 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T19:36:22.069-06:00  INFO 29316 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T19:36:22.131-06:00  INFO 29316 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T19:36:22.131-06:00  INFO 29316 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1768 ms
+2025-07-21T19:36:22.327-06:00  INFO 29316 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T19:36:22.409-06:00  INFO 29316 --- [Eventos] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-21T19:36:22.460-06:00  INFO 29316 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T19:36:22.876-06:00  INFO 29316 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T19:36:22.918-06:00  INFO 29316 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-21T19:36:23.168-06:00  INFO 29316 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@336fb118
+2025-07-21T19:36:23.173-06:00  INFO 29316 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-21T19:36:23.226-06:00  WARN 29316 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T19:36:23.249-06:00  INFO 29316 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T19:36:24.879-06:00  INFO 29316 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T19:36:25.364-06:00  INFO 29316 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T19:36:25.930-06:00  INFO 29316 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T19:36:25.931-06:00  WARN 29316 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T19:36:26.185-06:00  WARN 29316 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T19:36:26.605-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T19:36:26.606-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T19:36:26.607-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T19:36:26.609-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T19:36:26.616-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T19:36:26.618-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T19:36:27.039-06:00  INFO 29316 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T19:36:27.093-06:00  INFO 29316 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T19:36:27.102-06:00  INFO 29316 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 7.365 seconds (process running for 8.97)
+2025-07-21T19:38:11.234-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-21T19:38:11.235-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-21T19:38:11.239-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-07-21T19:38:11.878-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:38:37.086-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: fernanda.bautista.rodriguez@gmail.com
+2025-07-21T19:38:37.513-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-21T19:38:39.169-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:38:41.435-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:41:09.461-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:41:53.178-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:41:59.230-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:42:00.150-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:42:04.051-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:43:18.160-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:43:19.254-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:43:23.844-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:43:35.736-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: fernanda.bautista.rodriguez@gmail.com
+2025-07-21T19:43:35.977-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-21T19:43:39.345-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:43:40.919-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:44:17.218-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: fernanda.bautista.rodriguez@gmail.com
+2025-07-21T19:44:17.458-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-21T19:44:18.999-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:44:20.139-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:44:35.145-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:44:39.147-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:44:41.935-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:50:10.297-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: fernanda.bautista.rodriguez@gmail.com
+2025-07-21T19:50:10.549-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-21T19:50:12.137-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:50:13.141-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:50:48.161-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:50:50.140-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:19.127-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:22.139-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:23.209-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:27.565-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:42.147-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:45.155-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:51.141-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:52.122-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:54.698-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:51:55.395-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:52:09.508-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: fernanda.bautista.rodriguez@gmail.com
+2025-07-21T19:52:09.752-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-21T19:52:11.426-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:53:15.403-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:53:16.307-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:53:36.150-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:53:45.132-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:53:47.130-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:53:49.152-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:53:53.154-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:53:55.141-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:54:49.149-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:54:51.130-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:54:55.167-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:54:57.141-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:54:59.298-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:55:20.147-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:55:26.141-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:55:35.140-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:55:36.158-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:55:39.167-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:55:40.135-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:55:41.233-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:56:00.458-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: fernanda.bautista.rodriguez@gmail.com
+2025-07-21T19:56:00.695-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-21T19:56:02.016-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:56:03.300-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:56:13.156-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:56:15.138-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:56:19.142-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:56:24.206-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:57:11.197-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:57:13.148-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T19:57:16.817-06:00  INFO 29316 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T20:06:04.744-06:00  INFO 29316 --- [Eventos] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-07-21T20:06:04.748-06:00  INFO 29316 --- [Eventos] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:06:04.764-06:00  INFO 29316 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:06:04.770-06:00  INFO 29316 --- [Eventos] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:06:04.773-06:00  INFO 29316 --- [Eventos] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-21T20:06:04.775-06:00  INFO 29316 --- [Eventos] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-21T20:06:04.892-06:00  INFO 29316 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 29316 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:06:04.892-06:00  INFO 29316 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:06:05.237-06:00  INFO 29316 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:06:05.324-06:00  INFO 29316 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:06:05.590-06:00  INFO 29316 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:06:05.592-06:00  INFO 29316 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:06:05.592-06:00  INFO 29316 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:06:05.627-06:00  INFO 29316 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:06:05.628-06:00  INFO 29316 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 732 ms
+2025-07-21T20:06:05.716-06:00  INFO 29316 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:06:05.721-06:00  INFO 29316 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:06:05.739-06:00  INFO 29316 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:06:05.741-06:00  INFO 29316 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-07-21T20:06:05.818-06:00  INFO 29316 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@538a83ff
+2025-07-21T20:06:05.819-06:00  INFO 29316 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-07-21T20:06:05.833-06:00  WARN 29316 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:06:05.835-06:00  INFO 29316 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:06:06.170-06:00  INFO 29316 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:06:06.530-06:00  INFO 29316 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:06:06.680-06:00  INFO 29316 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:06:06.680-06:00  WARN 29316 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:06:06.839-06:00  WARN 29316 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:06:07.014-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:06:07.015-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:06:07.016-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:06:07.017-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:06:07.018-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:06:07.019-06:00  WARN 29316 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:06:07.222-06:00  INFO 29316 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:06:07.243-06:00  INFO 29316 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:06:07.248-06:00  INFO 29316 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 2.4 seconds (process running for 1789.116)
+2025-07-21T20:06:07.250-06:00  INFO 29316 --- [Eventos] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-07-21T20:06:58.285-06:00  INFO 29316 --- [Eventos] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:06:58.302-06:00  INFO 29316 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:06:58.306-06:00  INFO 29316 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:06:58.307-06:00  INFO 29316 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-07-21T20:06:58.311-06:00  INFO 29316 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-07-21T20:07:03.706-06:00  INFO 8048 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 8048 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:07:03.710-06:00  INFO 8048 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:07:03.775-06:00  INFO 8048 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-21T20:07:03.775-06:00  INFO 8048 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-21T20:07:04.811-06:00  INFO 8048 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:07:04.921-06:00  INFO 8048 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:07:05.780-06:00  INFO 8048 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:07:05.797-06:00  INFO 8048 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:07:05.798-06:00  INFO 8048 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:07:05.854-06:00  INFO 8048 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:07:05.854-06:00  INFO 8048 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2078 ms
+2025-07-21T20:07:06.071-06:00  INFO 8048 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:07:06.136-06:00  INFO 8048 --- [Eventos] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-21T20:07:06.182-06:00  INFO 8048 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:07:06.499-06:00  INFO 8048 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:07:06.531-06:00  INFO 8048 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-21T20:07:06.703-06:00  INFO 8048 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f81518
+2025-07-21T20:07:06.706-06:00  INFO 8048 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-21T20:07:06.748-06:00  WARN 8048 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:07:06.766-06:00  INFO 8048 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:07:07.933-06:00  INFO 8048 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:07:08.336-06:00  INFO 8048 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:07:08.792-06:00  INFO 8048 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:07:08.793-06:00  WARN 8048 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:07:08.990-06:00  WARN 8048 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:07:09.336-06:00  WARN 8048 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:07:09.341-06:00  WARN 8048 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:07:09.351-06:00  WARN 8048 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:07:09.353-06:00  WARN 8048 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:07:09.355-06:00  WARN 8048 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:07:09.356-06:00  WARN 8048 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:07:09.979-06:00  INFO 8048 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:07:10.029-06:00  INFO 8048 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:07:10.037-06:00  INFO 8048 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 6.909 seconds (process running for 7.692)
+2025-07-21T20:07:52.949-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-21T20:07:52.949-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-21T20:07:52.950-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-07-21T20:07:53.212-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: fernanda.bautista.rodriguez@gmail.com
+2025-07-21T20:07:53.819-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-21T20:07:53.822-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: fernanda.bautista.rodriguez@gmail.com
+2025-07-21T20:07:54.084-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-21T20:07:54.239-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T20:07:56.693-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T20:09:36.159-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T20:09:38.847-06:00  INFO 8048 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T20:10:05.342-06:00  INFO 8048 --- [Eventos] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:10:05.360-06:00  INFO 8048 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:10:05.366-06:00  INFO 8048 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:10:05.369-06:00  INFO 8048 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-21T20:10:05.372-06:00  INFO 8048 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-21T20:10:10.171-06:00  INFO 14356 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 14356 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:10:10.173-06:00  INFO 14356 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:10:10.232-06:00  INFO 14356 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-21T20:10:10.233-06:00  INFO 14356 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-21T20:10:11.112-06:00  INFO 14356 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:10:11.212-06:00  INFO 14356 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:10:11.942-06:00  INFO 14356 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:10:11.971-06:00  INFO 14356 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:10:11.972-06:00  INFO 14356 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:10:12.044-06:00  INFO 14356 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:10:12.044-06:00  INFO 14356 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1811 ms
+2025-07-21T20:10:12.284-06:00  INFO 14356 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:10:12.344-06:00  INFO 14356 --- [Eventos] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-21T20:10:12.392-06:00  INFO 14356 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:10:12.726-06:00  INFO 14356 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:10:12.758-06:00  INFO 14356 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-21T20:10:12.944-06:00  INFO 14356 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@73d84871
+2025-07-21T20:10:12.946-06:00  INFO 14356 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-21T20:10:12.982-06:00  WARN 14356 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:10:13.002-06:00  INFO 14356 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:10:14.493-06:00  INFO 14356 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:10:14.896-06:00  INFO 14356 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:10:15.359-06:00  INFO 14356 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:10:15.359-06:00  WARN 14356 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:10:15.550-06:00  WARN 14356 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:10:15.917-06:00  WARN 14356 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:10:15.918-06:00  WARN 14356 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:10:15.919-06:00  WARN 14356 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:10:15.921-06:00  WARN 14356 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:10:15.922-06:00  WARN 14356 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:10:15.923-06:00  WARN 14356 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:10:16.311-06:00  INFO 14356 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:10:16.373-06:00  INFO 14356 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:10:16.388-06:00  INFO 14356 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 6.73 seconds (process running for 7.48)
+2025-07-21T20:10:19.171-06:00  INFO 14356 --- [Eventos] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-21T20:10:19.172-06:00  INFO 14356 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-21T20:10:19.173-06:00  INFO 14356 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-07-21T20:10:19.544-06:00  INFO 14356 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T20:11:20.555-06:00  INFO 14356 --- [Eventos] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:11:20.574-06:00  INFO 14356 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:11:20.579-06:00  INFO 14356 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:11:20.582-06:00  INFO 14356 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-21T20:11:20.588-06:00  INFO 14356 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-21T20:11:25.802-06:00  INFO 32332 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 32332 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:11:25.805-06:00  INFO 32332 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:11:25.867-06:00  INFO 32332 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-21T20:11:25.867-06:00  INFO 32332 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-21T20:11:26.745-06:00  INFO 32332 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:11:26.866-06:00  INFO 32332 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:11:27.556-06:00  INFO 32332 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:11:27.571-06:00  INFO 32332 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:11:27.571-06:00  INFO 32332 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:11:27.622-06:00  INFO 32332 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:11:27.623-06:00  INFO 32332 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1755 ms
+2025-07-21T20:11:27.792-06:00  INFO 32332 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:11:27.864-06:00  INFO 32332 --- [Eventos] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-21T20:11:27.914-06:00  INFO 32332 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:11:28.268-06:00  INFO 32332 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:11:28.303-06:00  INFO 32332 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-21T20:11:28.475-06:00  INFO 32332 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f81518
+2025-07-21T20:11:28.477-06:00  INFO 32332 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-21T20:11:28.515-06:00  WARN 32332 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:11:28.533-06:00  INFO 32332 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:11:29.773-06:00  INFO 32332 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:11:30.159-06:00  INFO 32332 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:11:30.595-06:00  INFO 32332 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:11:30.596-06:00  WARN 32332 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:11:30.776-06:00  WARN 32332 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:11:31.103-06:00  WARN 32332 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:11:31.105-06:00  WARN 32332 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:11:31.111-06:00  WARN 32332 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:11:31.112-06:00  WARN 32332 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:11:31.113-06:00  WARN 32332 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:11:31.115-06:00  WARN 32332 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:11:31.590-06:00  INFO 32332 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:11:31.631-06:00  INFO 32332 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:11:31.640-06:00  INFO 32332 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 6.369 seconds (process running for 7.126)
+2025-07-21T20:12:00.947-06:00  INFO 32332 --- [Eventos] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-21T20:12:00.948-06:00  INFO 32332 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-21T20:12:00.949-06:00  INFO 32332 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-07-21T20:12:01.205-06:00  INFO 32332 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: fernanda.bautista.rodriguez@gmail.com
+2025-07-21T20:12:01.788-06:00  INFO 32332 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-21T20:12:03.621-06:00  INFO 32332 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T20:12:04.657-06:00  INFO 32332 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T20:14:34.238-06:00  INFO 32332 --- [Eventos] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:14:34.256-06:00  INFO 32332 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:14:34.262-06:00  INFO 32332 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:14:34.266-06:00  INFO 32332 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-21T20:14:34.268-06:00  INFO 32332 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
