@@ -16,6 +16,8 @@ export const entry = async ({ id_usuario, id_evento }) => {
 export const getEventosInscritos = async (id_usuario) => {
   try {
     const response = await axiosInstance.get(`/api/participantesevento/usuario/${id_usuario}`);
+    console.log("Hola");
+    console.log(response);
     return response.data;
   } catch (error) {
     console.error('Error al obtener eventos inscritos:', error);

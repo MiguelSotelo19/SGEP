@@ -15,12 +15,10 @@ public class ParticipantesEventosBean {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
-    @JsonIgnore
     private UsuarioBean usuario;
 
     @ManyToOne
     @JoinColumn(name = "id_evento", nullable = false)
-    @JsonIgnore
     private EventosBean evento;
 
     public ParticipantesEventosBean() {}

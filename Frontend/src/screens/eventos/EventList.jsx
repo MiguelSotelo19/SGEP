@@ -102,23 +102,17 @@ const fetchEventosInscritos = async () => {
 
   try {
     const inscritos = await getEventosInscritos(id_usuario);
-    console.log("Eventos inscritos (estructura real):", inscritos); // <-- Agrega esto
     setEventosInscritos(inscritos || []);
   } catch (error) {
     setEventosInscritos([]);
   }
 };
 
-
-
-
-
-
 const estaInscrito = (id_evento) => {
   if (!Array.isArray(eventosInscritos)) return false;
 
   const resultado = eventosInscritos.some(ev => {
-       const inscritoId = ev.id_evento || ev.evento?.id || ev.evento?.id;
+       const inscritoId = ev.evento.id_evento;
     console.log(`Comparando ${inscritoId} con ${id_evento}`);
     return String(inscritoId) === String(id_evento);
   });
