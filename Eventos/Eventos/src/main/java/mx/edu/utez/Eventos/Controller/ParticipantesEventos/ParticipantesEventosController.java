@@ -36,5 +36,20 @@ public class ParticipantesEventosController {
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error interno del servidor.");
         }
+
+
     }
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<?> obtenerEventosPorUsuario(@PathVariable Long idUsuario) {
+        try {
+            var eventos = participantesEventosService.obtenerEventosPorUsuario(idUsuario);
+            if (eventos == null || eventos.isEmpty()) {
+                return ResponseEntity.noContent().build();
+            }
+            return ResponseEntity.ok(eventos);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error interno del servidor.");
+        }
+    }
+
 }

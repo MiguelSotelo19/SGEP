@@ -34,7 +34,7 @@ import {
 
 import EventModal from "../../components/EventModal";
 import { getCategories } from "../../services/categoryService";
-import { entry } from "../../services/entryService"; // No olvides importar entry
+import { entry, getEventosInscritos } from "../../services/entryService"; // No olvides importar entry
 import "../css/main.css";
 
 const EventList = () => {
@@ -52,6 +52,8 @@ const EventList = () => {
   const user = JSON.parse(localStorage.getItem("User") ?? "{}");
 
   const [busqueda, setBusqueda] = useState("");
+
+  const [eventosInscritos, setEventosInscritos] = useState();
 
   const fetchCategorias = async () => {
     try {
@@ -94,9 +96,46 @@ const EventList = () => {
     }
   };
 
+const fetchEventosInscritos = async () => {
+  const id_usuario = user.idUsuario || user.usuario?.id || user.id;
+  if (!id_usuario) return;
+
+  try {
+    const inscritos = await getEventosInscritos(id_usuario);
+    console.log("Eventos inscritos (estructura real):", inscritos); // <-- Agrega esto
+    setEventosInscritos(inscritos || []);
+  } catch (error) {
+    setEventosInscritos([]);
+  }
+};
+
+
+
+
+
+
+const estaInscrito = (id_evento) => {
+  if (!Array.isArray(eventosInscritos)) return false;
+
+  const resultado = eventosInscritos.some(ev => {
+       const inscritoId = ev.id_evento || ev.evento?.id || ev.evento?.id;
+    console.log(`Comparando ${inscritoId} con ${id_evento}`);
+    return String(inscritoId) === String(id_evento);
+  });
+
+  console.log(`Evento ${id_evento} -> inscrito: `, resultado);
+  return resultado;
+};
+
   useEffect(() => {
-    fetchEventos();
-  }, []);
+  fetchEventos();
+  fetchEventosInscritos();
+}, []);
+
+useEffect(() => {
+  console.log("eventosInscritos:", eventosInscritos);
+}, [eventosInscritos]);
+
 
   const handleModal = () => {
     if (categoriaSeleccionada === "all") {
@@ -140,50 +179,38 @@ const EventList = () => {
     }
   };
 
- const inscribirUsuario = async (id_evento) => {
-  const userStr = localStorage.getItem("User");
-  console.log("Contenido crudo del localStorage:", userStr);
+  const inscribirUsuario = async (id_evento) => {
+    const userStr = localStorage.getItem("User");
+    if (!userStr) {
+      toast.error("Debes iniciar sesión para inscribirte");
+      return;
+    }
 
-  if (!userStr) {
-    toast.error("Debes iniciar sesión para inscribirte");
-    return;
-  }
+    const user = JSON.parse(userStr);
 
-  const user = JSON.parse(userStr);
-  console.log("Objeto user parseado:", user);
+    const id_usuario = user.idUsuario || user.usuario?.id || user.id || null;
+    const rolId = user.rol || user.rolUsuario || null;
 
-  const id_usuario = user.idUsuario || user.usuario?.id || user.id || null;
-  const rolObj = user.rol || user.rolUsuario || null; // ← aún es un objeto
-    console.log("Contenido de rolObj:", rolObj);
+    if (!id_usuario) {
+      toast.error("No se encontró el ID del usuario");
+      return;
+    }
 
-  const rolId = user.rol || user.rolUsuario || null;
- // ← extraemos el número del ID
+    if (rolId !== 2) {
+      toast.error("No tienes permiso para inscribirte a este taller");
+      return;
+    }
 
-  console.log("ID del usuario:", id_usuario);
-  console.log("Rol ID:", rolId);
+    try {
+      await entry({ id_usuario, id_evento });
+      toast.success("Inscripción exitosa");
 
-  if (!id_usuario) {
-    toast.error("No se encontró el ID del usuario");
-    return;
-  }
-
-  if (rolId !== 2) {
-    toast.error("No tienes permiso para inscribirte a este taller");
-    return;
-  }
-
-  try {
-    console.log("id_usuario:", id_usuario, "id_evento:", id_evento);
-
-    await entry({ id_usuario, id_evento });
-    toast.success("Inscripción exitosa");
-  } catch (error) {
-    toast.error("Error al inscribirte al taller");
-    console.error("Error en inscripción:", error);
-  }
-};
-
-
+      fetchEventosInscritos();
+    } catch (error) {
+      toast.error("Error al inscribirte al taller");
+      console.error("Error en inscripción:", error);
+    }
+  };
 
   const eventosFiltrados = eventos.filter((e) => {
     const coincideCategoria =
@@ -244,7 +271,10 @@ const EventList = () => {
               <SelectContent>
                 <SelectItem value="all">Todas las categorías</SelectItem>
                 {categoriasD.map((cat) => (
-                  <SelectItem key={cat.id_categoria} value={String(cat.id_categoria)}>
+                  <SelectItem
+                    key={cat.id_categoria}
+                    value={String(cat.id_categoria)}
+                  >
                     {cat.nombre}
                   </SelectItem>
                 ))}
@@ -260,19 +290,29 @@ const EventList = () => {
               No hay talleres para esta categoría.
             </div>
           ) : (
-            eventosFiltrados.map((evento) => (
-              <Card key={evento.id_evento} className="hover:shadow-lg transition-shadow">
+            eventosFiltrados.map((evento) => {
+              const inscrito = estaInscrito(evento.id_evento);
+              console.log(`Evento ${evento.id_evento} -> inscrito: `, inscrito);
+               return(
+              <Card
+                key={evento.id_evento}
+                className="hover:shadow-lg transition-shadow"
+              >
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <Badge variant="outline">{evento.tipo_evento}</Badge>
                     <Badge
                       variant={evento.estatus ? "default" : "destructive"}
-                      className={evento.estatus ? "bg-green-100 text-green-800" : ""}
+                      className={
+                        evento.estatus ? "bg-green-100 text-green-800" : ""
+                      }
                     >
                       {evento.estatus ? "Activo" : "Inactivo"}
                     </Badge>
                   </div>
-                  <CardTitle className="text-xl">{evento.nombre_evento}</CardTitle>
+                  <CardTitle className="text-xl">
+                    {evento.nombre_evento}
+                  </CardTitle>
                   <CardDescription>{evento.lugar}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -321,16 +361,18 @@ const EventList = () => {
                     </div>
                   ) : (
                     <Button
-                      variant="outline"
-                      className="w-full princ"
-                      onClick={() => inscribirUsuario(evento.id_evento)}
-                    >
-                      Inscribirse al taller
-                    </Button>
+            variant="outline"
+            className="w-full princ"
+            onClick={() => inscribirUsuario(evento.id_evento)}
+            disabled={inscrito}
+          >
+            {inscrito ? "Inscrito" : "Inscribirse al taller"}
+          </Button>
                   )}
                 </CardContent>
               </Card>
-            ))
+               );
+})
           )}
         </div>
       </div>

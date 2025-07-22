@@ -180,4 +180,5 @@ public class UsuarioBean {
     public void setRolBean(RolBean rolBean) {
         this.rolBean = rolBean;
     }
+
 }

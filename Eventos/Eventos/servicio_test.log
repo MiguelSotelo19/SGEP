@@ -428,3 +428,1116 @@ Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Service.auth.Au
 2025-07-21T20:14:34.262-06:00  INFO 32332 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-07-21T20:14:34.266-06:00  INFO 32332 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-07-21T20:14:34.268-06:00  INFO 32332 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-21T20:15:02.600-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:15:02.602-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:15:02.661-06:00  INFO 10572 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-21T20:15:02.662-06:00  INFO 10572 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-21T20:15:03.462-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:15:03.562-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:15:04.183-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:15:04.198-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:15:04.198-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:15:04.250-06:00  INFO 10572 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:15:04.250-06:00  INFO 10572 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1588 ms
+2025-07-21T20:15:04.402-06:00  INFO 10572 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:15:04.483-06:00  INFO 10572 --- [Eventos] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-21T20:15:04.525-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:15:04.837-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:15:04.867-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-21T20:15:05.033-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b20244d
+2025-07-21T20:15:05.035-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-21T20:15:05.082-06:00  WARN 10572 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:15:05.110-06:00  INFO 10572 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:15:06.269-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:15:06.672-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:15:07.151-06:00  INFO 10572 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:15:07.152-06:00  WARN 10572 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:15:07.348-06:00  WARN 10572 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:15:07.714-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:15:07.714-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:15:07.715-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:15:07.716-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:15:07.717-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:15:07.718-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:15:08.131-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:15:08.171-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:15:08.179-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 6.102 seconds (process running for 6.863)
+2025-07-21T20:15:20.980-06:00  INFO 10572 --- [Eventos] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-21T20:15:20.981-06:00  INFO 10572 --- [Eventos] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-21T20:15:20.982-06:00  INFO 10572 --- [Eventos] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-07-21T20:15:21.376-06:00  INFO 10572 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-21T20:25:39.552-06:00  INFO 10572 --- [Eventos] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-07-21T20:25:39.556-06:00  INFO 10572 --- [Eventos] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:25:39.574-06:00  INFO 10572 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:25:39.578-06:00  INFO 10572 --- [Eventos] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:25:39.581-06:00  INFO 10572 --- [Eventos] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-21T20:25:39.585-06:00  INFO 10572 --- [Eventos] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-21T20:25:39.684-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:25:39.684-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:25:39.951-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:25:39.991-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:25:40.190-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:25:40.193-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:25:40.193-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:25:40.241-06:00  INFO 10572 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:25:40.242-06:00  INFO 10572 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 556 ms
+2025-07-21T20:25:40.336-06:00  INFO 10572 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:25:40.342-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:25:40.361-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:25:40.364-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-07-21T20:25:40.452-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@711a623b
+2025-07-21T20:25:40.452-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-07-21T20:25:40.464-06:00  WARN 10572 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:25:40.468-06:00  INFO 10572 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:25:40.662-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:25:41.056-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:25:41.192-06:00  INFO 10572 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:25:41.193-06:00  WARN 10572 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:25:41.351-06:00  WARN 10572 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:25:41.553-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:25:41.554-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:25:41.555-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:25:41.556-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:25:41.557-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:25:41.558-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:25:41.745-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:25:41.760-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:25:41.765-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 2.12 seconds (process running for 640.449)
+2025-07-21T20:25:41.767-06:00  INFO 10572 --- [Eventos] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-07-21T20:27:58.045-06:00  INFO 10572 --- [Eventos] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-07-21T20:27:58.046-06:00  INFO 10572 --- [Eventos] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:27:58.062-06:00  INFO 10572 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:27:58.065-06:00  INFO 10572 --- [Eventos] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:27:58.066-06:00  INFO 10572 --- [Eventos] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-07-21T20:27:58.068-06:00  INFO 10572 --- [Eventos] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-07-21T20:27:58.168-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:27:58.168-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:27:58.407-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:27:58.431-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+2025-07-21T20:27:58.436-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:27:58.460-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:27:59.948-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:27:59.948-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:28:00.176-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:28:00.202-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+2025-07-21T20:28:00.205-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:28:00.208-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:28:19.380-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:28:19.380-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:28:19.577-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:28:19.592-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Eventos.EventosBean not present
+2025-07-21T20:28:19.594-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:28:19.598-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Eventos.EventosBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.Eventos.EventosBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:28:23.177-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:28:23.177-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:28:23.465-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:28:23.502-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Eventos.EventosBean not present
+2025-07-21T20:28:23.509-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:28:23.518-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Eventos.EventosBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.Eventos.EventosBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:30:23.554-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:30:23.554-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:30:23.822-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:30:23.835-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Categorias.CategoriaBean not present
+2025-07-21T20:30:23.840-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:30:23.845-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Categorias.CategoriaBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.Categorias.CategoriaBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:30:26.807-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:30:26.808-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:30:27.102-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:30:27.152-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:30:27.301-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:30:27.304-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:30:27.304-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:30:27.331-06:00  INFO 10572 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:30:27.331-06:00  INFO 10572 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 521 ms
+2025-07-21T20:30:27.392-06:00  INFO 10572 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:30:27.397-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:30:27.414-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:30:27.416-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-07-21T20:30:27.494-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@46f3b310
+2025-07-21T20:30:27.494-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-07-21T20:30:27.503-06:00  WARN 10572 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:30:27.504-06:00  INFO 10572 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:30:27.688-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:30:28.105-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:30:28.276-06:00  INFO 10572 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:30:28.276-06:00  WARN 10572 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:30:28.418-06:00  WARN 10572 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:30:28.587-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:30:28.588-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:30:28.589-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:30:28.590-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:30:28.591-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:30:28.592-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:30:28.786-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:30:28.801-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:30:28.804-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 2.052 seconds (process running for 927.488)
+2025-07-21T20:30:28.805-06:00  INFO 10572 --- [Eventos] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-07-21T20:32:14.352-06:00  INFO 10572 --- [Eventos] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-07-21T20:32:14.353-06:00  INFO 10572 --- [Eventos] [Thread-11] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:32:14.368-06:00  INFO 10572 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:32:14.370-06:00  INFO 10572 --- [Eventos] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:32:14.372-06:00  INFO 10572 --- [Eventos] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-07-21T20:32:14.374-06:00  INFO 10572 --- [Eventos] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-07-21T20:32:14.458-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:32:14.458-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:32:14.672-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:32:14.711-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:32:14.832-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:32:14.833-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:32:14.833-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:32:14.859-06:00  INFO 10572 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:32:14.860-06:00  INFO 10572 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 399 ms
+2025-07-21T20:32:14.913-06:00  INFO 10572 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:32:14.916-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:32:14.924-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:32:14.926-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-07-21T20:32:14.987-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@518fa44
+2025-07-21T20:32:14.987-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-07-21T20:32:14.997-06:00  WARN 10572 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:32:14.998-06:00  INFO 10572 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:32:15.169-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:32:15.612-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:32:15.732-06:00  INFO 10572 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:32:15.732-06:00  WARN 10572 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:32:15.997-06:00  WARN 10572 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:32:16.249-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:32:16.250-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:32:16.251-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:32:16.252-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:32:16.253-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:32:16.253-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:32:16.405-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:32:16.428-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:32:16.431-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 2.002 seconds (process running for 1035.115)
+2025-07-21T20:32:16.432-06:00  INFO 10572 --- [Eventos] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-07-21T20:33:24.786-06:00  INFO 10572 --- [Eventos] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-07-21T20:33:24.788-06:00  INFO 10572 --- [Eventos] [Thread-30] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:33:24.806-06:00  INFO 10572 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:33:24.809-06:00  INFO 10572 --- [Eventos] [Thread-30] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:33:24.810-06:00  INFO 10572 --- [Eventos] [Thread-30] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-07-21T20:33:24.811-06:00  INFO 10572 --- [Eventos] [Thread-30] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2025-07-21T20:33:24.896-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:33:24.896-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:33:25.125-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:33:25.148-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+2025-07-21T20:33:25.153-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:33:25.157-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:33:26.647-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:33:26.647-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:33:26.859-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:33:26.898-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:33:27.027-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:33:27.027-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:33:27.028-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:33:27.054-06:00  INFO 10572 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:33:27.055-06:00  INFO 10572 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 406 ms
+2025-07-21T20:33:27.118-06:00  INFO 10572 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:33:27.121-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:33:27.130-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:33:27.131-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-07-21T20:33:27.190-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@428d3444
+2025-07-21T20:33:27.190-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-07-21T20:33:27.199-06:00  WARN 10572 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:33:27.200-06:00  INFO 10572 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:33:27.333-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:33:27.757-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:33:27.877-06:00  INFO 10572 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:33:27.877-06:00  WARN 10572 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:33:28.006-06:00  WARN 10572 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:33:28.164-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:33:28.165-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:33:28.166-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:33:28.168-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:33:28.169-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:33:28.170-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:33:28.363-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:33:28.376-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:33:28.380-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 1.762 seconds (process running for 1107.064)
+2025-07-21T20:33:28.381-06:00  INFO 10572 --- [Eventos] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-07-21T20:36:15.373-06:00  INFO 10572 --- [Eventos] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-07-21T20:36:15.375-06:00  INFO 10572 --- [Eventos] [Thread-34] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:36:15.390-06:00  INFO 10572 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:36:15.394-06:00  INFO 10572 --- [Eventos] [Thread-34] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:36:15.394-06:00  INFO 10572 --- [Eventos] [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-07-21T20:36:15.396-06:00  INFO 10572 --- [Eventos] [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2025-07-21T20:36:15.486-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:36:15.486-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:36:15.734-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:36:15.785-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+2025-07-21T20:36:15.798-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:36:15.809-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:36:17.730-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:36:17.730-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:36:17.935-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:36:17.978-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:36:18.121-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:36:18.124-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:36:18.124-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:36:18.151-06:00  INFO 10572 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:36:18.151-06:00  INFO 10572 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 419 ms
+2025-07-21T20:36:18.216-06:00  INFO 10572 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:36:18.220-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:36:18.229-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:36:18.231-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2025-07-21T20:36:18.292-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@6dc6fb0
+2025-07-21T20:36:18.293-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2025-07-21T20:36:18.301-06:00  WARN 10572 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:36:18.303-06:00  INFO 10572 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-6)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:36:18.410-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:36:18.796-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:36:18.935-06:00  INFO 10572 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:36:18.935-06:00  WARN 10572 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:36:18.997-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'participantesEventosController': Resolution of declared constructors on bean Class [mx.edu.utez.Eventos.Controller.ParticipantesEventos.ParticipantesEventosController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@25ef338d] failed
+2025-07-21T20:36:18.997-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:36:18.997-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2025-07-21T20:36:19.051-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2025-07-21T20:36:19.053-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-07-21T20:36:19.060-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:36:19.064-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'participantesEventosController': Resolution of declared constructors on bean Class [mx.edu.utez.Eventos.Controller.ParticipantesEventos.ParticipantesEventosController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@25ef338d] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:384) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1229) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.NoClassDefFoundError: mx/edu/utez/Eventos/Service/ParticipantesEventosService/ParticipantesEventosService
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3006) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2356) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:379) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 23 common frames omitted
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Service.ParticipantesEventosService.ParticipantesEventosService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 27 common frames omitted
+
+2025-07-21T20:36:27.849-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:36:27.850-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:36:28.055-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:36:28.081-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+2025-07-21T20:36:28.084-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:36:28.086-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:36:29.567-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:36:29.567-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:36:29.767-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:36:29.811-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:36:29.949-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:36:29.950-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:36:29.950-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:36:30.035-06:00  INFO 10572 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:36:30.035-06:00  INFO 10572 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 466 ms
+2025-07-21T20:36:30.088-06:00  INFO 10572 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:36:30.091-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:36:30.100-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:36:30.100-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2025-07-21T20:36:30.160-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@1da88146
+2025-07-21T20:36:30.160-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2025-07-21T20:36:30.168-06:00  WARN 10572 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:36:30.169-06:00  INFO 10572 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-7)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:36:30.285-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:36:30.755-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:36:30.885-06:00  INFO 10572 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:36:30.886-06:00  WARN 10572 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:36:30.941-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'participantesEventosController': Resolution of declared constructors on bean Class [mx.edu.utez.Eventos.Controller.ParticipantesEventos.ParticipantesEventosController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@491a3188] failed
+2025-07-21T20:36:30.942-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:36:30.942-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2025-07-21T20:36:30.970-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2025-07-21T20:36:30.971-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-07-21T20:36:30.984-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:36:30.996-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'participantesEventosController': Resolution of declared constructors on bean Class [mx.edu.utez.Eventos.Controller.ParticipantesEventos.ParticipantesEventosController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@491a3188] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:384) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1229) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.NoClassDefFoundError: mx/edu/utez/Eventos/Service/ParticipantesEventosService/ParticipantesEventosService
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3006) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2356) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:379) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 23 common frames omitted
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Service.ParticipantesEventosService.ParticipantesEventosService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 27 common frames omitted
+
+2025-07-21T20:37:01.980-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:37:01.980-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:37:02.195-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:37:02.216-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.ParticipantesEventos.ParticipantesEventosBean not present
+2025-07-21T20:37:02.219-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:37:02.223-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.ParticipantesEventos.ParticipantesEventosBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.ParticipantesEventos.ParticipantesEventosBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:37:03.718-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:37:03.718-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:37:03.942-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:37:03.961-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.ParticipantesEventos.ParticipantesEventosBean not present
+2025-07-21T20:37:03.963-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:37:03.966-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.ParticipantesEventos.ParticipantesEventosBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.ParticipantesEventos.ParticipantesEventosBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:38:05.137-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:38:05.138-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:38:05.350-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:38:05.375-06:00  WARN 10572 --- [Eventos] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+2025-07-21T20:38:05.376-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21T20:38:05.379-06:00 ERROR 10572 --- [Eventos] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1274) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:553) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:501) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:263) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:37) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:93) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:170) ~[spring-data-commons-3.5.0.jar:3.5.0]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.7.jar:6.2.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at mx.edu.utez.Eventos.EventosApplication.main(EventosApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: java.lang.ClassNotFoundException: mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:543) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 39 common frames omitted
+
+2025-07-21T20:38:07.714-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 10572 (C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos\target\classes started by Blanch in C:\Users\Blanch\Desktop\Hector\SGEP\Eventos\Eventos)
+2025-07-21T20:38:07.715-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-21T20:38:07.913-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21T20:38:07.952-06:00  INFO 10572 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 6 JPA repository interfaces.
+2025-07-21T20:38:08.113-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-21T20:38:08.114-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-21T20:38:08.115-06:00  INFO 10572 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21T20:38:08.143-06:00  INFO 10572 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-07-21T20:38:08.143-06:00  INFO 10572 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 427 ms
+2025-07-21T20:38:08.214-06:00  INFO 10572 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-21T20:38:08.217-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-21T20:38:08.231-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-21T20:38:08.233-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2025-07-21T20:38:08.310-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@4f6e9af9
+2025-07-21T20:38:08.310-06:00  INFO 10572 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2025-07-21T20:38:08.321-06:00  WARN 10572 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-21T20:38:08.322-06:00  INFO 10572 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-8)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-21T20:38:08.442-06:00  INFO 10572 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-21T20:38:08.836-06:00  INFO 10572 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:38:08.949-06:00  INFO 10572 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-21T20:38:08.949-06:00  WARN 10572 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-21T20:38:09.089-06:00  WARN 10572 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-21T20:38:09.245-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:38:09.246-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:38:09.247-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:38:09.248-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:38:09.249-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:38:09.251-06:00  WARN 10572 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-21T20:38:09.409-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-21T20:38:09.424-06:00  INFO 10572 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-21T20:38:09.427-06:00  INFO 10572 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 1.734 seconds (process running for 1388.111)
+2025-07-21T20:38:09.428-06:00  INFO 10572 --- [Eventos] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-07-21T20:38:55.473-06:00  INFO 10572 --- [Eventos] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-21T20:38:55.489-06:00  INFO 10572 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-21T20:38:55.492-06:00  INFO 10572 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-21T20:38:55.493-06:00  INFO 10572 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2025-07-21T20:38:55.497-06:00  INFO 10572 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.

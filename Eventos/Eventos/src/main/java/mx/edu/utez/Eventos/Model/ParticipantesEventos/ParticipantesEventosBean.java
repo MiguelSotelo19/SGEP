@@ -1,5 +1,6 @@
 package mx.edu.utez.Eventos.Model.ParticipantesEventos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 import mx.edu.utez.Eventos.Model.Eventos.EventosBean;
@@ -14,10 +15,12 @@ public class ParticipantesEventosBean {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
+    @JsonIgnore
     private UsuarioBean usuario;
 
     @ManyToOne
     @JoinColumn(name = "id_evento", nullable = false)
+    @JsonIgnore
     private EventosBean evento;
 
     public ParticipantesEventosBean() {}

@@ -7,9 +7,18 @@ export const entry = async ({ id_usuario, id_evento }) => {
       id_evento
     });
     return response.data.data;
- 
   } catch (error) {
     console.error('Error al inscribir usuario al taller:', error);
+    throw error;
+  }
+};
+
+export const getEventosInscritos = async (id_usuario) => {
+  try {
+    const response = await axiosInstance.get(`/api/participantesevento/usuario/${id_usuario}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error al obtener eventos inscritos:', error);
     throw error;
   }
 };
