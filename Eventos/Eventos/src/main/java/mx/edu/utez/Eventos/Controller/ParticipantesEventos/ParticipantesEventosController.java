@@ -52,4 +52,31 @@ public class ParticipantesEventosController {
         }
     }
 
+    @GetMapping ("/asistentes/{idEvento}")
+    public ResponseEntity<?> obtenerUsuariosPorEvento(@PathVariable Long idEvento){
+        try {
+            var usuarios = participantesEventosService.obtenerParticipantesPorEvento(idEvento);
+            if (usuarios == null || usuarios.isEmpty()){
+                return ResponseEntity.noContent().build();
+            }
+            return ResponseEntity.ok(usuarios);
+        }catch (Exception e){
+            return ResponseEntity.status(500).body("Error interno del servidor");
+        }
+    }
+
+    @DeleteMapping ("/anularasistencia/{idUsuario}/{idEvento}")
+    public ResponseEntity<String> anularAsistencia(@PathVariable Long idUsuario, @PathVariable Long idEvento){
+        try{
+            boolean deleted = participantesEventosService.anularAsistencia(idUsuario,idEvento);
+            if (deleted) {
+                return ResponseEntity.ok("Asistencia anulada correctamente");
+            } else {
+                return ResponseEntity.badRequest().body("No se encontro la asistencia del usuario en el evento");
+            }
+        }catch (Exception e){
+            return ResponseEntity.status(500).body("Error interno del servidor");
+        }
+    }
+
 }

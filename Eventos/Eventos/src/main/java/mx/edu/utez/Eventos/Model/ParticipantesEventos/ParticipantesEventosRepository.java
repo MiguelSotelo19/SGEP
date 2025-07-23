@@ -12,4 +12,9 @@ public interface ParticipantesEventosRepository extends JpaRepository<Participan
     List<ParticipantesEventosBean> findAllByUsuario(UsuarioBean usuario);
 
     boolean existsByUsuarioAndEvento(UsuarioBean usuario, EventosBean evento);
+
+    List<ParticipantesEventosBean> findByEvento(EventosBean evento);
+
+    ParticipantesEventosBean findByUsuarioAndEvento(UsuarioBean usuario, EventosBean evento);
+
 }

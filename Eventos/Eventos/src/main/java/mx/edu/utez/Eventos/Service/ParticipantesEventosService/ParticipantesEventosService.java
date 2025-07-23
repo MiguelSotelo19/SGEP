@@ -54,4 +54,29 @@ public class ParticipantesEventosService {
         }
         return participantesEventosRepository.findAllByUsuario(usuario);
     }
+
+    public List<ParticipantesEventosBean> obtenerParticipantesPorEvento(Long idEvento){
+        EventosBean evento = eventosRepository.findById(idEvento).orElse(null);
+        if (evento == null){
+            return List.of();
+        }
+        return  participantesEventosRepository.findByEvento(evento);
+    }
+
+    public boolean anularAsistencia(Long idUsuario, Long idEvento){
+        UsuarioBean usuario = usuarioRepository.findById(idUsuario).orElse(null);
+        EventosBean evento = eventosRepository.findById(idEvento).orElse(null);
+
+        if (usuario == null || evento == null){
+            return false;
+        }
+        ParticipantesEventosBean participante = participantesEventosRepository.findByUsuarioAndEvento(usuario,evento);
+
+        if (participante == null){
+            return false;
+        }
+
+        participantesEventosRepository.delete(participante);
+        return true;
+    }
 }
