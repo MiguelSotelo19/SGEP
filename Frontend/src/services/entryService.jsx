@@ -24,3 +24,24 @@ export const getEventosInscritos = async (id_usuario) => {
     throw error;
   }
 };
+
+
+export const getAsistentesByEvento = async (id_evento) => {
+  try {
+    const response = await axiosInstance.get(`/api/participantesevento/asistentes/${id_evento}`);
+    return response.data;
+  } catch (error) {
+    console.log('Error al obtener a los usuarios inscritos', error);
+    throw error;
+  }
+};
+
+export const deleteAsistentesByEvento = async ({ id_usuario, id_evento }) => {
+  try {
+    const response = await axiosInstance.delete(`/api/participantesevento/anularasistencia/${id_usuario}/${id_evento}`);
+    return response.data;
+  } catch (error) {
+    console.log('Error al anular la asistencia del usuario')
+    throw error;
+  }
+};

@@ -37,6 +37,9 @@ import { getCategories } from "../../services/categoryService";
 import { entry, getEventosInscritos } from "../../services/entryService"; // No olvides importar entry
 import "../css/main.css";
 
+import AssistantsListModal from "../../components/AssistantsListModal";
+
+
 const EventList = () => {
   const [eventos, setEventos] = useState([]);
   const [categorias, setCategorias] = useState([]);
@@ -54,6 +57,9 @@ const EventList = () => {
   const [busqueda, setBusqueda] = useState("");
 
   const [eventosInscritos, setEventosInscritos] = useState();
+
+  const [asistentesOpen, setAsistentesOpen] = useState(false);
+  const [eventoActual, setEventoActual] = useState(null);
 
   const fetchCategorias = async () => {
     try {
@@ -96,39 +102,44 @@ const EventList = () => {
     }
   };
 
-const fetchEventosInscritos = async () => {
-  const id_usuario = user.idUsuario || user.usuario?.id || user.id;
-  if (!id_usuario) return;
+  const handleVerAsistentes = (evento) => {
+    setEventoActual(evento);
+    setAsistentesOpen(true);
+  };
 
-  try {
-    const inscritos = await getEventosInscritos(id_usuario);
-    setEventosInscritos(inscritos || []);
-  } catch (error) {
-    setEventosInscritos([]);
-  }
-};
+  const fetchEventosInscritos = async () => {
+    const id_usuario = user.idUsuario || user.usuario?.id || user.id;
+    if (!id_usuario) return;
 
-const estaInscrito = (id_evento) => {
-  if (!Array.isArray(eventosInscritos)) return false;
+    try {
+      const inscritos = await getEventosInscritos(id_usuario);
+      setEventosInscritos(inscritos || []);
+    } catch (error) {
+      setEventosInscritos([]);
+    }
+  };
 
-  const resultado = eventosInscritos.some(ev => {
-       const inscritoId = ev.evento.id_evento;
-    console.log(`Comparando ${inscritoId} con ${id_evento}`);
-    return String(inscritoId) === String(id_evento);
-  });
+  const estaInscrito = (id_evento) => {
+    if (!Array.isArray(eventosInscritos)) return false;
 
-  console.log(`Evento ${id_evento} -> inscrito: `, resultado);
-  return resultado;
-};
+    const resultado = eventosInscritos.some(ev => {
+      const inscritoId = ev.evento.id_evento;
+      console.log(`Comparando ${inscritoId} con ${id_evento}`);
+      return String(inscritoId) === String(id_evento);
+    });
+
+    console.log(`Evento ${id_evento} -> inscrito: `, resultado);
+    return resultado;
+  };
 
   useEffect(() => {
-  fetchEventos();
-  fetchEventosInscritos();
-}, []);
+    fetchEventos();
+    fetchEventosInscritos();
+  }, []);
 
-useEffect(() => {
-  console.log("eventosInscritos:", eventosInscritos);
-}, [eventosInscritos]);
+  useEffect(() => {
+    console.log("eventosInscritos:", eventosInscritos);
+  }, [eventosInscritos]);
 
 
   const handleModal = () => {
@@ -237,7 +248,7 @@ useEffect(() => {
               <Plus className="w-4 h-4 mr-2" />
               Nuevo Taller
             </Button>
-          ): (<></>)}
+          ) : (<></>)}
         </div>
 
         {/* Filtros */}
@@ -284,86 +295,98 @@ useEffect(() => {
             eventosFiltrados.map((evento) => {
               const inscrito = estaInscrito(evento.id_evento);
               console.log(`Evento ${evento.id_evento} -> inscrito: `, inscrito);
-               return(
-              <Card
-                key={evento.id_evento}
-                className="hover:shadow-lg transition-shadow"
-              >
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <Badge variant="outline">{evento.tipo_evento}</Badge>
-                    <Badge
-                      variant={evento.estatus ? "default" : "destructive"}
-                      className={
-                        evento.estatus ? "bg-green-100 text-green-800" : ""
-                      }
-                    >
-                      {evento.estatus ? "Activo" : "Inactivo"}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl">
-                    {evento.nombre_evento}
-                  </CardTitle>
-                  <CardDescription>{evento.lugar}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>
-                        {new Date(evento.fecha).toLocaleDateString("es-ES", {
-                          weekday: "long",
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
-                      </span>
+              return (
+                <Card
+                  key={evento.id_evento}
+                  className="hover:shadow-lg transition-shadow"
+                >
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <Badge variant="outline">{evento.tipo_evento}</Badge>
+                      <Badge
+                        variant={evento.estatus ? "default" : "destructive"}
+                        className={
+                          evento.estatus ? "bg-green-100 text-green-800" : ""
+                        }
+                      >
+                        {evento.estatus ? "Activo" : "Inactivo"}
+                      </Badge>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Clock className="w-4 h-4" />
-                      <span>{evento.hora || "Sin hora"}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <MapPin className="w-4 h-4" />
-                      <span>{evento.lugar}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Users className="w-4 h-4" />
-                      <span>{evento.limite_usuarios} asistentes</span>
-                    </div>
-                  </div>
+                    <CardTitle className="text-xl">
+                      {evento.nombre_evento}
+                    </CardTitle>
+                    <CardDescription>{evento.lugar}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="w-4 h-4" />
+                        <span>
+                          {new Date(evento.fecha).toLocaleDateString("es-ES", {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Clock className="w-4 h-4" />
+                        <span>{evento.hora || "Sin hora"}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <MapPin className="w-4 h-4" />
+                        <span>{evento.lugar}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Users className="w-4 h-4" />
+                        <span
+                          className={`${user?.rol === 1
+                              ? "text-blue-600 cursor-pointer hover:underline"
+                              : "text-gray-600 cursor-default"
+                            }`}
+                          onClick={() => {
+                            if (user?.rol === 1) handleVerAsistentes(evento);
+                          }}
+                          title={user?.rol === 1 ? "Ver asistentes" : "Solo visible para administradores"}
+                        >
+                          {evento.limite_usuarios} asistentes
+                        </span>
+                      </div>
 
-                  {user?.rol === 1 ? (
-                    <div className="flex justify-between items-center pt-4 gap-2">
-                      <Button
-                        variant="outline"
-                        className="w-full action"
-                        onClick={() => handleEditMode(evento)}
-                      >
-                        Editar
-                      </Button>
-                      <Button
-                        variant="outline"
-                        className="w-full action delete"
-                        onClick={() => handleDelete(evento.id_evento)}
-                      >
-                        Eliminar
-                      </Button>
                     </div>
-                  ) : (
-                    <Button
-            variant="outline"
-            className="w-full princ"
-            onClick={() => inscribirUsuario(evento.id_evento)}
-            disabled={inscrito}
-          >
-            {inscrito ? "Inscrito" : "Inscribirse al taller"}
-          </Button>
-                  )}
-                </CardContent>
-              </Card>
-               );
-})
+
+                    {user?.rol === 1 ? (
+                      <div className="flex justify-between items-center pt-4 gap-2">
+                        <Button
+                          variant="outline"
+                          className="w-full action"
+                          onClick={() => handleEditMode(evento)}
+                        >
+                          Editar
+                        </Button>
+                        <Button
+                          variant="outline"
+                          className="w-full action delete"
+                          onClick={() => handleDelete(evento.id_evento)}
+                        >
+                          Eliminar
+                        </Button>
+                      </div>
+                    ) : (
+                      <Button
+                        variant="outline"
+                        className="w-full princ"
+                        onClick={() => inscribirUsuario(evento.id_evento)}
+                        disabled={inscrito}
+                      >
+                        {inscrito ? "Inscrito" : "Inscribirse al taller"}
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })
           )}
         </div>
       </div>
@@ -376,6 +399,13 @@ useEffect(() => {
         eventoSeleccionado={eventoSeleccionado}
         categoriaSeleccionada={categoriaSeleccionada}
       />
+
+      <AssistantsListModal
+        isOpen={asistentesOpen}
+        onClose={() => setAsistentesOpen(false)}
+        evento={eventoActual}
+      />
+
     </div>
   );
 };
