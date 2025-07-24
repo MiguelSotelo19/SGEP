@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ParticipantesEventosService {
@@ -23,23 +24,31 @@ public class ParticipantesEventosService {
     @Autowired
     private ParticipantesEventosRepository participantesEventosRepository;
 
-    // Registrar participante en evento
+    // Registrar participante en evento con validación
     public boolean registrarUsuariosEventos(Long idUsuario, Long idEvento) {
-        UsuarioBean usuario = usuarioRepository.findById(idUsuario).orElse(null);
-        EventosBean evento = eventosRepository.findById(idEvento).orElse(null);
+        Optional<UsuarioBean> usuarioOpt = usuarioRepository.findById(idUsuario);
+        Optional<EventosBean> eventoOpt = eventosRepository.findById(idEvento);
 
-        if (usuario == null || evento == null) {
+        if (usuarioOpt.isEmpty() || eventoOpt.isEmpty()) {
             return false;
         }
 
-        // Verificamos si ya existe una inscripción previa
-        boolean yaInscrito = participantesEventosRepository
-                .existsByUsuarioAndEvento(usuario, evento);
+        UsuarioBean usuario = usuarioOpt.get();
+        EventosBean evento = eventoOpt.get();
 
+        // Validar si usuario ya está inscrito
+        boolean yaInscrito = participantesEventosRepository.existsByUsuarioAndEvento(usuario, evento);
         if (yaInscrito) {
-            return false; // Evitamos duplicados
+            throw new IllegalArgumentException("El usuario ya está inscrito en este evento.");
         }
 
+        // Contar inscritos actuales
+        int inscritos = participantesEventosRepository.countByEvento(evento);
+        if (inscritos >= evento.getLimite_usuarios()) {
+            throw new IllegalArgumentException("El evento ha alcanzado el límite de usuarios.");
+        }
+
+        // Guardar inscripción
         ParticipantesEventosBean participante = new ParticipantesEventosBean(usuario, evento);
         participantesEventosRepository.save(participante);
 
@@ -48,31 +57,33 @@ public class ParticipantesEventosService {
 
     // Obtener eventos por usuario
     public List<ParticipantesEventosBean> obtenerEventosPorUsuario(Long idUsuario) {
-        UsuarioBean usuario = usuarioRepository.findById(idUsuario).orElse(null);
-        if (usuario == null) {
-            return List.of(); // lista vacía si no existe usuario
-        }
-        return participantesEventosRepository.findAllByUsuario(usuario);
-    }
-
-    public List<ParticipantesEventosBean> obtenerParticipantesPorEvento(Long idEvento){
-        EventosBean evento = eventosRepository.findById(idEvento).orElse(null);
-        if (evento == null){
+        Optional<UsuarioBean> usuarioOpt = usuarioRepository.findById(idUsuario);
+        if (usuarioOpt.isEmpty()) {
             return List.of();
         }
-        return  participantesEventosRepository.findByEvento(evento);
+        return participantesEventosRepository.findAllByUsuario(usuarioOpt.get());
     }
 
-    public boolean anularAsistencia(Long idUsuario, Long idEvento){
-        UsuarioBean usuario = usuarioRepository.findById(idUsuario).orElse(null);
-        EventosBean evento = eventosRepository.findById(idEvento).orElse(null);
+    // Obtener participantes por evento
+    public List<ParticipantesEventosBean> obtenerParticipantesPorEvento(Long idEvento) {
+        Optional<EventosBean> eventoOpt = eventosRepository.findById(idEvento);
+        if (eventoOpt.isEmpty()) {
+            return List.of();
+        }
+        return participantesEventosRepository.findByEvento(eventoOpt.get());
+    }
 
-        if (usuario == null || evento == null){
+    // Anular asistencia
+    public boolean anularAsistencia(Long idUsuario, Long idEvento) {
+        Optional<UsuarioBean> usuarioOpt = usuarioRepository.findById(idUsuario);
+        Optional<EventosBean> eventoOpt = eventosRepository.findById(idEvento);
+
+        if (usuarioOpt.isEmpty() || eventoOpt.isEmpty()) {
             return false;
         }
-        ParticipantesEventosBean participante = participantesEventosRepository.findByUsuarioAndEvento(usuario,evento);
 
-        if (participante == null){
+        ParticipantesEventosBean participante = participantesEventosRepository.findByUsuarioAndEvento(usuarioOpt.get(), eventoOpt.get());
+        if (participante == null) {
             return false;
         }
 

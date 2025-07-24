@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ParticipantesEventosRepository extends JpaRepository<ParticipantesEventosBean,Long> {
+public interface ParticipantesEventosRepository extends JpaRepository<ParticipantesEventosBean, Long> {
     List<ParticipantesEventosBean> findAllByUsuario(UsuarioBean usuario);
 
     boolean existsByUsuarioAndEvento(UsuarioBean usuario, EventosBean evento);
@@ -17,4 +17,5 @@ public interface ParticipantesEventosRepository extends JpaRepository<Participan
 
     ParticipantesEventosBean findByUsuarioAndEvento(UsuarioBean usuario, EventosBean evento);
 
+    int countByEvento(EventosBean evento);
 }

@@ -1,15 +1,14 @@
 package mx.edu.utez.Eventos.Controller.ParticipantesEventos;
 
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.*;
 import mx.edu.utez.Eventos.Model.ParticipantesEventos.ParticipantesEventosDTO;
 import mx.edu.utez.Eventos.Service.ParticipantesEventosService.ParticipantesEventosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = {"*"})
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/participantesevento")
 public class ParticipantesEventosController {
 
@@ -32,13 +31,12 @@ public class ParticipantesEventosController {
             }
 
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body("Datos inválidos: " + e.getMessage());
+            return ResponseEntity.badRequest().body("Error: " + e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error interno del servidor.");
         }
-
-
     }
+
     @GetMapping("/usuario/{idUsuario}")
     public ResponseEntity<?> obtenerEventosPorUsuario(@PathVariable Long idUsuario) {
         try {
@@ -52,31 +50,30 @@ public class ParticipantesEventosController {
         }
     }
 
-    @GetMapping ("/asistentes/{idEvento}")
-    public ResponseEntity<?> obtenerUsuariosPorEvento(@PathVariable Long idEvento){
+    @GetMapping("/asistentes/{idEvento}")
+    public ResponseEntity<?> obtenerUsuariosPorEvento(@PathVariable Long idEvento) {
         try {
             var usuarios = participantesEventosService.obtenerParticipantesPorEvento(idEvento);
-            if (usuarios == null || usuarios.isEmpty()){
+            if (usuarios == null || usuarios.isEmpty()) {
                 return ResponseEntity.noContent().build();
             }
             return ResponseEntity.ok(usuarios);
-        }catch (Exception e){
+        } catch (Exception e) {
             return ResponseEntity.status(500).body("Error interno del servidor");
         }
     }
 
-    @DeleteMapping ("/anularasistencia/{idUsuario}/{idEvento}")
-    public ResponseEntity<String> anularAsistencia(@PathVariable Long idUsuario, @PathVariable Long idEvento){
-        try{
-            boolean deleted = participantesEventosService.anularAsistencia(idUsuario,idEvento);
+    @DeleteMapping("/anularasistencia/{idUsuario}/{idEvento}")
+    public ResponseEntity<String> anularAsistencia(@PathVariable Long idUsuario, @PathVariable Long idEvento) {
+        try {
+            boolean deleted = participantesEventosService.anularAsistencia(idUsuario, idEvento);
             if (deleted) {
                 return ResponseEntity.ok("Asistencia anulada correctamente");
             } else {
-                return ResponseEntity.badRequest().body("No se encontro la asistencia del usuario en el evento");
+                return ResponseEntity.badRequest().body("No se encontró la asistencia del usuario en el evento");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             return ResponseEntity.status(500).body("Error interno del servidor");
         }
     }
-
 }

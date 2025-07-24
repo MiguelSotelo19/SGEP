@@ -29,16 +29,14 @@ import {
   MapPin,
   Users,
   Search,
-  ChartNoAxesColumnIcon,
 } from "lucide-react";
 
 import EventModal from "../../components/EventModal";
 import { getCategories } from "../../services/categoryService";
-import { entry, getEventosInscritos } from "../../services/entryService"; // No olvides importar entry
+import { entry, getEventosInscritos, getAsistentesByEvento } from "../../services/entryService";
 import "../css/main.css";
 
 import AssistantsListModal from "../../components/AssistantsListModal";
-
 
 const EventList = () => {
   const [eventos, setEventos] = useState([]);
@@ -55,11 +53,10 @@ const EventList = () => {
   const user = JSON.parse(localStorage.getItem("User") ?? "{}");
 
   const [busqueda, setBusqueda] = useState("");
-
-  const [eventosInscritos, setEventosInscritos] = useState();
-
+  const [eventosInscritos, setEventosInscritos] = useState([]);
   const [asistentesOpen, setAsistentesOpen] = useState(false);
   const [eventoActual, setEventoActual] = useState(null);
+  const [conteoAsistentes, setConteoAsistentes] = useState({});
 
   const fetchCategorias = async () => {
     try {
@@ -70,9 +67,19 @@ const EventList = () => {
     }
   };
 
-  useEffect(() => {
-    fetchCategorias();
-  }, []);
+  // Carga el conteo de asistentes para cada evento
+  const fetchConteoAsistentes = async (eventos) => {
+    const conteos = {};
+    for (const evento of eventos) {
+      try {
+        const asistentes = await getAsistentesByEvento(evento.id_evento);
+        conteos[evento.id_evento] = Array.isArray(asistentes) ? asistentes.length : 0;
+      } catch (error) {
+        conteos[evento.id_evento] = 0;
+      }
+    }
+    setConteoAsistentes(conteos);
+  };
 
   const fetchEventos = async () => {
     try {
@@ -91,20 +98,16 @@ const EventList = () => {
       ];
       setCategorias(cats);
 
+      setEventos(data);
+
+      await fetchConteoAsistentes(data);
+
       if (id_categoria) {
         setCategoriaSeleccionada(String(id_categoria));
-        setEventos(data);
-      } else {
-        setEventos(data);
       }
     } catch (error) {
       toast.error("Error al cargar los talleres");
     }
-  };
-
-  const handleVerAsistentes = (evento) => {
-    setEventoActual(evento);
-    setAsistentesOpen(true);
   };
 
   const fetchEventosInscritos = async () => {
@@ -119,28 +122,28 @@ const EventList = () => {
     }
   };
 
+  const handleVerAsistentes = (evento) => {
+    setEventoActual(evento);
+    setAsistentesOpen(true);
+  };
+
   const estaInscrito = (id_evento) => {
     if (!Array.isArray(eventosInscritos)) return false;
 
-    const resultado = eventosInscritos.some(ev => {
+    return eventosInscritos.some((ev) => {
       const inscritoId = ev.evento.id_evento;
-      console.log(`Comparando ${inscritoId} con ${id_evento}`);
       return String(inscritoId) === String(id_evento);
     });
-
-    console.log(`Evento ${id_evento} -> inscrito: `, resultado);
-    return resultado;
   };
+
+  useEffect(() => {
+    fetchCategorias();
+  }, []);
 
   useEffect(() => {
     fetchEventos();
     fetchEventosInscritos();
   }, []);
-
-  useEffect(() => {
-    console.log("eventosInscritos:", eventosInscritos);
-  }, [eventosInscritos]);
-
 
   const handleModal = () => {
     if (categoriaSeleccionada === "all") {
@@ -192,7 +195,6 @@ const EventList = () => {
     }
 
     const user = JSON.parse(userStr);
-
     const id_usuario = user.idUsuario || user.usuario?.id || user.id || null;
     const rolId = user.rol || user.rolUsuario || null;
 
@@ -206,11 +208,27 @@ const EventList = () => {
       return;
     }
 
+    const evento = eventos.find((e) => e.id_evento === id_evento);
+    if (!evento) {
+      toast.error("Evento no encontrado");
+      return;
+    }
+
+    const actuales = conteoAsistentes[id_evento] ?? 0;
+    if (actuales >= evento.limite_usuarios) {
+      toast.error("El evento ha alcanzado el límite de usuarios.");
+      return;
+    }
+
     try {
       await entry({ id_usuario, id_evento });
       toast.success("Inscripción exitosa");
-
       fetchEventosInscritos();
+
+      setConteoAsistentes((prev) => ({
+        ...prev,
+        [id_evento]: actuales + 1,
+      }));
     } catch (error) {
       toast.error("Error al inscribirte al taller");
       console.error("Error en inscripción:", error);
@@ -243,12 +261,17 @@ const EventList = () => {
               Consulta o administra los talleres disponibles
             </p>
           </div>
-          {(user.rol == 1) ? (
-            <Button className="bg-blue-500 hover:bg-blue-600" onClick={handleModal}>
+          {user.rol == 1 ? (
+            <Button
+              className="bg-blue-500 hover:bg-blue-600"
+              onClick={handleModal}
+            >
               <Plus className="w-4 h-4 mr-2" />
               Nuevo Taller
             </Button>
-          ) : (<></>)}
+          ) : (
+            <></>
+          )}
         </div>
 
         {/* Filtros */}
@@ -273,10 +296,7 @@ const EventList = () => {
               <SelectContent>
                 <SelectItem value="all">Todas las categorías</SelectItem>
                 {categoriasD.map((cat) => (
-                  <SelectItem
-                    key={cat.id_categoria}
-                    value={String(cat.id_categoria)}
-                  >
+                  <SelectItem key={cat.id_categoria} value={String(cat.id_categoria)}>
                     {cat.nombre}
                   </SelectItem>
                 ))}
@@ -294,7 +314,8 @@ const EventList = () => {
           ) : (
             eventosFiltrados.map((evento) => {
               const inscrito = estaInscrito(evento.id_evento);
-              console.log(`Evento ${evento.id_evento} -> inscrito: `, inscrito);
+              const asistentesCount = conteoAsistentes[evento.id_evento] ?? 0;
+
               return (
                 <Card
                   key={evento.id_evento}
@@ -305,16 +326,12 @@ const EventList = () => {
                       <Badge variant="outline">{evento.tipo_evento}</Badge>
                       <Badge
                         variant={evento.estatus ? "default" : "destructive"}
-                        className={
-                          evento.estatus ? "bg-green-100 text-green-800" : ""
-                        }
+                        className={evento.estatus ? "bg-green-100 text-green-800" : ""}
                       >
                         {evento.estatus ? "Activo" : "Inactivo"}
                       </Badge>
                     </div>
-                    <CardTitle className="text-xl">
-                      {evento.nombre_evento}
-                    </CardTitle>
+                    <CardTitle className="text-xl">{evento.nombre_evento}</CardTitle>
                     <CardDescription>{evento.lugar}</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
@@ -341,19 +358,19 @@ const EventList = () => {
                       <div className="flex items-center space-x-2">
                         <Users className="w-4 h-4" />
                         <span
-                          className={`${user?.rol === 1
+                          className={`${
+                            user?.rol === 1
                               ? "text-blue-600 cursor-pointer hover:underline"
                               : "text-gray-600 cursor-default"
-                            }`}
+                          }`}
                           onClick={() => {
                             if (user?.rol === 1) handleVerAsistentes(evento);
                           }}
                           title={user?.rol === 1 ? "Ver asistentes" : "Solo visible para administradores"}
                         >
-                          {evento.limite_usuarios} asistentes
+                          {asistentesCount} / {evento.limite_usuarios} asistentes
                         </span>
                       </div>
-
                     </div>
 
                     {user?.rol === 1 ? (
@@ -405,7 +422,6 @@ const EventList = () => {
         onClose={() => setAsistentesOpen(false)}
         evento={eventoActual}
       />
-
     </div>
   );
 };
