@@ -3,6 +3,8 @@ package mx.edu.utez.Eventos.Service.Usuarios;
 import jakarta.mail.internet.MimeMessage;
 import lombok.AllArgsConstructor;
 import mx.edu.utez.Eventos.Config.ApiResponse;
+import mx.edu.utez.Eventos.Model.Bitacora.BitacoraBean;
+import mx.edu.utez.Eventos.Model.Bitacora.BitacoraRepository;
 import mx.edu.utez.Eventos.Model.PasswordReset.PasswordReset;
 import mx.edu.utez.Eventos.Model.PasswordReset.PasswordResetRepository;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
@@ -13,6 +15,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,10 +51,26 @@ public class UsuarioService {
     @Autowired
     private PasswordResetRepository resetRepository;
 
+    @Autowired
+    private BitacoraRepository bitacoraRepository;
 
+    //COLOCAR ESTO PARA LA BITACORA PQ BUSCA A LA PERSONA EN SESIÓN
+    private UsuarioBean getUsuarioAutenticado(Authentication authentication) {
+        if (authentication == null || !(authentication.getPrincipal() instanceof UserDetails)) {
+            return null;
+        }
+        String username = ((UserDetails) authentication.getPrincipal()).getUsername();
+        return repository.findByCorreo(username).orElse(null);
+    }
+
+
+    //EN TODOS LOS SERVICIOS COLOCAR Authentication authentication COMO PARAMETRO
     @Transactional
-    public ApiResponse consultarUsuario(String correo) {
+    public ApiResponse consultarUsuario(String correo, Authentication authentication) {
         Optional<UsuarioBean> optionalUsuario = repository.findByCorreo(correo);
+        //PARA LA BITACORA
+        //PASO 1
+        UsuarioBean usuarioAutenticado = getUsuarioAutenticado(authentication);
 
         if (optionalUsuario.isPresent()) {
             logger.info("Consultando al usuario con correo: " + correo);
@@ -58,6 +78,18 @@ public class UsuarioService {
             UsuarioBean usuario = optionalUsuario.get();
             LocalDateTime limite = usuario.getLimitefecha();
             System.out.println("Limite fecha: " + limite);
+
+            //PASO 2
+            BitacoraBean bitacora = new BitacoraBean(
+                    LocalDateTime.now(),
+                    "GET",
+                    usuarioAutenticado,
+                    "Se ha consultado la información: " + usuario.getNombre()
+            );
+
+            //PASO 3
+            bitacoraRepository.saveAndFlush(bitacora);
+            logger.info("Insertando movimiento en la bitacora");
 
             return new ApiResponse(limite, HttpStatus.OK.value(), "Ok");
         } else {
@@ -67,16 +99,33 @@ public class UsuarioService {
 
 
 
-    @Transactional(readOnly = true)
-    public ApiResponse getAllUsuarios() {
+    @Transactional()
+    public ApiResponse getAllUsuarios(Authentication authentication) {
+        //PARA LA BITACORA
+        //PASO 1
+        UsuarioBean usuarioAutenticado = getUsuarioAutenticado(authentication);
         logger.info("Se han consultado a todos los usuarios");
+
+        //PASO 2
+        BitacoraBean bitacora = new BitacoraBean(
+                LocalDateTime.now(),
+                "GET",
+                usuarioAutenticado,
+                "Se ha consultado la información de todos los usuarios "
+        );
+
+        //PASO 3
+        bitacoraRepository.saveAndFlush(bitacora);
+        logger.info("Insertando movimiento en la bitacora");
         return new ApiResponse(repository.findAll(), HttpStatus.OK.value(), "OK");
     }
 
     @Transactional
-    public ResponseEntity<ApiResponse> newUsuario(UsuarioBean usuario) {
+    public ResponseEntity<ApiResponse> newUsuario(UsuarioBean usuario, Authentication authentication) {
         Optional<UsuarioBean> findCorreo = repository.findByCorreo(usuario.getCorreo());
         Optional<UsuarioBean> findTel = repository.findByTelefono(usuario.getTelefono());
+
+        UsuarioBean usuarioAutenticado = getUsuarioAutenticado(authentication);
 
         if(findCorreo.isPresent() || findTel.isPresent()) {
             logger.warn("El intento de registro falló debido a " + (findTel.isPresent() ? "número de teléfono duplicado" : "correo electrónico duplicado"));
@@ -88,12 +137,24 @@ public class UsuarioService {
 
         UsuarioBean saved = repository.saveAndFlush(usuario);
         logger.info("Se ha registrado a un nuevo usuario con correo: " + saved.getCorreo());
+
+        //PASO 2
+        BitacoraBean bitacora = new BitacoraBean(
+                LocalDateTime.now(),
+                "POST",
+                usuarioAutenticado,
+                "Se ha registrado la información de un nuevo usuario "
+        );
+
+        bitacoraRepository.saveAndFlush(bitacora);
         return new ResponseEntity<>(new ApiResponse(saved, HttpStatus.OK.value(), "Usuario registrado!"), HttpStatus.OK);
     }
 
     @Transactional
-    public ResponseEntity<ApiResponse> updateUsuario(UsuarioBean usuario, Long id) {
+    public ResponseEntity<ApiResponse> updateUsuario(UsuarioBean usuario, Long id, Authentication authentication) {
         Optional<UsuarioBean> find = repository.findById(id);
+
+        UsuarioBean usuarioAutenticado = getUsuarioAutenticado(authentication);
 
         if (find.isPresent()) {
             UsuarioBean existingUser = find.get();
@@ -122,6 +183,17 @@ public class UsuarioService {
 
             repository.save(existingUser);
             logger.info("Se ha actualizado correctamente al uusario con correo: " +existingUser.getCorreo());
+            //PASO 2
+            BitacoraBean bitacora = new BitacoraBean(
+                    LocalDateTime.now(),
+                    "PUT",
+                    usuarioAutenticado,
+                    "Se ha actualizado la información del usuario con ID " + id
+            );
+
+            bitacoraRepository.saveAndFlush(bitacora);
+            logger.info("Insertando movimiento en la bitacora");
+
             return new ResponseEntity<>(new ApiResponse(existingUser, HttpStatus.OK.value(), "Usuario actualizado correctamente"), HttpStatus.OK);
         } else {
             logger.warn("El usuario con ID : " + id  + " no ha sido localizado");
@@ -155,14 +227,24 @@ public class UsuarioService {
     }
 
     @Transactional
-    public ResponseEntity<ApiResponse> bloquearUsuario(String correo) {
+    public ResponseEntity<ApiResponse> bloquearUsuario(String correo, Authentication authentication) {
         Optional<UsuarioBean> find = repository.findByCorreo(correo);
+        UsuarioBean usuarioAutenticado = getUsuarioAutenticado(authentication);
 
         if (find.isPresent()) {
             UsuarioBean usuario = find.get();
             usuario.setLimitefecha(LocalDateTime.now().plusMinutes(30));
             repository.save(usuario);
             logger.info("Se ha bloqueado por " +usuario.getLimitefecha() +  " minutos al usuario con correo: " + usuario.getCorreo());
+            //PASO 2
+            BitacoraBean bitacora = new BitacoraBean(
+                    LocalDateTime.now(),
+                    "POST",
+                    usuarioAutenticado,
+                    "Se ha bloqueado al usuario con correo " + usuario.getCorreo()
+            );
+            bitacoraRepository.saveAndFlush(bitacora);
+            logger.info("Insertando movimiento en la bitacora");
             return new ResponseEntity<>(new ApiResponse(usuario, HttpStatus.OK.value(), "Usuario actualizado correctamente"), HttpStatus.OK);
         } else {
             logger.info("El usuario con correo: " +correo + "no ha sido localizado");
@@ -173,8 +255,10 @@ public class UsuarioService {
 
 
     @Transactional
-    public ResponseEntity<ApiResponse> VerifyEmail(String email) throws Exception {
+    public ResponseEntity<ApiResponse> VerifyEmail(String email, Authentication authentication) throws Exception {
         Optional<UsuarioBean> find = repository.findByCorreo(email);
+        UsuarioBean usuarioAutenticado = getUsuarioAutenticado(authentication);
+
         if (find.isPresent()) {
 
             List<PasswordReset> codigosViejos = resetRepository.findAllByEmailAndUsedFalse(email);
@@ -194,6 +278,16 @@ public class UsuarioService {
 
             enviarCorreo(email, codigo);
             logger.info("Se ha enviado un correo electrónico al usuario con correo: " +token.getEmail());
+
+            //PASO 2
+            BitacoraBean bitacora = new BitacoraBean(
+                    LocalDateTime.now(),
+                    "POST",
+                    usuarioAutenticado,
+                    "se ha enviado un correo electrónico al usuario con correo:  " +email
+            );
+            bitacoraRepository.saveAndFlush(bitacora);
+            logger.info("Insertando movimiento en la bitacora");
             return new ResponseEntity<>(new ApiResponse(HttpStatus.OK.value(), "Código enviado", false), HttpStatus.OK);
         }
         logger.warn("El usuario con correo " +email + "no ha sido localizado");
@@ -202,8 +296,10 @@ public class UsuarioService {
 
 
     @Transactional
-    public ResponseEntity<ApiResponse> newPassword(String email, String code, String password) {
+    public ResponseEntity<ApiResponse> newPassword(String email, String code, String password, Authentication authentication) {
         Optional<PasswordReset> tokenOpt = resetRepository.findByEmailAndCodeAndUsedFalse(email, code.trim());
+        UsuarioBean usuarioAutenticado = getUsuarioAutenticado(authentication);
+
         if (tokenOpt.isPresent() && tokenOpt.get().getExpiration().isAfter(LocalDateTime.now())) {
             Optional<UsuarioBean> userOpt = repository.findByCorreo(email);
             if (userOpt.isPresent()) {
@@ -215,6 +311,18 @@ public class UsuarioService {
                 token.setUsed(true);
                 resetRepository.save(token);
                 logger.info("Se ha actualizado la contraseña del usuario con correo: " +user.getCorreo());
+
+                //PASO 2
+                BitacoraBean bitacora = new BitacoraBean(
+                        LocalDateTime.now(),
+                        "PUT",
+                        usuarioAutenticado,
+                        "Se ha actualizado la contraseña del usuario con correo:  " +email
+                );
+
+                bitacoraRepository.saveAndFlush(bitacora);
+                logger.info("Insertando movimiento en la bitacora");
+
                 return new ResponseEntity<>(new ApiResponse(HttpStatus.OK.value(), "Contraseña reestablecida", false), HttpStatus.OK);
             }
         }
@@ -223,10 +331,22 @@ public class UsuarioService {
     }
 
 
-    public ResponseEntity<ApiResponse> verifyCode(String email, String code) {
+    public ResponseEntity<ApiResponse> verifyCode(String email, String code, Authentication authentication) {
         Optional<PasswordReset> tokenOpt = resetRepository.findByEmailAndCodeAndUsedFalse(email, code.trim());
+        UsuarioBean usuarioAutenticado = getUsuarioAutenticado(authentication);
+
         if (tokenOpt.isPresent() && tokenOpt.get().getExpiration().isAfter(LocalDateTime.now())) {
             logger.info("El código usado por el usuario con correo: " +email + " es válido");
+            //PASO 2
+            BitacoraBean bitacora = new BitacoraBean(
+                    LocalDateTime.now(),
+                    "POST",
+                    usuarioAutenticado,
+                    "Se ha consultado la vericidad del código enviado al correo: " + email
+            );
+
+            bitacoraRepository.saveAndFlush(bitacora);
+            logger.info("Insertando movimiento en la bitacora");
             return new ResponseEntity<>(new ApiResponse(HttpStatus.OK.value(), "Código válido", false), HttpStatus.OK);
         }
         logger.warn("El código ingresado se encuentra expirado o es inválido");

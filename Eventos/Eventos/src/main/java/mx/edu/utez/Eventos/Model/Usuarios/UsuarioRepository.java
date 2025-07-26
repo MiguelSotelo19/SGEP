@@ -10,4 +10,6 @@ public interface UsuarioRepository extends JpaRepository<UsuarioBean, Long> {
     Optional<UsuarioBean> findByCorreo(String correo);
 
     Optional<UsuarioBean> findByTelefono(String telefono);
+
+    Optional<UsuarioBean>findByNombre(String nombre);
 }

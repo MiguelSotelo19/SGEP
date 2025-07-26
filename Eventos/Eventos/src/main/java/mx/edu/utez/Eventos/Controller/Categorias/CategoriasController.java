@@ -8,6 +8,7 @@ import mx.edu.utez.Eventos.Service.Categorias.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
@@ -41,27 +42,27 @@ public class CategoriasController {
     }
 
     @GetMapping(value = "/")
-    public ResponseEntity<ApiResponse> categorias(){
-        return  new ResponseEntity<>(new ApiResponse(service.getAllCategorias(), HttpStatus.OK.value(), "ok"), HttpStatus.OK);
+    public ResponseEntity<ApiResponse> categorias(Authentication authentication){
+        return  new ResponseEntity<>(new ApiResponse(service.getAllCategorias(authentication), HttpStatus.OK.value(), "ok"), HttpStatus.OK);
     }
 
     @GetMapping("/true")
-    public ResponseEntity<ApiResponse>categoriasTrue(){
-        return new ResponseEntity<>(new ApiResponse(service.getAllCategoriasTrue(), HttpStatus.OK.value(), "ok"), HttpStatus.OK);
+    public ResponseEntity<ApiResponse>categoriasTrue(Authentication authentication){
+        return new ResponseEntity<>(new ApiResponse(service.getAllCategoriasTrue(authentication), HttpStatus.OK.value(), "ok"), HttpStatus.OK);
     }
 
     @PostMapping("/save")
-    public ResponseEntity<ApiResponse> nuevaCategoria(@Validated(CategoriaDTO.Register.class) @RequestBody CategoriaDTO dto){
-        return service.newCategoria(dto.toEntity());
+    public ResponseEntity<ApiResponse> nuevaCategoria(@Validated(CategoriaDTO.Register.class) @RequestBody CategoriaDTO dto, Authentication authentication){
+        return service.newCategoria(dto.toEntity(), authentication);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<ApiResponse> actualizarCategoria(@Validated(CategoriaDTO.Modify.class) @RequestBody CategoriaDTO dto, @PathVariable Long id){
-        return  service.updateCategoria(dto.toUpdate(),id);
+    public ResponseEntity<ApiResponse> actualizarCategoria(@Validated(CategoriaDTO.Modify.class) @RequestBody CategoriaDTO dto, @PathVariable Long id, Authentication authentication){
+        return  service.updateCategoria(dto.toUpdate(),id, authentication);
     }
 
     @PatchMapping("/status/{id}")
-    public ResponseEntity<ApiResponse>cambiarEstado(@PathVariable Long id){
-        return service.changeStatus(id);
+    public ResponseEntity<ApiResponse>cambiarEstado(@PathVariable Long id, Authentication authentication){
+        return service.changeStatus(id, authentication);
     }
 }
