@@ -103,3 +103,452 @@
 2025-07-26T01:13:22.170-06:00  INFO 24808 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-07-26T01:13:22.180-06:00  INFO 24808 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-07-26T01:13:22.189-06:00  INFO 24808 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-27T01:07:32.544-06:00  INFO 14548 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 14548 (C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos\target\classes started by jim_j in C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos)
+2025-07-27T01:07:32.546-06:00  INFO 14548 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-27T01:07:32.609-06:00  INFO 14548 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-27T01:07:32.610-06:00  INFO 14548 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-27T01:07:34.607-06:00  INFO 14548 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-27T01:07:34.739-06:00  INFO 14548 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 7 JPA repository interfaces.
+2025-07-27T01:07:35.530-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-27T01:07:35.548-06:00  INFO 14548 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-27T01:07:35.549-06:00  INFO 14548 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-27T01:07:35.605-06:00  INFO 14548 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-27T01:07:35.605-06:00  INFO 14548 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2995 ms
+2025-07-27T01:07:35.812-06:00  INFO 14548 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-27T01:07:35.913-06:00  INFO 14548 --- [Eventos] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-27T01:07:36.008-06:00  INFO 14548 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-27T01:07:36.388-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-27T01:07:36.437-06:00  INFO 14548 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-27T01:07:37.026-06:00  INFO 14548 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@a24d914
+2025-07-27T01:07:37.029-06:00  INFO 14548 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-27T01:07:37.153-06:00  WARN 14548 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-27T01:07:37.179-06:00  INFO 14548 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-27T01:07:38.545-06:00  INFO 14548 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-27T01:07:39.090-06:00  INFO 14548 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T01:07:39.658-06:00  INFO 14548 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-27T01:07:39.659-06:00  WARN 14548 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-27T01:07:39.696-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-27T01:07:40.401-06:00  WARN 14548 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-27T01:07:40.830-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:07:40.831-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:07:40.832-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:07:40.832-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:07:40.833-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:07:40.834-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:07:41.276-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-27T01:07:41.315-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-27T01:07:41.325-06:00  INFO 14548 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 9.39 seconds (process running for 11.424)
+2025-07-27T01:08:23.977-06:00  INFO 14548 --- [Eventos] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 57 class path changes (0 additions, 56 deletions, 1 modification)
+2025-07-27T01:08:23.983-06:00  INFO 14548 --- [Eventos] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-27T01:08:23.990-06:00  INFO 14548 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-27T01:08:23.998-06:00  INFO 14548 --- [Eventos] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T01:08:24.004-06:00  INFO 14548 --- [Eventos] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-27T01:08:24.009-06:00  INFO 14548 --- [Eventos] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-27T01:08:24.207-06:00  INFO 14548 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 14548 (C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos\target\classes started by jim_j in C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos)
+2025-07-27T01:08:24.208-06:00  INFO 14548 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-27T01:08:24.481-06:00  INFO 14548 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-27T01:08:24.483-06:00  INFO 14548 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-07-27T01:08:24.654-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-27T01:08:24.655-06:00  INFO 14548 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-27T01:08:24.655-06:00  INFO 14548 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-27T01:08:24.681-06:00  INFO 14548 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-27T01:08:24.681-06:00  INFO 14548 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 470 ms
+2025-07-27T01:08:24.740-06:00  INFO 14548 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-27T01:08:24.745-06:00  INFO 14548 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-27T01:08:24.758-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-27T01:08:24.759-06:00  INFO 14548 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-07-27T01:08:24.935-06:00  INFO 14548 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@1f154003
+2025-07-27T01:08:24.936-06:00  INFO 14548 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-07-27T01:08:24.943-06:00  WARN 14548 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-27T01:08:24.945-06:00  INFO 14548 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-27T01:08:24.968-06:00  INFO 14548 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-27T01:08:24.968-06:00  INFO 14548 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T01:08:24.984-06:00  WARN 14548 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-27T01:08:25.173-06:00  WARN 14548 --- [Eventos] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: da0a80f6-0f03-4fa3-8a4a-a31e724786bf
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-07-27T01:08:25.178-06:00  INFO 14548 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-07-27T01:08:25.238-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-27T01:08:25.249-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-27T01:08:25.254-06:00  INFO 14548 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 1.095 seconds (process running for 55.353)
+2025-07-27T01:08:25.259-06:00  INFO 14548 --- [Eventos] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'spring.security.user.password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'spring.security.user.name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+      - @ConditionalOnBean (types: org.springframework.security.config.ObjectPostProcessor; SearchStrategy: all) found beans 'objectPostProcessor', 'webAuthorizationManagerPostProcessor', 'filterChainDecoratorPostProcessor', 'authenticationManagerPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,?; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-07-27T01:08:30.429-06:00  INFO 14548 --- [Eventos] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 56 class path changes (56 additions, 0 deletions, 0 modifications)
+2025-07-27T01:08:30.432-06:00  INFO 14548 --- [Eventos] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-27T01:08:30.449-06:00  INFO 14548 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-27T01:08:30.455-06:00  INFO 14548 --- [Eventos] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T01:08:30.457-06:00  INFO 14548 --- [Eventos] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-07-27T01:08:30.460-06:00  INFO 14548 --- [Eventos] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-07-27T01:08:30.707-06:00  INFO 14548 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 14548 (C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos\target\classes started by jim_j in C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos)
+2025-07-27T01:08:30.708-06:00  INFO 14548 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-27T01:08:31.364-06:00  INFO 14548 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-27T01:08:31.467-06:00  INFO 14548 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 7 JPA repository interfaces.
+2025-07-27T01:08:31.780-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-27T01:08:31.781-06:00  INFO 14548 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-27T01:08:31.783-06:00  INFO 14548 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-27T01:08:31.816-06:00  INFO 14548 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-27T01:08:31.817-06:00  INFO 14548 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1107 ms
+2025-07-27T01:08:31.900-06:00  INFO 14548 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-27T01:08:31.904-06:00  INFO 14548 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-27T01:08:31.916-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-27T01:08:31.918-06:00  INFO 14548 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-07-27T01:08:32.035-06:00  INFO 14548 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@cfbd863
+2025-07-27T01:08:32.035-06:00  INFO 14548 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-07-27T01:08:32.055-06:00  WARN 14548 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-27T01:08:32.057-06:00  INFO 14548 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-27T01:08:32.577-06:00  INFO 14548 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-27T01:08:33.197-06:00  INFO 14548 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T01:08:33.547-06:00  INFO 14548 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-27T01:08:33.548-06:00  WARN 14548 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-27T01:08:33.850-06:00  WARN 14548 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-27T01:08:34.250-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:08:34.254-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:08:34.256-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:08:34.259-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:08:34.263-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:08:34.265-06:00  WARN 14548 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T01:08:34.609-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-27T01:08:34.635-06:00  INFO 14548 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-27T01:08:34.641-06:00  INFO 14548 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 3.966 seconds (process running for 64.74)
+2025-07-27T01:08:34.644-06:00  INFO 14548 --- [Eventos] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,?; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' userDetailsServiceImpl and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' authenticationProvider (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'spring.security.user.password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'spring.security.user.name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-07-27T01:10:09.696-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-27T01:10:09.696-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-27T01:10:09.697-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-07-27T01:20:33.866-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.Service.Usuarios.UsuarioService  : Se ha registrado a un nuevo usuario con correo: isaac@example.com
+2025-07-27T01:20:51.183-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: isaac@example.com
+2025-07-27T01:20:51.186-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T01:20:51.560-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-27T01:20:51.564-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T01:20:52.960-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T01:20:52.966-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T01:21:00.194-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T01:21:00.203-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T01:21:00.205-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T01:21:02.926-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T01:21:02.934-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T01:21:05.745-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T01:21:05.751-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T01:21:05.762-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T01:21:07.952-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T01:21:07.955-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T01:22:56.487-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: isaac@example.com
+2025-07-27T01:22:56.490-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T01:22:56.756-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-27T01:22:56.761-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T01:22:58.574-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T01:22:58.581-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T01:26:32.170-06:00  WARN 14548 --- [Eventos] [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-07-27T01:27:30.375-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T01:27:30.380-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T01:30:47.491-06:00  INFO 14548 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.Service.Usuarios.UsuarioService  : Usuario autenticado en bitácora: isaac
+2025-07-27T01:30:57.842-06:00  INFO 14548 --- [Eventos] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-27T01:30:57.852-06:00  INFO 14548 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-27T01:30:57.858-06:00  INFO 14548 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T01:30:57.858-06:00  INFO 14548 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-07-27T01:30:57.860-06:00  INFO 14548 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-07-27T13:16:14.099-06:00  INFO 26704 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 26704 (C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos\target\classes started by jim_j in C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos)
+2025-07-27T13:16:14.101-06:00  INFO 26704 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-27T13:16:14.162-06:00  INFO 26704 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-27T13:16:14.162-06:00  INFO 26704 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-27T13:16:15.019-06:00  INFO 26704 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-27T13:16:15.115-06:00  INFO 26704 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 7 JPA repository interfaces.
+2025-07-27T13:16:15.936-06:00  INFO 26704 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-27T13:16:15.963-06:00  INFO 26704 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-27T13:16:15.964-06:00  INFO 26704 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-27T13:16:16.031-06:00  INFO 26704 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-27T13:16:16.032-06:00  INFO 26704 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1868 ms
+2025-07-27T13:16:16.201-06:00  INFO 26704 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-27T13:16:16.307-06:00  INFO 26704 --- [Eventos] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-27T13:16:16.383-06:00  INFO 26704 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-27T13:16:16.750-06:00  INFO 26704 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-27T13:16:16.788-06:00  INFO 26704 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-27T13:16:17.021-06:00  INFO 26704 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3dc0adf3
+2025-07-27T13:16:17.023-06:00  INFO 26704 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-27T13:16:17.085-06:00  WARN 26704 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-27T13:16:17.108-06:00  INFO 26704 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-27T13:16:18.330-06:00  INFO 26704 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-27T13:16:18.848-06:00  INFO 26704 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T13:16:19.432-06:00  INFO 26704 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-27T13:16:19.432-06:00  WARN 26704 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-27T13:16:19.478-06:00  INFO 26704 --- [Eventos] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-27T13:16:20.224-06:00  WARN 26704 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-27T13:16:20.650-06:00  WARN 26704 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:16:20.652-06:00  WARN 26704 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:16:20.654-06:00  WARN 26704 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:16:20.655-06:00  WARN 26704 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:16:20.657-06:00  WARN 26704 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:16:20.659-06:00  WARN 26704 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:16:21.112-06:00  INFO 26704 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-27T13:16:21.161-06:00  INFO 26704 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-27T13:16:21.173-06:00  INFO 26704 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 7.572 seconds (process running for 8.471)
+2025-07-27T13:16:27.742-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-27T13:16:27.742-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-27T13:16:27.743-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-07-27T13:16:28.064-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:16:28.129-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:16:28.131-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:16:42.710-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: isaac@example.com
+2025-07-27T13:16:42.716-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:16:43.410-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-27T13:16:43.415-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:16:44.655-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:16:44.665-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:24:00.632-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:24:00.643-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:24:02.635-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:24:02.651-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:24:02.671-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:24:03.723-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:24:03.735-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:24:05.914-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:24:05.926-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:25:14.974-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:25:14.986-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:25:14.991-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:25:15.808-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:25:15.820-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:25:17.017-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:25:17.029-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:25:17.035-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:25:18.373-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:25:18.385-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:25:20.643-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:25:20.653-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:25:23.406-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:25:23.416-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:25:23.423-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:25:25.994-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:25:26.001-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:25:27.891-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:25:27.902-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:25:27.912-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:25:36.114-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:25:36.123-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:27:29.045-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: isaac@example.com
+2025-07-27T13:27:29.049-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:27:29.475-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-27T13:27:29.481-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:27:30.665-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:27:30.672-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:27:33.564-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:27:33.575-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:27:33.607-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:35:46.256-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:35:46.267-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:35:46.277-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:35:54.003-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:35:54.012-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:36:42.326-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: isaac@example.com
+2025-07-27T13:36:42.332-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:36:42.723-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-27T13:36:42.727-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:36:44.072-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:36:44.080-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:38:06.805-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Usuario autenticado en bitácora: isaac
+2025-07-27T13:41:03.623-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:41:03.645-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:41:21.834-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: isaac@example.com
+2025-07-27T13:41:21.838-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:41:22.222-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-27T13:41:22.225-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:41:24.097-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:41:24.104-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:41:26.868-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:41:26.870-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:41:26.884-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:41:29.166-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:41:29.174-06:00  INFO 26704 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:43:37.243-06:00  INFO 26704 --- [Eventos] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-27T13:43:37.257-06:00  INFO 26704 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-27T13:43:37.271-06:00  INFO 26704 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T13:43:37.280-06:00  INFO 26704 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-27T13:43:37.284-06:00  INFO 26704 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-27T13:44:45.412-06:00  INFO 8304 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24.0.1 with PID 8304 (C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos\target\classes started by jim_j in C:\Users\jim_j\Desktop\SGEP\Eventos\Eventos)
+2025-07-27T13:44:45.414-06:00  INFO 8304 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-27T13:44:45.479-06:00  INFO 8304 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-27T13:44:45.480-06:00  INFO 8304 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-27T13:44:46.298-06:00  INFO 8304 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-27T13:44:46.376-06:00  INFO 8304 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 7 JPA repository interfaces.
+2025-07-27T13:44:47.020-06:00  INFO 8304 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-27T13:44:47.035-06:00  INFO 8304 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-27T13:44:47.036-06:00  INFO 8304 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-27T13:44:47.080-06:00  INFO 8304 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-27T13:44:47.081-06:00  INFO 8304 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1601 ms
+2025-07-27T13:44:47.237-06:00  INFO 8304 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-27T13:44:47.294-06:00  INFO 8304 --- [Eventos] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-27T13:44:47.342-06:00  INFO 8304 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-27T13:44:47.610-06:00  INFO 8304 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-27T13:44:47.641-06:00  INFO 8304 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-27T13:44:47.801-06:00  INFO 8304 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5a64119d
+2025-07-27T13:44:47.804-06:00  INFO 8304 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-27T13:44:47.846-06:00  WARN 8304 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-27T13:44:47.867-06:00  INFO 8304 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-27T13:44:48.940-06:00  INFO 8304 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-27T13:44:49.410-06:00  INFO 8304 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T13:44:49.882-06:00  INFO 8304 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-27T13:44:49.884-06:00  WARN 8304 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-27T13:44:49.922-06:00  INFO 8304 --- [Eventos] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-27T13:44:50.508-06:00  WARN 8304 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-27T13:44:50.842-06:00  WARN 8304 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:44:50.843-06:00  WARN 8304 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:44:50.844-06:00  WARN 8304 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:44:50.846-06:00  WARN 8304 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:44:50.847-06:00  WARN 8304 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:44:50.848-06:00  WARN 8304 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-07-27T13:44:51.210-06:00  INFO 8304 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-27T13:44:51.248-06:00  INFO 8304 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-27T13:44:51.258-06:00  INFO 8304 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 6.385 seconds (process running for 7.252)
+2025-07-27T13:44:58.017-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-27T13:44:58.018-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-27T13:44:58.020-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-07-27T13:45:10.218-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: isaac@example.com
+2025-07-27T13:45:10.342-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:45:11.386-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-07-27T13:45:11.391-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-07-27T13:45:12.862-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:45:12.874-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:45:15.485-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.Service.Usuarios.UsuarioService  : Usuario autenticado en bitácora: isaac
+2025-07-27T13:45:43.470-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.Service.Usuarios.UsuarioService  : Usuario autenticado en bitácora: isaac
+2025-07-27T13:47:21.552-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.Service.Usuarios.UsuarioService  : Usuario autenticado en bitácora: isaac
+2025-07-27T13:47:23.188-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:47:23.199-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:47:26.626-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Usuario autenticado en bitácora: isaac
+2025-07-27T13:47:37.781-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:47:37.792-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:47:38.782-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-07-27T13:47:38.795-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-07-27T13:47:38.836-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-07-27T13:47:39.727-06:00  INFO 8304 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.Service.Usuarios.UsuarioService  : Usuario autenticado en bitácora: isaac
+2025-07-27T13:48:58.154-06:00  INFO 8304 --- [Eventos] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-27T13:48:58.171-06:00  INFO 8304 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-27T13:48:58.183-06:00  INFO 8304 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T13:48:58.191-06:00  INFO 8304 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-27T13:48:58.196-06:00  INFO 8304 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
