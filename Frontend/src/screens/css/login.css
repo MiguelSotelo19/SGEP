@@ -91,9 +91,9 @@
   }
 }
 .login {
-  position: absolute;
   width: 20vw;
   height: 100%;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +116,6 @@
   background: transparent;
   border: 1px solid #000000;
   border-radius: 10px;
-  font-size: 1.2em;
   color: #000000;
   box-shadow: none;
   outline: none;
@@ -126,12 +125,14 @@
   font-size: 1.2em;
 }
 .login .inputBx input[type="submit"] {
-  width: 100%;
-  background: #0078ff;
+  display: block;
+  margin: 0 auto;
+
   background: linear-gradient(45deg, #ADD8E6, #2294f3);
   border: none;
   cursor: pointer;
 }
+
 .login .inputBx input::placeholder {
   color: rgba(0, 0, 0, 0.75);
 }
@@ -144,14 +145,54 @@
   padding: 2%;
 }
 .login .links button {
-  background: none;
-  border: none;
-  font: inherit;
-  color: #2294f3;
+  color: linear-gradient(45deg, #ADD8E6, #2294f3);
   text-decoration: none;
   cursor: pointer;
 }
 .login .links a {
-  color: #000000;
+  color: linear-gradient(45deg, #ADD8E6, #2294f3);
   text-decoration: none;
+  cursor: pointer;
+}
+
+.boton_login {
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: white;
+  color: #2294f3;
+  position: relative;
+  transition: all 0.3s ease;
+  outline: none;
+  padding: 2%;
+  background-image: linear-gradient(white, white);
+  background-origin: border-box;
+  background-clip: padding-box;
+}
+
+.boton_login:hover {
+  padding: 2%;
+  background-image: linear-gradient(white, white),
+                    linear-gradient(45deg, #ADD8E6, #2294f3);
+  background-clip: padding-box, border-box;
+  border: 2px solid transparent;
+}
+
+.small-inputs  {
+  font-size: 0.9em;
+  width: 20vw;
+  height: 100%;
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+}
+.small-inputs .inputBx input{
+  padding: 4%; 
+  font-size: 0.9em; 
+}
+.small-inputs .inputBx input[type="submit"] {
+  font-size: 1em;
+  padding: 4% 3%;
 }

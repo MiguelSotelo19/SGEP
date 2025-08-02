@@ -2,14 +2,9 @@ package mx.edu.utez.Eventos.Model.Usuarios;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import mx.edu.utez.Eventos.Model.Eventos.EventosBean;
 import mx.edu.utez.Eventos.Model.Roles.RolBean;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "usuarios")
@@ -35,19 +30,23 @@ public class UsuarioBean {
     @Column(length = 10, unique = true)
     private String telefono;
 
+    @JsonIgnore
     @Column(columnDefinition = "TEXT")
     private String password;
 
     @Column
     private Boolean estatus;
 
+    @Column(columnDefinition = "TIMESTAMP")
+    private LocalDateTime limitefecha;
+
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_rol")
     private RolBean rolBean;
 
-    @ManyToMany(mappedBy = "usuarios", fetch = FetchType.LAZY)
-    private Set<EventosBean> eventos = new HashSet<>();
+    /*@ManyToMany(mappedBy = "usuarios", fetch = FetchType.LAZY)
+    private Set<EventosBean> eventos = new HashSet<>();*/
 
 
     public UsuarioBean(String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, String password, Boolean estatus, RolBean rolBean) {
@@ -63,6 +62,51 @@ public class UsuarioBean {
 
     public UsuarioBean() {
 
+    }
+
+    public UsuarioBean(Long id_usuario, String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, String password, Boolean estatus, LocalDateTime limitefecha, RolBean rolBean) {
+        this.id_usuario = id_usuario;
+        this.nombre = nombre;
+        this.apellido_paterno = apellido_paterno;
+        this.apellido_materno = apellido_materno;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.password = password;
+        this.estatus = estatus;
+        this.limitefecha = limitefecha;
+        this.rolBean = rolBean;
+    }
+
+    public UsuarioBean(String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, String password, Boolean estatus, LocalDateTime limitefecha, RolBean rolBean) {
+        this.nombre = nombre;
+        this.apellido_paterno = apellido_paterno;
+        this.apellido_materno = apellido_materno;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.password = password;
+        this.estatus = estatus;
+        this.limitefecha = limitefecha;
+        this.rolBean = rolBean;
+    }
+
+    public UsuarioBean(String nombre, String apellido_paterno, String apellido_materno, String correo, String telefono, String password, Boolean estatus, LocalDateTime limitefecha, int intentos, RolBean rolBean) {
+        this.nombre = nombre;
+        this.apellido_paterno = apellido_paterno;
+        this.apellido_materno = apellido_materno;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.password = password;
+        this.estatus = estatus;
+        this.limitefecha = limitefecha;
+        this.rolBean = rolBean;
+    }
+
+    public LocalDateTime getLimitefecha() {
+        return limitefecha;
+    }
+
+    public void setLimitefecha(LocalDateTime limitefecha) {
+        this.limitefecha = limitefecha;
     }
 
     public Long getId_usuario() {
@@ -136,4 +180,5 @@ public class UsuarioBean {
     public void setRolBean(RolBean rolBean) {
         this.rolBean = rolBean;
     }
+
 }

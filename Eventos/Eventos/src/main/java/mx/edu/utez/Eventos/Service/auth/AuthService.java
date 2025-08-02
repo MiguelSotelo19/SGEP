@@ -15,6 +15,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 
@@ -47,7 +49,17 @@ public class AuthService {
             String token = provider.generateToken(auth);
             // Payload - DTO (token, attrs)
 
-            return new ResponseEntity<>(new ApiResponse(token, HttpStatus.OK.value(),"Token generado"), HttpStatus.OK);
+            Map<String, Object> userData = new HashMap<>();
+            userData.put("id", user.getId_usuario());
+            userData.put("correo", user.getCorreo());
+            userData.put("nombre", user.getNombre());
+            userData.put("apellido_paterno", user.getApellido_paterno());
+            userData.put("apellido_materno", user.getApellido_materno());
+            userData.put("telefono", user.getTelefono());
+            userData.put("rol", user.getRolBean().getId_rol());
+            userData.put("estatus", user.getEstatus());
+
+            return new ResponseEntity<>(new ApiResponse(token, userData, HttpStatus.OK.value(),"Token generado"), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             String message = "CredentialsMismatch";
@@ -55,7 +67,7 @@ public class AuthService {
                 message = "UserDisabled";
             if (e instanceof AccountExpiredException)
                 message = "Expiro";
-            return new ResponseEntity<>(new ApiResponse(HttpStatus.BAD_REQUEST.value(), message,true), HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(new ApiResponse(HttpStatus.UNAUTHORIZED.value(), message,true), HttpStatus.UNAUTHORIZED);
         }
     }
 }

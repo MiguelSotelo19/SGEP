@@ -3,10 +3,11 @@ package mx.edu.utez.Eventos.Model.Categorias;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 @Repository
 public interface CategoriaRepository extends JpaRepository<CategoriaBean, Long> {
-    Optional<CategoriaBean>findByEstatusTrue();
+    List<CategoriaBean> findAllByEstatusTrue();
 
     Optional<CategoriaBean>findByNombre(String nombre);
 }

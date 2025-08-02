@@ -1,23 +1,21 @@
 package mx.edu.utez.Eventos.Model.Categorias.DTO;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.OneToMany;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import mx.edu.utez.Eventos.Model.Categorias.CategoriaBean;
 import mx.edu.utez.Eventos.Model.Eventos.EventosBean;
 
 import java.util.Set;
 public class CategoriaDTO {
-    private String nombre;
 
+    @NotBlank(groups = {Register.class, Modify.class})
+    private String nombre;
+    @NotBlank(groups = {Register.class, Modify.class})
     private String descripcion;
 
+    @NotNull(groups = {Register.class, Modify.class})
     private Boolean estatus;
 
     private Set<EventosBean> eventos;
@@ -66,4 +64,7 @@ public class CategoriaDTO {
 
     public CategoriaDTO() {
     }
+
+    public interface Register{}
+    public interface Modify{}
 }
