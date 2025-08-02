@@ -15,7 +15,6 @@ public class UsuarioDTO {
     private String correo;
     @NotBlank(groups = {Register.class, Modify.class})
     private String telefono;
-    @NotBlank(groups = {Register.class, Modify.class})
     private String password;
     @NotNull(groups = {Register.class, Modify.class})
     private Boolean estatus;

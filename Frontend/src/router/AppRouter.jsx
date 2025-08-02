@@ -3,6 +3,7 @@ import CategoryList from '../screens/categories/CategoryList';
 import { LoginHub } from '../screens/LoginHub';
 import EventList from '../screens/eventos/EventList';
 import HistoryList from '../screens/history/HistoryList';
+import { Perfil } from '../screens/perfil/Perfil';
 const AppRouter = () => {
     return (
         <Router>
@@ -11,6 +12,7 @@ const AppRouter = () => {
                 <Route path='/categories' element={<CategoryList />} />
                 <Route path="/events" element={<EventList />} />
                 <Route path='/history' element={<HistoryList/> } />
+                <Route path='/perfil' element={<Perfil />} />
             </Routes>
         </Router>
     );

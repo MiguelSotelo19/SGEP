@@ -120,6 +120,11 @@ public class UsuarioService {
         return new ApiResponse(repository.findAll(), HttpStatus.OK.value(), "OK");
     }
 
+    @Transactional(readOnly = true)
+    public ApiResponse getOneUser(Long id) {
+        return new ApiResponse(repository.findById(id), HttpStatus.OK.value(), "OK");
+    }
+
     @Transactional
     public ResponseEntity<ApiResponse> newUsuario(UsuarioBean usuario, Authentication authentication) {
         Optional<UsuarioBean> findCorreo = repository.findByCorreo(usuario.getCorreo());

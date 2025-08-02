@@ -68,6 +68,7 @@
 2025-07-26T01:09:06.709-06:00  INFO 24808 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2025-07-26T01:09:06.747-06:00  WARN 24808 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2025-07-26T01:09:06.771-06:00  INFO 24808 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 17.5
@@ -75,6 +76,7 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
+
 2025-07-26T01:09:07.988-06:00  INFO 24808 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2025-07-26T01:09:08.560-06:00  INFO 24808 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
 2025-07-26T01:09:09.078-06:00  INFO 24808 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
