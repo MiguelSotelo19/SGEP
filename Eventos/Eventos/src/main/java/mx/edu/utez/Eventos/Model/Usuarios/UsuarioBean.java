@@ -2,9 +2,11 @@ package mx.edu.utez.Eventos.Model.Usuarios;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import mx.edu.utez.Eventos.Model.Bitacora.BitacoraBean;
 import mx.edu.utez.Eventos.Model.Roles.RolBean;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "usuarios")
@@ -44,6 +46,9 @@ public class UsuarioBean {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_rol")
     private RolBean rolBean;
+
+    @OneToMany(mappedBy = "persona", fetch = FetchType.LAZY)
+    private Set<BitacoraBean> bitacoraBeans;
 
     /*@ManyToMany(mappedBy = "usuarios", fetch = FetchType.LAZY)
     private Set<EventosBean> eventos = new HashSet<>();*/

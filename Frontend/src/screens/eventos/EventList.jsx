@@ -29,13 +29,14 @@ import {
   MapPin,
   Users,
   Search,
-  ChartNoAxesColumnIcon,
 } from "lucide-react";
 
 import EventModal from "../../components/EventModal";
 import { getCategories } from "../../services/categoryService";
-import { entry, getEventosInscritos } from "../../services/entryService"; // No olvides importar entry
+import { entry, getEventosInscritos, getAsistentesByEvento } from "../../services/entryService";
 import "../css/main.css";
+
+import AssistantsListModal from "../../components/AssistantsListModal";
 
 const EventList = () => {
   const [eventos, setEventos] = useState([]);
@@ -52,8 +53,10 @@ const EventList = () => {
   const user = JSON.parse(localStorage.getItem("User") ?? "{}");
 
   const [busqueda, setBusqueda] = useState("");
-
-  const [eventosInscritos, setEventosInscritos] = useState();
+  const [eventosInscritos, setEventosInscritos] = useState([]);
+  const [asistentesOpen, setAsistentesOpen] = useState(false);
+  const [eventoActual, setEventoActual] = useState(null);
+  const [conteoAsistentes, setConteoAsistentes] = useState({});
 
   const fetchCategorias = async () => {
     try {
@@ -64,9 +67,19 @@ const EventList = () => {
     }
   };
 
-  useEffect(() => {
-    fetchCategorias();
-  }, []);
+  // Carga el conteo de asistentes para cada evento
+  const fetchConteoAsistentes = async (eventos) => {
+    const conteos = {};
+    for (const evento of eventos) {
+      try {
+        const asistentes = await getAsistentesByEvento(evento.id_evento);
+        conteos[evento.id_evento] = Array.isArray(asistentes) ? asistentes.length : 0;
+      } catch (error) {
+        conteos[evento.id_evento] = 0;
+      }
+    }
+    setConteoAsistentes(conteos);
+  };
 
   const fetchEventos = async () => {
     try {
@@ -85,51 +98,52 @@ const EventList = () => {
       ];
       setCategorias(cats);
 
+      setEventos(data);
+
+      await fetchConteoAsistentes(data);
+
       if (id_categoria) {
         setCategoriaSeleccionada(String(id_categoria));
-        setEventos(data);
-      } else {
-        setEventos(data);
       }
     } catch (error) {
       toast.error("Error al cargar los talleres");
     }
   };
 
-const fetchEventosInscritos = async () => {
-  const id_usuario = user.idUsuario || user.usuario?.id || user.id;
-  if (!id_usuario) return;
+  const fetchEventosInscritos = async () => {
+    const id_usuario = user.idUsuario || user.usuario?.id || user.id;
+    if (!id_usuario) return;
 
-  try {
-    const inscritos = await getEventosInscritos(id_usuario);
-    setEventosInscritos(inscritos || []);
-  } catch (error) {
-    setEventosInscritos([]);
-  }
-};
+    try {
+      const inscritos = await getEventosInscritos(id_usuario);
+      setEventosInscritos(inscritos || []);
+    } catch (error) {
+      setEventosInscritos([]);
+    }
+  };
 
-const estaInscrito = (id_evento) => {
-  if (!Array.isArray(eventosInscritos)) return false;
+  const handleVerAsistentes = (evento) => {
+    setEventoActual(evento);
+    setAsistentesOpen(true);
+  };
 
-  const resultado = eventosInscritos.some(ev => {
-       const inscritoId = ev.evento.id_evento;
-    console.log(`Comparando ${inscritoId} con ${id_evento}`);
-    return String(inscritoId) === String(id_evento);
-  });
+  const estaInscrito = (id_evento) => {
+    if (!Array.isArray(eventosInscritos)) return false;
 
-  console.log(`Evento ${id_evento} -> inscrito: `, resultado);
-  return resultado;
-};
+    return eventosInscritos.some((ev) => {
+      const inscritoId = ev.evento.id_evento;
+      return String(inscritoId) === String(id_evento);
+    });
+  };
 
   useEffect(() => {
-  fetchEventos();
-  fetchEventosInscritos();
-}, []);
+    fetchCategorias();
+  }, []);
 
-useEffect(() => {
-  console.log("eventosInscritos:", eventosInscritos);
-}, [eventosInscritos]);
-
+  useEffect(() => {
+    fetchEventos();
+    fetchEventosInscritos();
+  }, []);
 
   const handleModal = () => {
     if (categoriaSeleccionada === "all") {
@@ -181,7 +195,6 @@ useEffect(() => {
     }
 
     const user = JSON.parse(userStr);
-
     const id_usuario = user.idUsuario || user.usuario?.id || user.id || null;
     const rolId = user.rol || user.rolUsuario || null;
 
@@ -195,11 +208,27 @@ useEffect(() => {
       return;
     }
 
+    const evento = eventos.find((e) => e.id_evento === id_evento);
+    if (!evento) {
+      toast.error("Evento no encontrado");
+      return;
+    }
+
+    const actuales = conteoAsistentes[id_evento] ?? 0;
+    if (actuales >= evento.limite_usuarios) {
+      toast.error("El evento ha alcanzado el límite de usuarios.");
+      return;
+    }
+
     try {
       await entry({ id_usuario, id_evento });
       toast.success("Inscripción exitosa");
-
       fetchEventosInscritos();
+
+      setConteoAsistentes((prev) => ({
+        ...prev,
+        [id_evento]: actuales + 1,
+      }));
     } catch (error) {
       toast.error("Error al inscribirte al taller");
       console.error("Error en inscripción:", error);
@@ -232,12 +261,17 @@ useEffect(() => {
               Consulta o administra los talleres disponibles
             </p>
           </div>
-          {(user.rol == 1) ? (
-            <Button className="bg-blue-500 hover:bg-blue-600" onClick={handleModal}>
+          {user.rol == 1 ? (
+            <Button
+              className="bg-blue-500 hover:bg-blue-600"
+              onClick={handleModal}
+            >
               <Plus className="w-4 h-4 mr-2" />
               Nuevo Taller
             </Button>
-          ): (<></>)}
+          ) : (
+            <></>
+          )}
         </div>
 
         {/* Filtros */}
@@ -262,10 +296,7 @@ useEffect(() => {
               <SelectContent>
                 <SelectItem value="all">Todas las categorías</SelectItem>
                 {categoriasD.map((cat) => (
-                  <SelectItem
-                    key={cat.id_categoria}
-                    value={String(cat.id_categoria)}
-                  >
+                  <SelectItem key={cat.id_categoria} value={String(cat.id_categoria)}>
                     {cat.nombre}
                   </SelectItem>
                 ))}
@@ -283,87 +314,96 @@ useEffect(() => {
           ) : (
             eventosFiltrados.map((evento) => {
               const inscrito = estaInscrito(evento.id_evento);
-              console.log(`Evento ${evento.id_evento} -> inscrito: `, inscrito);
-               return(
-              <Card
-                key={evento.id_evento}
-                className="hover:shadow-lg transition-shadow"
-              >
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <Badge variant="outline">{evento.tipo_evento}</Badge>
-                    <Badge
-                      variant={evento.estatus ? "default" : "destructive"}
-                      className={
-                        evento.estatus ? "bg-green-100 text-green-800" : ""
-                      }
-                    >
-                      {evento.estatus ? "Activo" : "Inactivo"}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl">
-                    {evento.nombre_evento}
-                  </CardTitle>
-                  <CardDescription>{evento.lugar}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>
-                        {new Date(evento.fecha).toLocaleDateString("es-ES", {
-                          weekday: "long",
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Clock className="w-4 h-4" />
-                      <span>{evento.hora || "Sin hora"}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <MapPin className="w-4 h-4" />
-                      <span>{evento.lugar}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Users className="w-4 h-4" />
-                      <span>{evento.limite_usuarios} asistentes</span>
-                    </div>
-                  </div>
+              const asistentesCount = conteoAsistentes[evento.id_evento] ?? 0;
 
-                  {user?.rol === 1 ? (
-                    <div className="flex justify-between items-center pt-4 gap-2">
-                      <Button
-                        variant="outline"
-                        className="w-full action"
-                        onClick={() => handleEditMode(evento)}
+              return (
+                <Card
+                  key={evento.id_evento}
+                  className="hover:shadow-lg transition-shadow"
+                >
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <Badge variant="outline">{evento.tipo_evento}</Badge>
+                      <Badge
+                        variant={evento.estatus ? "default" : "destructive"}
+                        className={evento.estatus ? "bg-green-100 text-green-800" : ""}
                       >
-                        Editar
-                      </Button>
-                      <Button
-                        variant="outline"
-                        className="w-full action delete"
-                        onClick={() => handleDelete(evento.id_evento)}
-                      >
-                        Eliminar
-                      </Button>
+                        {evento.estatus ? "Activo" : "Inactivo"}
+                      </Badge>
                     </div>
-                  ) : (
-                    <Button
-            variant="outline"
-            className="w-full princ"
-            onClick={() => inscribirUsuario(evento.id_evento)}
-            disabled={inscrito}
-          >
-            {inscrito ? "Inscrito" : "Inscribirse al taller"}
-          </Button>
-                  )}
-                </CardContent>
-              </Card>
-               );
-})
+                    <CardTitle className="text-xl">{evento.nombre_evento}</CardTitle>
+                    <CardDescription>{evento.lugar}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="w-4 h-4" />
+                        <span>
+                          {new Date(evento.fecha).toLocaleDateString("es-ES", {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Clock className="w-4 h-4" />
+                        <span>{evento.hora || "Sin hora"}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <MapPin className="w-4 h-4" />
+                        <span>{evento.lugar}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Users className="w-4 h-4" />
+                        <span
+                          className={`${
+                            user?.rol === 1
+                              ? "text-blue-600 cursor-pointer hover:underline"
+                              : "text-gray-600 cursor-default"
+                          }`}
+                          onClick={() => {
+                            if (user?.rol === 1) handleVerAsistentes(evento);
+                          }}
+                          title={user?.rol === 1 ? "Ver asistentes" : "Solo visible para administradores"}
+                        >
+                          {asistentesCount} / {evento.limite_usuarios} asistentes
+                        </span>
+                      </div>
+                    </div>
+
+                    {user?.rol === 1 ? (
+                      <div className="flex justify-between items-center pt-4 gap-2">
+                        <Button
+                          variant="outline"
+                          className="w-full action"
+                          onClick={() => handleEditMode(evento)}
+                        >
+                          Editar
+                        </Button>
+                        <Button
+                          variant="outline"
+                          className="w-full action delete"
+                          onClick={() => handleDelete(evento.id_evento)}
+                        >
+                          Eliminar
+                        </Button>
+                      </div>
+                    ) : (
+                      <Button
+                        variant="outline"
+                        className="w-full princ"
+                        onClick={() => inscribirUsuario(evento.id_evento)}
+                        disabled={inscrito}
+                      >
+                        {inscrito ? "Inscrito" : "Inscribirse al taller"}
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })
           )}
         </div>
       </div>
@@ -375,6 +415,12 @@ useEffect(() => {
         isEditMode={isEditMode}
         eventoSeleccionado={eventoSeleccionado}
         categoriaSeleccionada={categoriaSeleccionada}
+      />
+
+      <AssistantsListModal
+        isOpen={asistentesOpen}
+        onClose={() => setAsistentesOpen(false)}
+        evento={eventoActual}
       />
     </div>
   );

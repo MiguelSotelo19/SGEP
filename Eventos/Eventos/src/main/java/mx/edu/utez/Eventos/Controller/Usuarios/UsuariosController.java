@@ -14,6 +14,7 @@ import mx.edu.utez.Eventos.Service.Usuarios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
@@ -48,8 +49,8 @@ public class UsuariosController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<ApiResponse> getAllUsuarios() {
-        return new ResponseEntity<>(new ApiResponse(service.getAllUsuarios(), HttpStatus.OK.value(), "OK"), HttpStatus.OK);
+    public ResponseEntity<ApiResponse> getAllUsuarios(Authentication authentication) {
+        return new ResponseEntity<>(new ApiResponse(service.getAllUsuarios(authentication), HttpStatus.OK.value(), "OK"), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -60,43 +61,44 @@ public class UsuariosController {
     }
 
     @PostMapping("/registro")
-    public ResponseEntity<ApiResponse> nuevoUsuario(@Validated(UsuarioDTO.Register.class) @RequestBody UsuarioDTO dto) {
-        return service.newUsuario(dto.toEntity());
+    public ResponseEntity<ApiResponse> nuevoUsuario(@Validated(UsuarioDTO.Register.class) @RequestBody UsuarioDTO dto, Authentication authentication) {
+        return service.newUsuario(dto.toEntity(), authentication);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse> actualizarUsuario(
             @PathVariable Long id,
-            @Validated(UsuarioDTO.Modify.class) @RequestBody UsuarioDTO dto
+            @Validated(UsuarioDTO.Modify.class) @RequestBody UsuarioDTO dto,
+            Authentication authentication
     ) {
-        return service.updateUsuario(dto.toEntity(), id);
+        return service.updateUsuario(dto.toEntity(), id, authentication);
     }
 
     @GetMapping("/consultar-bloqueo/{correo:.+}")
-    public ResponseEntity<ApiResponse> consultarBloqueo(@PathVariable String correo) {
-        return new ResponseEntity<>(service.consultarUsuario(correo), HttpStatus.OK);
+    public ResponseEntity<ApiResponse> consultarBloqueo(@PathVariable String correo, Authentication authentication) {
+        return new ResponseEntity<>(service.consultarUsuario(correo, authentication), HttpStatus.OK);
     }
 
 
     @PostMapping("/bloquear/{correo:.+}")
-    public ResponseEntity<ApiResponse> bloquearUsuario(@PathVariable String correo) {
-        return service.bloquearUsuario(correo);
+    public ResponseEntity<ApiResponse> bloquearUsuario(@PathVariable String correo, Authentication authentication) {
+        return service.bloquearUsuario(correo, authentication);
     }
 
 
     @PostMapping("/verify")
-    public ResponseEntity<ApiResponse> verificarEmail(@RequestBody CorreoDTO dto) throws Exception {
-        return service.VerifyEmail(dto.getCorreo());
+    public ResponseEntity<ApiResponse> verificarEmail(@RequestBody CorreoDTO dto, Authentication authentication) throws Exception {
+        return service.VerifyEmail(dto.getCorreo(), authentication);
     }
 
     @PostMapping("/verify/code")
-    public ResponseEntity<ApiResponse> verificarCodigo(@RequestBody CodeDTO dto) {
-        return service.verifyCode(dto.getCorreo(), dto.getCodigo());
+    public ResponseEntity<ApiResponse> verificarCodigo(@RequestBody CodeDTO dto, Authentication authentication) {
+        return service.verifyCode(dto.getCorreo(), dto.getCodigo(), authentication);
     }
 
     @PutMapping("/verify/reset")
-    public ResponseEntity<ApiResponse> resetPassword(@RequestBody PasswordResetDTO dto) {
-        return service.newPassword(dto.getCorreo(), dto.getCodigo(), dto.getPassword());
+    public ResponseEntity<ApiResponse> resetPassword(@RequestBody PasswordResetDTO dto, Authentication authentication) {
+        return service.newPassword(dto.getCorreo(), dto.getCodigo(), dto.getPassword(), authentication);
     }
 
 }

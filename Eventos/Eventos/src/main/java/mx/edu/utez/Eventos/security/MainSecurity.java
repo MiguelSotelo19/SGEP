@@ -82,6 +82,7 @@ public class MainSecurity {
                                 .requestMatchers("api/talleres/update/**").hasAnyAuthority("Admin")
                                 .requestMatchers("api/talleres/cambiarEstado/**").hasAnyAuthority("Admin")
                                 .requestMatchers("api/talleres/delete/**").hasAnyAuthority("Admin")
+                                .requestMatchers("/api/movimientos/").hasAnyAuthority("Admin")
 
 
 

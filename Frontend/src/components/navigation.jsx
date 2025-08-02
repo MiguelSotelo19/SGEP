@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Calendar, Grid3X3, User, LogOut, CircleUserIcon } from "lucide-react";
+import { Calendar, Grid3X3, User, LogOut, History, CircleUserIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 
@@ -11,6 +11,7 @@ export function Navigation() {
   const navItems = [
     { href: "/categories", label: "Categorías", icon: Grid3X3 },
     { href: "/events", label: "Eventos", icon: Calendar },
+    { href: "/history", label: "Bitácora", icon: History  },
   ];
 
   return (

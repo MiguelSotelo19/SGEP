@@ -7,6 +7,7 @@ import mx.edu.utez.Eventos.Service.Roles.RolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +26,7 @@ public class RolController {
     private RolRepository repository;
 
     @GetMapping("/")
-    public ResponseEntity<ApiResponse> All() {
-        return new ResponseEntity<>(new ApiResponse(service.findAll(), HttpStatus.OK.value(), "OK"), HttpStatus.OK);
+    public ResponseEntity<ApiResponse> All(Authentication authentication) {
+        return new ResponseEntity<>(new ApiResponse(service.findAll(authentication), HttpStatus.OK.value(), "OK"), HttpStatus.OK);
     }
 }
