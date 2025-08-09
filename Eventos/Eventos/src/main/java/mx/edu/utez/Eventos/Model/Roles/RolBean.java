@@ -27,6 +27,11 @@ public class RolBean {
 
     }
 
+    public RolBean(Long id_rol, String rol) {
+        this.id_rol = id_rol;
+        this.rol = rol;
+    }
+
     public RolBean(Long id_rol, String rol, Set<UsuarioBean> usuarioBeans) {
         this.id_rol = id_rol;
         this.rol = rol;
