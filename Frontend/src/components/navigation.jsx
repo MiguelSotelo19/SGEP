@@ -11,8 +11,10 @@ export function Navigation() {
   const navItems = [
     { href: "/categories", label: "Categorías", icon: Grid3X3 },
     { href: "/events", label: "Eventos", icon: Calendar },
-    { href: "/history", label: "Bitácora", icon: History  },
-  ];
+    ...(user?.rol === 1
+      ? [{ href: "/history", label: "Bitácora", icon: History }]
+      : []),
+    ];
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -37,9 +39,8 @@ export function Navigation() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isActive ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                  }`}
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                    }`}
                 >
                   <Icon className="w-4 h-4" />
                   <span>{item.label}</span>
@@ -60,14 +61,14 @@ export function Navigation() {
                 <DropdownMenuItem
                   onClick={() => window.location.href = "/perfil"}
                   className="flex items-center space-x-2 cursor-pointer"
-                  >
-                    <CircleUserIcon className="w-4 h-4" />
-                    <span>Mi perfil</span>
+                >
+                  <CircleUserIcon className="w-4 h-4" />
+                  <span>Mi perfil</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => {
-                    localStorage.removeItem("accessToken"); 
-                    window.location.href = "/"; 
+                    localStorage.removeItem("accessToken");
+                    window.location.href = "/";
                   }}
                   className="flex items-center space-x-2 cursor-pointer"
                 >

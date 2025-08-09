@@ -58,6 +58,9 @@ const EventList = () => {
   const [eventoActual, setEventoActual] = useState(null);
   const [conteoAsistentes, setConteoAsistentes] = useState({});
 
+  const [loading, setLoading] = useState(false);
+
+
   const fetchCategorias = async () => {
     try {
       const data = await getCategories();
@@ -82,6 +85,8 @@ const EventList = () => {
   };
 
   const fetchEventos = async () => {
+    setLoading(true);
+    setEventos([]);
     try {
       const data = await getEventos();
 
@@ -107,7 +112,9 @@ const EventList = () => {
       }
     } catch (error) {
       toast.error("Error al cargar los talleres");
-    }
+    } finally {
+    setLoading(false); // ✅ Esto asegura que deje de mostrar “Cargando…”
+  }
   };
 
   const fetchEventosInscritos = async () => {
@@ -143,7 +150,7 @@ const EventList = () => {
   useEffect(() => {
     fetchEventos();
     fetchEventosInscritos();
-  }, []);
+  }, [id_categoria]);
 
   const handleModal = () => {
     if (categoriaSeleccionada === "all") {
@@ -247,6 +254,14 @@ const EventList = () => {
     return coincideCategoria && coincideBusqueda;
   });
 
+  const handleAsistenteEliminado = (id_evento) => {
+    setConteoAsistentes((prev) => ({
+      ...prev,
+      [id_evento]: Math.max((prev[id_evento] ?? 1) - 1, 0)
+    }));
+  };
+
+
   return (
     <div className="min-h-screen bg-gray-50">
       <ToastContainer />
@@ -307,7 +322,11 @@ const EventList = () => {
 
         {/* Grid de eventos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {eventosFiltrados.length === 0 ? (
+          {loading ? (
+            <div className="col-span-full text-center text-gray-500">
+              Cargando talleres...
+            </div>
+          ) : eventosFiltrados.length === 0 ? (
             <div className="col-span-full text-center text-gray-500">
               No hay talleres para esta categoría.
             </div>
@@ -358,11 +377,10 @@ const EventList = () => {
                       <div className="flex items-center space-x-2">
                         <Users className="w-4 h-4" />
                         <span
-                          className={`${
-                            user?.rol === 1
-                              ? "text-blue-600 cursor-pointer hover:underline"
-                              : "text-gray-600 cursor-default"
-                          }`}
+                          className={`${user?.rol === 1
+                            ? "text-blue-600 cursor-pointer hover:underline"
+                            : "text-gray-600 cursor-default"
+                            }`}
                           onClick={() => {
                             if (user?.rol === 1) handleVerAsistentes(evento);
                           }}
@@ -421,6 +439,7 @@ const EventList = () => {
         isOpen={asistentesOpen}
         onClose={() => setAsistentesOpen(false)}
         evento={eventoActual}
+        onAsistenteEliminado={handleAsistenteEliminado}
       />
     </div>
   );
