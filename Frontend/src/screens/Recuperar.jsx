@@ -162,7 +162,7 @@ export const Recuperar = ({ setModo }) => {
             {paso === 1 && (
                 <>
                     <div className="inputBx login-letra">
-                        <label>Ingresa tu correo electrónico</label>
+                        <label style={{fontSize:"17px"}}>Ingresa tu correo electrónico</label>
                         <input className="login-letra" type="email" placeholder="Correo electrónico"
                             value={correo} onChange={(e) => setCorreo(e.target.value)} />
                     </div>

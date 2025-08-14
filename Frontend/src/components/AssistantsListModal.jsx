@@ -3,7 +3,7 @@ import { Users, X } from "lucide-react";
 import { toast } from "react-toastify";
 import { deleteAsistentesByEvento, getAsistentesByEvento } from "../services/entryService";
 
-const AssistantsListModal = ({ isOpen, onClose, evento }) => {
+const AssistantsListModal = ({ isOpen, onClose, evento, onAsistenteEliminado }) => {
 
     const [asistentes, setAsistentes] = useState([]);
 
@@ -29,6 +29,9 @@ const AssistantsListModal = ({ isOpen, onClose, evento }) => {
             await deleteAsistentesByEvento({ id_usuario, id_evento: evento.id_evento });
             toast.success("Asistencia anulada");
             fetchAsistentes();
+            if (onAsistenteEliminado) {
+                onAsistenteEliminado(evento.id_evento);
+            }
         } catch (error) {
             toast.error("Error al anular asistencia");
         }

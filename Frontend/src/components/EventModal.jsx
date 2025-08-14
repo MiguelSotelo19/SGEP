@@ -65,9 +65,10 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    const cleanedValue = value.replace(/\s{2,}/g, ' ');
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: cleanedValue
     }));
   };
 
@@ -141,9 +142,16 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
 
     if (isValid) {
       try {
+
+        const cleanedFormData = {
+        ...formData,
+        nombre_evento: formData.nombre_evento.trim(),
+        lugar: formData.lugar.trim(),
+      };
+
         const payload = {
-          ...formData,
-          id_categoria: parseInt(formData.id_categoria),
+          ...cleanedFormData,
+          id_categoria: parseInt(cleanedFormData.id_categoria),
           estatus: isActivate
         };
         console.log(payload)
@@ -253,7 +261,7 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
                 onChange={handleInputChange}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 transition ${errors.limite_usuarios ? 'border-red-300 bg-red-50 focus:ring-red-500' : 'border-gray-300 focus:ring-green-500'}`}
               />
-              {errors.limite_usuarios && <p className="text-sm text-red-600 mt-1">{errors.limite_usuarios}</p>}
+              {/*{errors.limite_usuarios && <p className="text-sm text-red-600 mt-1">{errors.limite_usuarios}</p>}*/}
             </div>
           )}
 

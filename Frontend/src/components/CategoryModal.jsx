@@ -6,14 +6,28 @@ import { toast } from "react-toastify";
 const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada, isEditMode, categoriaSeleccionada }) => {
 
     useEffect(() => {
+    if (isOpen) {
         if (isEditMode && categoriaSeleccionada) {
             setFormData({
                 nombre: categoriaSeleccionada.nombre || '',
                 descripcion: categoriaSeleccionada.descripcion || '',
             });
             setIsActivate(categoriaSeleccionada.estatus);
+        } else {
+            // Modo creación: limpiar el formulario
+            setFormData({
+                nombre: '',
+                descripcion: ''
+            });
+            setIsActivate(true);
+            setErrors({
+                nombre: '',
+                descripcion: ''
+            });
         }
-    }, [isEditMode, categoriaSeleccionada]);
+    }
+}, [isOpen, isEditMode, categoriaSeleccionada]);
+
 
     const [formData, setFormData] = useState({
         nombre: '',
@@ -57,10 +71,10 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada, isEditMode, cat
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-
+        const cleanedValue = value.replace(/\s{2,}/g, ' ');
         setFormData(prev => ({
             ...prev,
-            [name]: value
+            [name]: cleanedValue
         }));
     };
 
@@ -92,7 +106,7 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada, isEditMode, cat
 
             } catch (error) {
                 if (error.response?.status === 400) {
-                    toast.warn('Ya está registrada');
+                    toast.warn('El nombre de la categoría ya está registrado');
                 } else {
                     console.error('Error al enviar: ', error);
                     toast.error('Error en el servidor');
@@ -174,7 +188,7 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada, isEditMode, cat
                                 <label class="inline-flex items-center cursor-pointer">
                                     <input type="checkbox" value="" class="sr-only peer" checked={isActivate} onChange={handleActivate} />
                                     <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-                                    <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Checked toggle</span>
+                                    <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-600">Activa</span>
                                 </label>
 
                             ) : null}
