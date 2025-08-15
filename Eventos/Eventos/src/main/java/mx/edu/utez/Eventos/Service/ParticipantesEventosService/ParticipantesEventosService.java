@@ -25,7 +25,7 @@ public class ParticipantesEventosService {
     private ParticipantesEventosRepository participantesEventosRepository;
 
     // Registrar participante en evento con validación
-    public boolean registrarUsuariosEventos(Long idUsuario, Long idEvento) {
+    public boolean registrarUsuariosEventos(Long idUsuario, Long idEvento, String codigo) {
         Optional<UsuarioBean> usuarioOpt = usuarioRepository.findById(idUsuario);
         Optional<EventosBean> eventoOpt = eventosRepository.findById(idEvento);
 
@@ -35,6 +35,16 @@ public class ParticipantesEventosService {
 
         UsuarioBean usuario = usuarioOpt.get();
         EventosBean evento = eventoOpt.get();
+
+        // Validar código si el evento es privado
+        if ("Privado".equalsIgnoreCase(evento.getTipo_evento())) {
+            if (codigo == null || codigo.isEmpty()) {
+                throw new IllegalArgumentException("Este evento es privado, se requiere un código de acceso.");
+            }
+            if (!codigo.equals(evento.getCodigo())) {
+                throw new IllegalArgumentException("Código de acceso incorrecto.");
+            }
+        }
 
         // Validar si usuario ya está inscrito
         boolean yaInscrito = participantesEventosRepository.existsByUsuarioAndEvento(usuario, evento);

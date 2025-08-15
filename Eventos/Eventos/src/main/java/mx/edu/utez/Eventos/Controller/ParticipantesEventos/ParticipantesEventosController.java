@@ -22,7 +22,7 @@ public class ParticipantesEventosController {
     @PostMapping("/")
     public ResponseEntity<String> registrarUsuariosEventos(@Valid @RequestBody ParticipantesEventosDTO dto) {
         try {
-            boolean registro = participantesEventosService.registrarUsuariosEventos(dto.getId_usuario(), dto.getId_evento());
+            boolean registro = participantesEventosService.registrarUsuariosEventos(dto.getId_usuario(), dto.getId_evento(), dto.getCodigo());
 
             if (registro) {
                 return ResponseEntity.ok("Usuario registrado correctamente en el evento.");

@@ -6,6 +6,9 @@ import { useParams } from "react-router-dom";
 
 
 const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSeleccionado, categoriaSeleccionada }) => {
+
+  const [minDate, setMinDate] = useState('');
+
   console.log(categoriaSeleccionada)
   const [formData, setFormData] = useState({
     nombre_evento: '',
@@ -48,6 +51,12 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
   const textRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]*$/;
 
   useEffect(() => {
+
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 2);
+    setMinDate(tomorrow.toISOString().split('T')[0]);
+
     if (isEditMode && eventoSeleccionado) {
       setFormData({
         nombre_evento: eventoSeleccionado.nombre_evento || '',
@@ -104,7 +113,7 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
     }
 
 
-    if (!formData.tipo_evento) {  
+    if (!formData.tipo_evento) {
       tempErrors.tipo_evento = 'El tipo de evento es requerido';
       isValid = false;
     }
@@ -119,6 +128,9 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
 
       if (selectedDate < today) {
         tempErrors.fecha = 'No se puede seleccionar una fecha pasada';
+        isValid = false;
+      } else if (selectedDate.toDateString() === today.toDateString()) {
+        tempErrors.fecha = 'No se pueden crear o editar eventos con esa fecha';
         isValid = false;
       }
     }
@@ -144,10 +156,10 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
       try {
 
         const cleanedFormData = {
-        ...formData,
-        nombre_evento: formData.nombre_evento.trim(),
-        lugar: formData.lugar.trim(),
-      };
+          ...formData,
+          nombre_evento: formData.nombre_evento.trim(),
+          lugar: formData.lugar.trim(),
+        };
 
         const payload = {
           ...cleanedFormData,
@@ -245,7 +257,7 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
               name="fecha"
               value={formData.fecha}
               onChange={handleInputChange}
-              min={new Date().toISOString().split('T')[0]}
+              min={minDate}
               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 transition ${errors.fecha ? 'border-red-300 bg-red-50 focus:ring-red-500' : 'border-gray-300 focus:ring-green-500'}`}
             />
             {errors.fecha && <p className="text-sm text-red-600 mt-1">{errors.fecha}</p>}

@@ -11,6 +11,7 @@ public class EventoResponseDTO {
     private Boolean estatus;
     private Long limite_usuarios;
     private Long id_categoria;
+    private String codigo;
 
     public EventoResponseDTO(EventosBean evento) {
         this.id_evento = evento.getId_evento();
@@ -21,6 +22,7 @@ public class EventoResponseDTO {
         this.estatus = evento.getEstatus();
         this.limite_usuarios = evento.getLimite_usuarios();
         this.id_categoria = evento.getCategoriaBean().getId_categoria(); // ◄ Extrae solo el ID
+        this.codigo = evento.getCodigo();
     }
 
     public String getNombre_evento() {
@@ -55,4 +57,7 @@ public class EventoResponseDTO {
         return estatus;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
 }

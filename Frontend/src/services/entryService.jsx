@@ -1,10 +1,11 @@
 import axiosInstance from "./axiosInstance";
 
-export const entry = async ({ id_usuario, id_evento }) => {
+export const entry = async ({ id_usuario, id_evento, codigo }) => {
   try {
     const response = await axiosInstance.post('/api/participantesevento/', {
       id_usuario,
-      id_evento
+      id_evento,
+      codigo
     });
     return response.data.data;
   } catch (error) {

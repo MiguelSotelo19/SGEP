@@ -38,6 +38,12 @@ import "../css/main.css";
 
 import AssistantsListModal from "../../components/AssistantsListModal";
 
+import { isPastEvent, shouldDisableRegistration } from "../../utils/dateUtils";
+
+import CodeModal from "../../components/CodeModal";
+
+import PrivateEventModal from "../../components/PrivateModal";
+
 const EventList = () => {
   const [eventos, setEventos] = useState([]);
   const [categorias, setCategorias] = useState([]);
@@ -60,6 +66,29 @@ const EventList = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const [codeModalOpen, setCodeModalOpen] = useState(false);
+  const [selectedEventCode, setSelectedEventCode] = useState('');
+
+  const [privateEventModalOpen, setPrivateEventModalOpen] = useState(false);
+  const [selectedPrivateEvent, setSelectedPrivateEvent] = useState(null);
+
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  const handleVerMas = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
+
+  const handlePrivateEventClick = (evento, e) => {
+    const isActionButton = e.target.closest('.action-button') ||
+      e.target.closest('.delete-button');
+
+    if (user?.rol === 1 &&
+      evento.tipo_evento?.toLowerCase() === "privado" &&
+      !isActionButton) {
+      setSelectedEventCode(evento.codigo);
+      setCodeModalOpen(true);
+    }
+  };
 
   const fetchCategorias = async () => {
     try {
@@ -113,8 +142,8 @@ const EventList = () => {
     } catch (error) {
       toast.error("Error al cargar los talleres");
     } finally {
-    setLoading(false); // ✅ Esto asegura que deje de mostrar “Cargando…”
-  }
+      setLoading(false); // ✅ Esto asegura que deje de mostrar “Cargando…”
+    }
   };
 
   const fetchEventosInscritos = async () => {
@@ -195,12 +224,16 @@ const EventList = () => {
   };
 
   const inscribirUsuario = async (id_evento) => {
-    const userStr = localStorage.getItem("User");
+    // Primero obtener el usuario del localStorage
+    const userStr = localStorage.getItem("User"); // ✅ Mover al inicio
+
+    // Verificar si hay usuario logueado
     if (!userStr) {
       toast.error("Debes iniciar sesión para inscribirte");
       return;
     }
 
+    // Ahora podemos usar userStr para parsear el usuario
     const user = JSON.parse(userStr);
     const id_usuario = user.idUsuario || user.usuario?.id || user.id || null;
     const rolId = user.rol || user.rolUsuario || null;
@@ -218,6 +251,13 @@ const EventList = () => {
     const evento = eventos.find((e) => e.id_evento === id_evento);
     if (!evento) {
       toast.error("Evento no encontrado");
+      return;
+    }
+
+    // Si es evento privado, muestra el modal
+    if (evento.tipo_evento?.toLowerCase() === "privado") {
+      setSelectedPrivateEvent(evento);
+      setPrivateEventModalOpen(true);
       return;
     }
 
@@ -239,6 +279,47 @@ const EventList = () => {
     } catch (error) {
       toast.error("Error al inscribirte al taller");
       console.error("Error en inscripción:", error);
+    }
+  };
+
+  const handlePrivateEventRegistration = async (code) => {
+    setPrivateEventModalOpen(false);
+
+    const userStr = localStorage.getItem("User");
+    const user = JSON.parse(userStr);
+    const id_usuario = user.idUsuario || user.usuario?.id || user.id || null;
+
+    try {
+      // Verifica el código y registra al usuario
+      if (code !== selectedPrivateEvent.codigo) {
+        toast.error("Código incorrecto");
+        return;
+      }
+
+      const actuales = conteoAsistentes[selectedPrivateEvent.id_evento] ?? 0;
+      if (actuales >= selectedPrivateEvent.limite_usuarios) {
+        toast.error("El evento ha alcanzado el límite de usuarios.");
+        return;
+      }
+
+      await entry({
+        id_usuario,
+        id_evento: selectedPrivateEvent.id_evento,
+        codigo: code // Envía el código al backend para validación adicional
+      });
+
+      toast.success("Inscripción exitosa");
+      fetchEventosInscritos();
+
+      setConteoAsistentes((prev) => ({
+        ...prev,
+        [selectedPrivateEvent.id_evento]: actuales + 1,
+      }));
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Error al inscribirte al taller");
+    } finally {
+      setPrivateEventModalOpen(false);
+      setSelectedPrivateEvent(null); // Limpia el evento seleccionado
     }
   };
 
@@ -331,23 +412,36 @@ const EventList = () => {
               No hay talleres para esta categoría.
             </div>
           ) : (
-            eventosFiltrados.map((evento) => {
+            eventosFiltrados.slice(0, visibleCount).map((evento) => {
               const inscrito = estaInscrito(evento.id_evento);
               const asistentesCount = conteoAsistentes[evento.id_evento] ?? 0;
+              const fechaEvento = new Date(evento.fecha);
+              const esPasado = isPastEvent(fechaEvento);
+              const deshabilitarInscripcion = shouldDisableRegistration(fechaEvento) || inscrito;
+
+              // Si el evento es pasado, lo marcamos como inactivo
+              const estatus = esPasado ? false : evento.estatus;
 
               return (
-                <Card
-                  key={evento.id_evento}
-                  className="hover:shadow-lg transition-shadow"
-                >
-                  <CardHeader>
+                <Card key={evento.id_evento} className="hover:shadow-lg transition-shadow">
+                  <CardHeader
+                    onClick={() => {
+                      if (user?.rol === 1 && evento.tipo_evento?.toLowerCase() === "privado") {
+                        setSelectedEventCode(evento.codigo);
+                        setCodeModalOpen(true);
+                      }
+                    }}
+                    className={`${user?.rol === 1 && evento.tipo_evento?.toLowerCase() === "privado" ?
+                      "cursor-pointer hover:bg-gray-50 rounded-t-lg" :
+                      ""}`}
+                  >
                     <div className="flex justify-between items-start">
                       <Badge variant="outline">{evento.tipo_evento}</Badge>
                       <Badge
-                        variant={evento.estatus ? "default" : "destructive"}
-                        className={evento.estatus ? "bg-green-100 text-green-800" : ""}
+                        variant={estatus ? "default" : "destructive"}
+                        className={estatus ? "bg-green-100 text-green-800" : ""}
                       >
-                        {evento.estatus ? "Activo" : "Inactivo"}
+                        {estatus ? "Activo" : "Inactivo"}
                       </Badge>
                     </div>
                     <CardTitle className="text-xl">{evento.nombre_evento}</CardTitle>
@@ -358,17 +452,13 @@ const EventList = () => {
                       <div className="flex items-center space-x-2">
                         <Calendar className="w-4 h-4" />
                         <span>
-                          {new Date(evento.fecha).toLocaleDateString("es-ES", {
+                          {new Date(evento.fecha + 'T00:00:00').toLocaleDateString("es-ES", {
                             weekday: "long",
                             year: "numeric",
                             month: "long",
                             day: "numeric",
                           })}
                         </span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Clock className="w-4 h-4" />
-                        <span>{evento.hora || "Sin hora"}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <MapPin className="w-4 h-4" />
@@ -413,9 +503,13 @@ const EventList = () => {
                         variant="outline"
                         className="w-full princ"
                         onClick={() => inscribirUsuario(evento.id_evento)}
-                        disabled={inscrito}
+                        disabled={inscrito || deshabilitarInscripcion}
                       >
-                        {inscrito ? "Inscrito" : "Inscribirse al taller"}
+                        {inscrito
+                          ? "Inscrito"
+                          : deshabilitarInscripcion
+                            ? "Inscripciones cerradas"
+                            : "Inscribirse al taller"}
                       </Button>
                     )}
                   </CardContent>
@@ -425,6 +519,17 @@ const EventList = () => {
           )}
         </div>
       </div>
+
+      {visibleCount < eventos.length && (
+        <div className="flex justify-center mt-4">
+          <button
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            onClick={handleVerMas}
+          >
+            Ver más
+          </button>
+        </div>
+      )}
 
       <EventModal
         isOpen={isOpen}
@@ -441,7 +546,24 @@ const EventList = () => {
         evento={eventoActual}
         onAsistenteEliminado={handleAsistenteEliminado}
       />
-    </div>
+
+      <CodeModal
+        isOpen={codeModalOpen}
+        onClose={() => setCodeModalOpen(false)}
+        eventCode={selectedEventCode}
+      />
+
+      <PrivateEventModal
+        isOpen={privateEventModalOpen}
+        onClose={() => {
+          setPrivateEventModalOpen(false);
+          setSelectedPrivateEvent(null); // Limpia al cerrar
+        }}
+        onConfirm={handlePrivateEventRegistration}
+        eventName={selectedPrivateEvent?.nombre_evento || ''}
+        key={selectedPrivateEvent?.id_evento || 'modal'} // Forza reinicio al cambiar evento
+      />
+    </div >
   );
 };
 

@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import { Users, X } from "lucide-react";
+import { Users, X, Search } from "lucide-react";
 import { toast } from "react-toastify";
 import { deleteAsistentesByEvento, getAsistentesByEvento } from "../services/entryService";
 
 const AssistantsListModal = ({ isOpen, onClose, evento, onAsistenteEliminado }) => {
 
     const [asistentes, setAsistentes] = useState([]);
-
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         if (isOpen && evento?.id_evento) {
             fetchAsistentes();
         }
     }, [isOpen, evento]);
-
 
     const fetchAsistentes = async () => {
         try {
@@ -37,6 +36,12 @@ const AssistantsListModal = ({ isOpen, onClose, evento, onAsistenteEliminado }) 
         }
     };
 
+    // 🔍 Filtrar por nombre o apellido
+    const filteredAsistentes = asistentes.filter((asistente) =>
+        `${asistente.usuario.nombre} ${asistente.usuario.apellido_paterno}`
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase())
+    );
 
     return isOpen ? (
         <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
@@ -56,18 +61,34 @@ const AssistantsListModal = ({ isOpen, onClose, evento, onAsistenteEliminado }) 
                     </button>
                 </div>
 
+                {/* Search bar */}
+                <div className="p-4 border-b">
+                    <div className="flex items-center gap-2 border rounded-lg px-3 py-2">
+                        <Search className="w-4 h-4 text-gray-400" />
+                        <input
+                            type="text"
+                            placeholder="Buscar por nombre..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="w-full outline-none text-sm"
+                        />
+                    </div>
+                </div>
+
                 {/* Content */}
                 <div className="p-6 space-y-4 max-h-[60vh] overflow-y-auto">
-
-                    {asistentes.length === 0 ? (
-                        <p className="text-center text-gray-500">No hay asistentes inscritos.</p>
+                    {filteredAsistentes.length === 0 ? (
+                        <p className="text-center text-gray-500">No se encontraron asistentes.</p>
                     ) : (
-                        asistentes.map((asistente) => (
-
+                        filteredAsistentes.map((asistente) => (
                             <div key={asistente.usuario.id_usuario} className="flex justify-between items-center border rounded-lg px-4 py-3">
                                 <div>
-                                    <p className="font-medium text-gray-800">{asistente.usuario.nombre} {asistente.usuario.apellido_paterno}</p>
-                                    <p className="text-sm text-gray-500">{asistente.usuario.correo || "Sin correo"}</p>
+                                    <p className="font-medium text-gray-800">
+                                        {asistente.usuario.nombre} {asistente.usuario.apellido_paterno}
+                                    </p>
+                                    <p className="text-sm text-gray-500">
+                                        {asistente.usuario.correo || "Sin correo"}
+                                    </p>
                                 </div>
                                 <button
                                     onClick={() => handleEliminar(asistente.usuario.id_usuario)}

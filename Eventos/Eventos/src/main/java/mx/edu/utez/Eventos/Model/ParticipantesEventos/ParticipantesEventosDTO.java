@@ -3,6 +3,7 @@ package mx.edu.utez.Eventos.Model.ParticipantesEventos;
 public class ParticipantesEventosDTO {
     private Long id_usuario;
     private Long id_evento;
+    private String codigo;
 
     public Long getId_usuario() {
         return id_usuario;
@@ -18,5 +19,13 @@ public class ParticipantesEventosDTO {
 
     public void setId_evento(Long id_evento) {
         this.id_evento = id_evento;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 }

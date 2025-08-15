@@ -43,6 +43,12 @@ const CategoryList = () => {
   const [busqueda, setBusqueda] = useState(""); 
   const [categoriasFiltradas, setCategoriasFiltradas] = useState([]);
 
+   const [visibleCount, setVisibleCount] = useState(6);
+
+  const handleVerMas = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
+
 
   const handleModal = () => setIsOpen(true);
 
@@ -121,47 +127,58 @@ const CategoryList = () => {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categoriasFiltradas.map((cat) => {
-            const Icon = iconMap[cat.nombre] || Calendar;
-            const color = colorMap[cat.nombre] || "bg-gray-100 text-gray-600";
-            return (
-              <Card key={cat.id_categoria} className="hover:shadow-lg transition-shadow cursor-pointer h-full">
-                <CardHeader onClick={() => showEvents(cat)}>
-                  <div className="flex items-center justify-between">
-                    <div className={`p-3 rounded-lg ${color}`}>
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <Badge
-                      variant={cat.estatus ? "default" : "destructive"}
-                      className={cat.estatus ? "bg-green-100 text-green-800" : ""}
-                    >
-                      {cat.estatus ? "Activo" : "Inactivo"}</Badge>
-                  </div>
-                  <CardTitle className="text-xl">{cat.nombre}</CardTitle>
-                  <CardDescription>{cat.descripcion}</CardDescription>
-                </CardHeader>
-                <CardContent>
+  {categoriasFiltradas.slice(0, visibleCount).map((cat) => {
+    const Icon = iconMap[cat.nombre] || Calendar;
+    const color = colorMap[cat.nombre] || "bg-gray-100 text-gray-600";
+    return (
+      <Card key={cat.id_categoria} className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+        <CardHeader onClick={() => showEvents(cat)}>
+          <div className="flex items-center justify-between">
+            <div className={`p-3 rounded-lg ${color}`}>
+              <Icon className="w-6 h-6" />
+            </div>
+            <Badge
+              variant={cat.estatus ? "default" : "destructive"}
+              className={cat.estatus ? "bg-green-100 text-green-800" : ""}
+            >
+              {cat.estatus ? "Activo" : "Inactivo"}
+            </Badge>
+          </div>
+          <CardTitle className="text-xl">{cat.nombre}</CardTitle>
+          <CardDescription>{cat.descripcion}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          {user.rol == 1 ? (
+            <div className="flex items-center justify-between">
+              <Button variant="outline" className="action bg-transparent" onClick={() => handleEditMode(cat)}>
+                Editar Categoría
+              </Button>
+              <Button variant="outline" className="action w-50 princ" onClick={() => showEvents(cat)}>
+                Ver talleres
+              </Button>
+            </div>
+          ) : (
+            <Button variant="outline" className="action w-full princ" onClick={() => showEvents(cat)}>
+              Ver talleres
+            </Button>
+          )}
+        </CardContent>
+      </Card>
+    );
+  })}
+</div>
+{visibleCount < categoriasFiltradas.length && (
+  <div className="flex justify-center mt-6">
+    <Button
+      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg"
+      onClick={handleVerMas}
+    >
+      Ver más
+    </Button>
+  </div>
+)}
 
-                  {(user.rol == 1) ? (
-                    <div className="flex items-center justify-between">
-                      <Button variant="outline" className="action bg-transparent" onClick={() => handleEditMode(cat)}>
-                        Editar Categoría
-                      </Button>
-                      <Button variant="outline" className="action w-50 princ" onClick={() => showEvents(cat)}>
-                        Ver talleres
-                      </Button>
-                    </div>
-                  ): (
-                    <Button variant="outline" className="action w-full princ" onClick={() => showEvents(cat)}>
-                      Ver talleres
-                    </Button>
-                  )}
-                  
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
+
       </div>
 
       <CategoryModal

@@ -9,6 +9,7 @@ import mx.edu.utez.Eventos.Model.Eventos.EventoDTO;
 import mx.edu.utez.Eventos.Model.Eventos.EventoResponseDTO;
 import mx.edu.utez.Eventos.Model.Eventos.EventosBean;
 import mx.edu.utez.Eventos.Model.Eventos.EventosRepository;
+import mx.edu.utez.Eventos.Model.ParticipantesEventos.ParticipantesEventosRepository;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioBean;
 import mx.edu.utez.Eventos.Model.Usuarios.UsuarioRepository;
 import mx.edu.utez.Eventos.Service.Eventos.EventoService;
@@ -46,6 +47,9 @@ public class EventosController {
 
     @Autowired
     private BitacoraRepository bitacoraRepository;
+
+    @Autowired
+    private ParticipantesEventosRepository participantesEventosRepository;
 
     private static final Logger logger = LoggerFactory.getLogger(EventosController.class);
 
@@ -197,6 +201,9 @@ public class EventosController {
 
         EventosBean evento = eventosRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Taller no encontrado"));
+
+        // 1. Primero eliminar los participantes asociados
+        participantesEventosRepository.deleteByEventoId(id);
 
         eventosRepository.delete(evento);
 

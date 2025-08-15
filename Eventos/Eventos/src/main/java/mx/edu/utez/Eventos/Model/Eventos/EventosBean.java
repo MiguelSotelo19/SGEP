@@ -37,6 +37,9 @@ public class EventosBean {
     @Column
     private Long limite_usuarios;
 
+    @Column
+    private String codigo;
+
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "evento_usuario",
@@ -120,5 +123,13 @@ public class EventosBean {
 
     public void setUsuarios(Set<UsuarioBean> usuarios) {
         this.usuarios = usuarios;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 }
