@@ -554,3 +554,215 @@ Unconditional classes:
 2025-07-27T13:48:58.183-06:00  INFO 8304 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-07-27T13:48:58.191-06:00  INFO 8304 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-07-27T13:48:58.196-06:00  INFO 8304 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-14T21:59:42.616-06:00  INFO 15192 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Starting EventosApplication using Java 24 with PID 15192 (C:\Users\Migue\Documents\Miguel\SGEP\Eventos\Eventos\target\classes started by Migue in C:\Users\Migue\Documents\Miguel\SGEP\Eventos\Eventos)
+2025-08-14T21:59:42.618-06:00  INFO 15192 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-08-14T21:59:42.667-06:00  INFO 15192 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-14T21:59:42.667-06:00  INFO 15192 --- [Eventos] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-14T21:59:43.609-06:00  INFO 15192 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-14T21:59:43.703-06:00  INFO 15192 --- [Eventos] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 7 JPA repository interfaces.
+2025-08-14T21:59:44.335-06:00  INFO 15192 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-14T21:59:44.349-06:00  INFO 15192 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-14T21:59:44.350-06:00  INFO 15192 --- [Eventos] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-14T21:59:44.394-06:00  INFO 15192 --- [Eventos] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-14T21:59:44.394-06:00  INFO 15192 --- [Eventos] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1727 ms
+2025-08-14T21:59:44.534-06:00  INFO 15192 --- [Eventos] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14T21:59:44.622-06:00  INFO 15192 --- [Eventos] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-14T21:59:44.668-06:00  INFO 15192 --- [Eventos] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-14T21:59:45.012-06:00  INFO 15192 --- [Eventos] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-14T21:59:45.051-06:00  INFO 15192 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-14T21:59:45.318-06:00  INFO 15192 --- [Eventos] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4befecb1
+2025-08-14T21:59:45.320-06:00  INFO 15192 --- [Eventos] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-14T21:59:45.404-06:00  WARN 15192 --- [Eventos] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-14T21:59:45.424-06:00  INFO 15192 --- [Eventos] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-14T21:59:46.571-06:00  INFO 15192 --- [Eventos] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-14T21:59:46.981-06:00  INFO 15192 --- [Eventos] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-14T21:59:47.485-06:00  INFO 15192 --- [Eventos] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-08-14T21:59:47.485-06:00  WARN 15192 --- [Eventos] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-08-14T21:59:47.515-06:00  INFO 15192 --- [Eventos] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-14T21:59:48.104-06:00  WARN 15192 --- [Eventos] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14T21:59:48.398-06:00  WARN 15192 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-08-14T21:59:48.399-06:00  WARN 15192 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/one/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-08-14T21:59:48.403-06:00  WARN 15192 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/save] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-08-14T21:59:48.405-06:00  WARN 15192 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/update/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-08-14T21:59:48.406-06:00  WARN 15192 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/cambiarEstado/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-08-14T21:59:48.406-06:00  WARN 15192 --- [Eventos] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [api/talleres/delete/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-08-14T21:59:48.702-06:00  INFO 15192 --- [Eventos] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-14T21:59:48.735-06:00  INFO 15192 --- [Eventos] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-14T21:59:48.741-06:00  INFO 15192 --- [Eventos] [restartedMain] mx.edu.utez.Eventos.EventosApplication   : Started EventosApplication in 6.689 seconds (process running for 7.674)
+2025-08-14T22:01:02.340-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-14T22:01:02.340-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-14T22:01:02.341-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-14T22:01:02.470-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: alguien@example.com
+2025-08-14T22:01:02.517-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-08-14T22:01:02.959-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-08-14T22:01:02.962-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-08-14T22:01:04.371-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:01:04.376-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:01:07.168-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:01:07.173-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:01:07.190-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:04:08.263-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:04:08.266-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:04:08.269-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:04:12.726-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:04:12.732-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:04:12.742-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:04:13.633-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:04:13.637-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:04:13.641-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:07:40.109-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:07:40.112-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:07:40.115-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:08:04.461-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: alguien@example.com
+2025-08-14T22:08:04.463-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-08-14T22:08:04.661-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-08-14T22:08:04.663-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-08-14T22:08:09.331-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:08:09.335-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:08:15.764-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:08:15.768-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:08:15.772-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:08:28.917-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.Service.Usuarios.UsuarioService  : Consultando al usuario con correo: alguien2@example.com
+2025-08-14T22:08:28.919-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-08-14T22:08:29.124-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.Service.Usuarios.UsuarioService  : Se han consultado a todos los usuarios
+2025-08-14T22:08:29.126-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.Service.Usuarios.UsuarioService  : Insertando movimiento en la bitacora
+2025-08-14T22:08:30.046-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:08:30.053-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:08:31.216-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:08:31.220-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:08:31.222-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:12:41.681-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:12:41.684-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:12:41.687-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:12:44.702-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:12:44.705-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:12:44.707-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-6] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:12:47.866-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:12:47.869-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:12:47.873-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:12:49.102-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:12:49.106-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:12:49.112-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:13:11.666-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:13:11.672-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:13:11.676-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:13:24.719-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:13:24.721-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:13:24.723-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:13:42.165-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:13:42.169-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:13:42.170-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:13:51.281-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:13:51.283-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:13:51.295-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:13:53.294-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:13:53.299-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:13:53.314-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:13:54.273-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:13:54.275-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:13:54.300-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:13:57.287-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:13:57.289-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:13:57.293-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:13:59.271-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:13:59.274-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-2] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:13:59.293-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:02.298-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:02.299-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:02.323-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:04.284-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:04.287-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:04.289-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:06.264-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:06.267-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:06.269-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:27.282-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:27.284-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:27.285-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:30.279-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:30.281-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:30.282-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:33.279-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:33.282-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:33.284-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:38.265-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:38.268-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:38.276-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:41.281-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:41.283-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:41.284-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:43.260-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:43.264-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:43.265-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:51.268-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:51.270-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:51.270-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:54.277-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:54.278-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:54.279-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:14:57.293-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:14:57.295-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:14:57.302-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:00.278-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:00.280-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:00.281-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:02.273-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:02.274-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:02.275-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:04.283-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:04.285-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:04.287-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:09.276-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:09.278-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:09.278-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:11.260-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:11.261-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:11.262-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:15.286-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:15.289-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:15.301-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:17.276-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:17.277-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:17.279-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:19.279-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:19.280-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:19.281-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:22.275-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:22.278-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:22.278-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:24.268-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:24.270-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:24.270-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:28.288-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:28.290-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:28.291-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:30.272-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:30.273-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:30.274-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:32.281-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:32.282-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:32.283-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-1] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:33.272-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:33.273-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:33.274-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-5] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:34.289-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:34.291-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-10] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:34.298-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-3] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:36.276-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:36.278-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-8] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:36.278-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-4] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:15:38.280-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Se han obtenido todas las categorías
+2025-08-14T22:15:38.282-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-9] m.e.u.E.S.Categorias.CategoriaService    : Insertando movimiento en la bitacora
+2025-08-14T22:15:38.283-06:00  INFO 15192 --- [Eventos] [http-nio-8080-exec-7] m.e.u.E.C.Eventos.EventosController      : Insertando movimiento en la bitacora
+2025-08-14T22:16:57.438-06:00  INFO 15192 --- [Eventos] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-14T22:16:57.442-06:00  INFO 15192 --- [Eventos] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-14T22:16:57.447-06:00  INFO 15192 --- [Eventos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-14T22:16:57.455-06:00  INFO 15192 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-14T22:16:57.458-06:00  INFO 15192 --- [Eventos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
