@@ -18,7 +18,6 @@ export const Perfil = () => {
     const [isEditing, setIsEditing] = useState(false)
     const user = JSON.parse(localStorage.getItem("User"));
     const [profileData, setProfileData] = useState(user);
-    console.log(user);
 
     const [editData, setEditData] = useState({ ...profileData })
     const [errors, setErrors] = useState({
@@ -81,20 +80,15 @@ export const Perfil = () => {
             try {
                 if (isEditing) {
                     const response = await editUser(usuario);
-                    console.log(response);
-                    console.log("Usuario actualizado")
                 }
             } catch (error) {
-                console.error('Error al enviar: ', error);
                 toast.error('Error en el servidor');
             }
         } else {
-            console.log('Formulario inválido');
             toast.error("Los datos ingresados no son válidos");
         }
     }
 
-    console.log(editData)
 
     return (
         <div className="min-h-screen bg-gray-50">

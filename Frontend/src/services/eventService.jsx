@@ -8,7 +8,6 @@ export const getEventos = async (id_categoria = null) => {
         const response = await axiosInstance.get(endpoint);
         return response.data;
     } catch (error) {
-        console.error("Error al obtener los eventos: ", error);
         throw error;
     }
 }
@@ -26,7 +25,6 @@ export const createEvent = async ({ nombre_evento, lugar, tipo_evento, fecha, es
         })
         return response.data.data
     } catch (error) {
-        console.log(error)
         throw error
     }
 }
@@ -52,7 +50,6 @@ export const editEvent = async ({ id_evento, nombre_evento, lugar, tipo_evento, 
             estado: responseEstado.data.data
         }
     } catch (error) {
-        console.error("Error al editar taller (Promise.all):", error);
         throw error;
     }
 }
@@ -62,7 +59,6 @@ export const deleteEvent = async ({ id_evento }) => {
         const response = await axiosInstance.delete(`/api/talleres/delete/${id_evento}`)
         return response.data.data
     } catch (error) {
-        console.log(error)
         throw error
     }
 }

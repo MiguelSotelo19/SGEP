@@ -68,6 +68,7 @@ export function Navigation() {
                 <DropdownMenuItem
                   onClick={() => {
                     localStorage.removeItem("accessToken");
+                    localStorage.removeItem("User");
                     window.location.href = "/";
                   }}
                   className="flex items-center space-x-2 cursor-pointer"

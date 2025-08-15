@@ -122,9 +122,7 @@ export const Registro = ({ setModo }) => {
                     id_rol: 2
                 }
             };
-            console.log("parametros: ", parametros)
             const respuesta = await axios.post(urlRegistro, parametros);
-            console.log("respuesta: ", respuesta)
             if (respuesta.status === 200) {
                 Swal.fire({
                     icon: "success",
@@ -137,13 +135,11 @@ export const Registro = ({ setModo }) => {
             }
 
         } catch (error) {
-
             Swal.fire({
                 icon: "error",
                 title: "Error",
                 text: "Algo salió mal. Intenta más tarde.",
             });
-            console.log(error)
         }
     };
 

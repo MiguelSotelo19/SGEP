@@ -5,7 +5,6 @@ export const getMovimientos = async () => {
         const response = await axiosInstance.get('/api/movimientos/');
         return response.data;
     } catch (error) {
-        console.error("Error al obtener los movimientos: ", error);
         throw error;
     }
 }

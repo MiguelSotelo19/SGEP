@@ -9,7 +9,6 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
 
   const [minDate, setMinDate] = useState('');
 
-  console.log(categoriaSeleccionada)
   const [formData, setFormData] = useState({
     nombre_evento: '',
     lugar: '',
@@ -166,7 +165,6 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
           id_categoria: parseInt(cleanedFormData.id_categoria),
           estatus: isActivate
         };
-        console.log(payload)
 
         if (isEditMode && eventoSeleccionado) {
           await editEvent({ ...payload, id_evento: eventoSeleccionado.id_evento });
@@ -179,7 +177,6 @@ const EventModal = ({ isOpen, handleClose, onEventoCreado, isEditMode, eventoSel
         onEventoCreado?.();
         handleClose();
       } catch (error) {
-        console.error("Error al guardar el evento", error);
         toast.error("Error en el servidor");
       }
     }

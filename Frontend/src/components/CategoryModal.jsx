@@ -90,14 +90,12 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada, isEditMode, cat
                         descripcion: formData.descripcion.trim(),
                         estatus: isActivate,
                     });
-                    console.log("Actualizada: ", response);
                     toast.success("Categoría actualizada");
                 } else {
                     const response = await category({
                         nombre: formData.nombre.trim(),
                         descripcion: formData.descripcion.trim(),
                     });
-                    console.log("Creada: ", response);
                     toast.success("Categoría creada");
                 }
 
@@ -108,12 +106,9 @@ const CategoryModal = ({ isOpen, handleClose, onCategoriaCreada, isEditMode, cat
                 if (error.response?.status === 400) {
                     toast.warn('El nombre de la categoría ya está registrado');
                 } else {
-                    console.error('Error al enviar: ', error);
                     toast.error('Error en el servidor');
                 }
             }
-        } else {
-            console.log('Formulario inválido');
         }
     };
 

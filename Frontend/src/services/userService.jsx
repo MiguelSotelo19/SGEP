@@ -15,7 +15,6 @@ export const editUser = async (user) => {
         await getUser(user)
         return response.data.data;
     } catch (error) {
-        console.error("Error al editar el usuario: ", error);
         throw error;
     }
 }
@@ -25,14 +24,12 @@ export const getUser = async (user) => {
         const endpoint = `/api/usuarios/${user.id}`;
     
         const response = await axiosInstance.get(endpoint)
-        console.log(response.data.data.data);
         const userId = {
             ...response.data.data.data,
             id: response.data.data.data.id_usuario
         }
         localStorage.setItem("User", JSON.stringify(userId));
     } catch (error) {
-        console.error("Error al editar el usuario: ", error);
         throw error;
     }
 }

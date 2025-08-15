@@ -19,12 +19,9 @@ export const Login = ({ setModo }) => {
 
     const getUsers = async (correo) => {
         try {
-            console.log("Entra al get")
-            console.log("Token:", localStorage.getItem("accessToken"))
-
+           
             const response = await axiosInstance.get(urlUser)
-            console.log("Respuesta:", response)
-
+           
             const users = response.data.data.data
             const user = users.find((u) => u.correo === correo)
 
@@ -41,7 +38,6 @@ export const Login = ({ setModo }) => {
                 return false
             }
         } catch (error) {
-            console.error("Error al obtener usuarios:", error)
 
             if (error.response?.status === 401) {
                 Swal.fire({
@@ -112,14 +108,12 @@ export const Login = ({ setModo }) => {
                 }
             }
         } catch (err) {
-            console.error("Error al verificar bloqueo", err);
+            throw error;
         }
 
         try {
             const respuesta = await auth(correoLogin, passwordLogin)
-            console.log(respuesta)
             if (!respuesta || !respuesta.data) {
-                console.warn("Credenciales incorrectas")
                 setIntentosRestantes((prev) => prev - 1)
 
                 if (intentosRestantes <= 1) {
@@ -128,7 +122,7 @@ export const Login = ({ setModo }) => {
                     try {
                         await axios.post(`${urlUser}bloquear/${correoLogin}`);
                     } catch (error) {
-                        console.error("Error al bloquear usuario", error);
+                        throw error;    
                     }
                     return
                 }
@@ -160,7 +154,6 @@ export const Login = ({ setModo }) => {
                 navigate("/categories")
             })
         } catch (error) {
-            console.error("Error en login:", error)
             Swal.fire({
                 icon: "error",
                 title: "Error",

@@ -278,7 +278,6 @@ const EventList = () => {
       }));
     } catch (error) {
       toast.error("Error al inscribirte al taller");
-      console.error("Error en inscripción:", error);
     }
   };
 
