@@ -5,31 +5,12 @@ import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 import { Navigation } from "../../components/navigation";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../../components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "../../components/ui/select";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../../components/ui/select";
 import { Input } from "../../components/ui/input";
-import {
-  Plus,
-  Calendar,
-  Clock,
-  MapPin,
-  Users,
-  Search,
-} from "lucide-react";
+import { Plus, Calendar, Clock, MapPin, Users, Search, Lock } from "lucide-react";
 
 import EventModal from "../../components/EventModal";
 import { getCategories } from "../../services/categoryService";
@@ -99,7 +80,6 @@ const EventList = () => {
     }
   };
 
-  // Carga el conteo de asistentes para cada evento
   const fetchConteoAsistentes = async (eventos) => {
     const conteos = {};
     for (const evento of eventos) {
@@ -118,10 +98,11 @@ const EventList = () => {
     setEventos([]);
     try {
       const data = await getEventos();
+      const eventosFiltrados = filtrarEventosPorRol(data);
 
       const cats = [
         ...new Map(
-          data.map((e) => [
+          eventosFiltrados.map((e) => [
             e.id_categoria,
             {
               id_categoria: e.id_categoria,
@@ -132,9 +113,9 @@ const EventList = () => {
       ];
       setCategorias(cats);
 
-      setEventos(data);
+      setEventos(eventosFiltrados);
 
-      await fetchConteoAsistentes(data);
+      await fetchConteoAsistentes(eventosFiltrados);
 
       if (id_categoria) {
         setCategoriaSeleccionada(String(id_categoria));
@@ -142,7 +123,7 @@ const EventList = () => {
     } catch (error) {
       toast.error("Error al cargar los talleres");
     } finally {
-      setLoading(false); // ✅ Esto asegura que deje de mostrar “Cargando…”
+      setLoading(false);
     }
   };
 
@@ -342,6 +323,9 @@ const EventList = () => {
     }));
   };
 
+  const esEventoPrivado = (evento) => {
+    return evento.tipo_evento === 'Privado' || evento.es_privado === true;
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -349,12 +333,14 @@ const EventList = () => {
       <Navigation />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Talleres</h1>
             <p className="text-gray-600 mt-2">
               Consulta o administra los talleres disponibles
+              {esUsuarioAdmin() && (
+                <span className="text-blue-600 font-medium"> • Vista de Administrador</span>
+              )}
             </p>
           </div>
           {user.rol == 1 ? (
@@ -370,7 +356,6 @@ const EventList = () => {
           )}
         </div>
 
-        {/* Filtros */}
         <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="relative">
@@ -401,7 +386,6 @@ const EventList = () => {
           </div>
         </div>
 
-        {/* Grid de eventos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading ? (
             <div className="col-span-full text-center text-gray-500">
@@ -436,7 +420,15 @@ const EventList = () => {
                       ""}`}
                   >
                     <div className="flex justify-between items-start">
-                      <Badge variant="outline">{evento.tipo_evento}</Badge>
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline">{evento.tipo_evento}</Badge>
+                        {eventoPrivado && esUsuarioAdmin() && (
+                          <Badge variant="secondary" className="bg-amber-100 text-amber-800">
+                            <Lock className="w-3 h-3 mr-1" />
+                            Privado
+                          </Badge>
+                        )}
+                      </div>
                       <Badge
                         variant={estatus ? "default" : "destructive"}
                         className={estatus ? "bg-green-100 text-green-800" : ""}
